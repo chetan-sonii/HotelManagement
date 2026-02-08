@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FrmRental
     Inherits ReaLTaiizor.Forms.PoisonForm
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,29 +20,46 @@ Partial Class FrmRental
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PoisonStyleManager1 = New ReaLTaiizor.Manager.PoisonStyleManager(Me.components)
         Me.dgvRentals = New ReaLTaiizor.Controls.PoisonDataGridView()
         Me.lblRoom = New ReaLTaiizor.Controls.PoisonLabel()
         Me.lblDate = New ReaLTaiizor.Controls.PoisonLabel()
         Me.PoisonLabel3 = New ReaLTaiizor.Controls.PoisonLabel()
         Me.lblFee = New ReaLTaiizor.Controls.PoisonLabel()
-        Me.lblName = New ReaLTaiizor.Controls.PoisonLabel()
+        Me.lblGuestName = New ReaLTaiizor.Controls.PoisonLabel()
         Me.lblReturn = New ReaLTaiizor.Controls.PoisonLabel()
         Me.cbRoom = New ReaLTaiizor.Controls.PoisonComboBox()
         Me.cbCust = New ReaLTaiizor.Controls.PoisonComboBox()
-        Me.dtDate = New System.Windows.Forms.DateTimePicker()
-        Me.dtReturn = New System.Windows.Forms.DateTimePicker()
+        Me.dtCheckIn = New ReaLTaiizor.Controls.PoisonDateTime()
+        Me.dtCheckOut = New ReaLTaiizor.Controls.PoisonDateTime()
         Me.btnCalculate = New ReaLTaiizor.Controls.PoisonButton()
         Me.btnRent = New ReaLTaiizor.Controls.PoisonButton()
         Me.btnBack = New ReaLTaiizor.Controls.PoisonButton()
+        Me.PoisonLabel1 = New ReaLTaiizor.Controls.PoisonLabel()
+        Me.PoisonPanel1 = New ReaLTaiizor.Controls.PoisonPanel()
+        Me.lblRoomInfo = New ReaLTaiizor.Controls.PoisonLabel()
+        Me.PoisonLabel8 = New ReaLTaiizor.Controls.PoisonLabel()
+        Me.lblDays = New ReaLTaiizor.Controls.PoisonLabel()
+        Me.PoisonLabel6 = New ReaLTaiizor.Controls.PoisonLabel()
+        Me.lblGuestPhone = New ReaLTaiizor.Controls.PoisonLabel()
+        Me.PoisonLabel4 = New ReaLTaiizor.Controls.PoisonLabel()
+        Me.btnClear = New ReaLTaiizor.Controls.PoisonButton()
+        Me.btnRefresh = New ReaLTaiizor.Controls.PoisonButton()
+        Me.PoisonPanel2 = New ReaLTaiizor.Controls.PoisonPanel()
+        Me.PoisonLabel2 = New ReaLTaiizor.Controls.PoisonLabel()
+        Me.PoisonTile1 = New ReaLTaiizor.Controls.PoisonTile()
+        Me.txtSearch = New ReaLTaiizor.Controls.PoisonTextBox()
+        Me.PoisonLabel5 = New ReaLTaiizor.Controls.PoisonLabel()
         CType(Me.PoisonStyleManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvRentals, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PoisonPanel1.SuspendLayout()
+        Me.PoisonPanel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'PoisonStyleManager1
@@ -51,111 +68,119 @@ Partial Class FrmRental
         '
         'dgvRentals
         '
+        Me.dgvRentals.AllowUserToAddRows = False
+        Me.dgvRentals.AllowUserToDeleteRows = False
         Me.dgvRentals.AllowUserToResizeRows = False
         Me.dgvRentals.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dgvRentals.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvRentals.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
         Me.dgvRentals.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvRentals.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
-        Me.dgvRentals.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer))
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvRentals.DefaultCellStyle = DataGridViewCellStyle5
-        Me.dgvRentals.Dock = System.Windows.Forms.DockStyle.Right
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        DataGridViewCellStyle10.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
+        DataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
+        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvRentals.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle10
+        Me.dgvRentals.ColumnHeadersHeight = 35
+        Me.dgvRentals.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle11.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        DataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer))
+        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
+        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvRentals.DefaultCellStyle = DataGridViewCellStyle11
+        Me.dgvRentals.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvRentals.EnableHeadersVisualStyles = False
         Me.dgvRentals.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
         Me.dgvRentals.GridColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dgvRentals.Location = New System.Drawing.Point(330, 60)
+        Me.dgvRentals.Location = New System.Drawing.Point(0, 0)
+        Me.dgvRentals.MultiSelect = False
         Me.dgvRentals.Name = "dgvRentals"
         Me.dgvRentals.ReadOnly = True
         Me.dgvRentals.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvRentals.RowHeadersDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        DataGridViewCellStyle12.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        DataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
+        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvRentals.RowHeadersDefaultCellStyle = DataGridViewCellStyle12
+        Me.dgvRentals.RowHeadersVisible = False
         Me.dgvRentals.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
+        Me.dgvRentals.RowTemplate.Height = 30
         Me.dgvRentals.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvRentals.Size = New System.Drawing.Size(450, 370)
+        Me.dgvRentals.Size = New System.Drawing.Size(670, 480)
         Me.dgvRentals.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Blue
         Me.dgvRentals.TabIndex = 0
         '
         'lblRoom
         '
         Me.lblRoom.AutoSize = True
-        Me.lblRoom.Location = New System.Drawing.Point(38, 103)
+        Me.lblRoom.Location = New System.Drawing.Point(15, 33)
         Me.lblRoom.Name = "lblRoom"
-        Me.lblRoom.Size = New System.Drawing.Size(72, 19)
+        Me.lblRoom.Size = New System.Drawing.Size(83, 19)
         Me.lblRoom.TabIndex = 1
-        Me.lblRoom.Text = "Select Room:"
+        Me.lblRoom.Text = "Select Room"
         '
         'lblDate
         '
         Me.lblDate.AutoSize = True
-        Me.lblDate.Location = New System.Drawing.Point(25, 237)
+        Me.lblDate.Location = New System.Drawing.Point(15, 298)
         Me.lblDate.Name = "lblDate"
-        Me.lblDate.Size = New System.Drawing.Size(79, 19)
+        Me.lblDate.Size = New System.Drawing.Size(90, 19)
         Me.lblDate.TabIndex = 3
-        Me.lblDate.Text = "Rental Date:"
+        Me.lblDate.Text = "Check-In Date"
         '
         'PoisonLabel3
         '
         Me.PoisonLabel3.AutoSize = True
-        Me.PoisonLabel3.Location = New System.Drawing.Point(163, 103)
+        Me.PoisonLabel3.Location = New System.Drawing.Point(15, 97)
         Me.PoisonLabel3.Name = "PoisonLabel3"
-        Me.PoisonLabel3.Size = New System.Drawing.Size(104, 19)
+        Me.PoisonLabel3.Size = New System.Drawing.Size(79, 19)
         Me.PoisonLabel3.TabIndex = 3
         Me.PoisonLabel3.Text = "Select Guest"
         '
         'lblFee
         '
         Me.lblFee.AutoSize = True
-        Me.lblFee.Location = New System.Drawing.Point(28, 329)
+        Me.lblFee.Location = New System.Drawing.Point(17, 483)
         Me.lblFee.Name = "lblFee"
-        Me.lblFee.Size = New System.Drawing.Size(97, 19)
+        Me.lblFee.Size = New System.Drawing.Size(44, 19)
+        Me.lblFee.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Blue
         Me.lblFee.TabIndex = 3
-        Me.lblFee.Text = "Total Fees: 0.00"
+        Me.lblFee.Text = "₹ 0.00"
+        Me.lblFee.UseStyleColors = True
         '
-        'lblName
+        'lblGuestName
         '
-        Me.lblName.AutoSize = True
-        Me.lblName.Location = New System.Drawing.Point(25, 203)
-        Me.lblName.Name = "lblName"
-        Me.lblName.Size = New System.Drawing.Size(113, 19)
-        Me.lblName.TabIndex = 3
-        Me.lblName.Text = "Guest Name: "
+        Me.lblGuestName.AutoSize = True
+        Me.lblGuestName.Location = New System.Drawing.Point(15, 257)
+        Me.lblGuestName.Name = "lblGuestName"
+        Me.lblGuestName.Size = New System.Drawing.Size(114, 19)
+        Me.lblGuestName.TabIndex = 3
+        Me.lblGuestName.Text = "Select a guest first"
         '
         'lblReturn
         '
         Me.lblReturn.AutoSize = True
-        Me.lblReturn.Location = New System.Drawing.Point(25, 280)
+        Me.lblReturn.Location = New System.Drawing.Point(15, 362)
         Me.lblReturn.Name = "lblReturn"
-        Me.lblReturn.Size = New System.Drawing.Size(85, 19)
+        Me.lblReturn.Size = New System.Drawing.Size(102, 19)
         Me.lblReturn.TabIndex = 3
-        Me.lblReturn.Text = "Return Date: "
+        Me.lblReturn.Text = "Check-Out Date"
         '
         'cbRoom
         '
         Me.cbRoom.FormattingEnabled = True
         Me.cbRoom.ItemHeight = 23
-        Me.cbRoom.Location = New System.Drawing.Point(23, 137)
+        Me.cbRoom.Location = New System.Drawing.Point(15, 65)
         Me.cbRoom.Name = "cbRoom"
-        Me.cbRoom.Size = New System.Drawing.Size(121, 29)
+        Me.cbRoom.Size = New System.Drawing.Size(220, 29)
         Me.cbRoom.TabIndex = 4
         Me.cbRoom.UseSelectable = True
         '
@@ -163,76 +188,274 @@ Partial Class FrmRental
         '
         Me.cbCust.FormattingEnabled = True
         Me.cbCust.ItemHeight = 23
-        Me.cbCust.Location = New System.Drawing.Point(180, 137)
+        Me.cbCust.Location = New System.Drawing.Point(15, 137)
         Me.cbCust.Name = "cbCust"
-        Me.cbCust.Size = New System.Drawing.Size(121, 29)
+        Me.cbCust.Size = New System.Drawing.Size(220, 29)
         Me.cbCust.TabIndex = 5
         Me.cbCust.UseSelectable = True
         '
-        'dtDate
+        'dtCheckIn
         '
-        Me.dtDate.Location = New System.Drawing.Point(116, 236)
-        Me.dtDate.Name = "dtDate"
-        Me.dtDate.Size = New System.Drawing.Size(200, 20)
-        Me.dtDate.TabIndex = 6
+        Me.dtCheckIn.FontSize = ReaLTaiizor.Extension.Poison.PoisonDateTimeSize.Medium
+        Me.dtCheckIn.Location = New System.Drawing.Point(15, 330)
+        Me.dtCheckIn.MinimumSize = New System.Drawing.Size(0, 29)
+        Me.dtCheckIn.Name = "dtCheckIn"
+        Me.dtCheckIn.Size = New System.Drawing.Size(220, 29)
+        Me.dtCheckIn.TabIndex = 6
         '
-        'dtReturn
+        'dtCheckOut
         '
-        Me.dtReturn.Location = New System.Drawing.Point(116, 280)
-        Me.dtReturn.Name = "dtReturn"
-        Me.dtReturn.Size = New System.Drawing.Size(200, 20)
-        Me.dtReturn.TabIndex = 7
+        Me.dtCheckOut.FontSize = ReaLTaiizor.Extension.Poison.PoisonDateTimeSize.Medium
+        Me.dtCheckOut.Location = New System.Drawing.Point(15, 394)
+        Me.dtCheckOut.MinimumSize = New System.Drawing.Size(0, 29)
+        Me.dtCheckOut.Name = "dtCheckOut"
+        Me.dtCheckOut.Size = New System.Drawing.Size(220, 29)
+        Me.dtCheckOut.TabIndex = 7
         '
         'btnCalculate
         '
-        Me.btnCalculate.Location = New System.Drawing.Point(95, 372)
+        Me.btnCalculate.Highlight = True
+        Me.btnCalculate.Location = New System.Drawing.Point(15, 521)
         Me.btnCalculate.Name = "btnCalculate"
-        Me.btnCalculate.Size = New System.Drawing.Size(138, 23)
+        Me.btnCalculate.Size = New System.Drawing.Size(220, 35)
         Me.btnCalculate.TabIndex = 8
-        Me.btnCalculate.Text = "Calculate Fee"
+        Me.btnCalculate.Text = "💰 Calculate Total Fee"
         Me.btnCalculate.UseSelectable = True
         '
         'btnRent
         '
-        Me.btnRent.Location = New System.Drawing.Point(58, 416)
+        Me.btnRent.Highlight = True
+        Me.btnRent.Location = New System.Drawing.Point(15, 581)
         Me.btnRent.Name = "btnRent"
-        Me.btnRent.Size = New System.Drawing.Size(112, 23)
+        Me.btnRent.Size = New System.Drawing.Size(220, 40)
         Me.btnRent.TabIndex = 8
-        Me.btnRent.Text = "CONFIRM RENTAL"
+        Me.btnRent.Text = "✓ Confirm Booking"
         Me.btnRent.UseSelectable = True
         '
         'btnBack
         '
-        Me.btnBack.Location = New System.Drawing.Point(208, 416)
+        Me.btnBack.Location = New System.Drawing.Point(130, 540)
         Me.btnBack.Name = "btnBack"
-        Me.btnBack.Size = New System.Drawing.Size(75, 23)
+        Me.btnBack.Size = New System.Drawing.Size(105, 35)
         Me.btnBack.TabIndex = 8
-        Me.btnBack.Text = "BACK"
+        Me.btnBack.Text = "← Back"
         Me.btnBack.UseSelectable = True
+        '
+        'PoisonLabel1
+        '
+        Me.PoisonLabel1.AutoSize = True
+        Me.PoisonLabel1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.PoisonLabel1.Location = New System.Drawing.Point(340, 73)
+        Me.PoisonLabel1.Name = "PoisonLabel1"
+        Me.PoisonLabel1.Size = New System.Drawing.Size(150, 19)
+        Me.PoisonLabel1.TabIndex = 9
+        Me.PoisonLabel1.Text = "📅 New Room Booking"
+        Me.PoisonLabel1.UseCustomForeColor = True
+        '
+        'PoisonPanel1
+        '
+        Me.PoisonPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PoisonPanel1.Controls.Add(Me.lblRoomInfo)
+        Me.PoisonPanel1.Controls.Add(Me.PoisonLabel8)
+        Me.PoisonPanel1.Controls.Add(Me.lblDays)
+        Me.PoisonPanel1.Controls.Add(Me.PoisonLabel6)
+        Me.PoisonPanel1.Controls.Add(Me.lblGuestPhone)
+        Me.PoisonPanel1.Controls.Add(Me.PoisonLabel4)
+        Me.PoisonPanel1.Controls.Add(Me.lblRoom)
+        Me.PoisonPanel1.Controls.Add(Me.cbRoom)
+        Me.PoisonPanel1.Controls.Add(Me.btnRent)
+        Me.PoisonPanel1.Controls.Add(Me.PoisonLabel3)
+        Me.PoisonPanel1.Controls.Add(Me.btnCalculate)
+        Me.PoisonPanel1.Controls.Add(Me.cbCust)
+        Me.PoisonPanel1.Controls.Add(Me.dtCheckOut)
+        Me.PoisonPanel1.Controls.Add(Me.lblGuestName)
+        Me.PoisonPanel1.Controls.Add(Me.dtCheckIn)
+        Me.PoisonPanel1.Controls.Add(Me.lblDate)
+        Me.PoisonPanel1.Controls.Add(Me.lblFee)
+        Me.PoisonPanel1.Controls.Add(Me.lblReturn)
+        Me.PoisonPanel1.HorizontalScrollbarBarColor = True
+        Me.PoisonPanel1.HorizontalScrollbarHighlightOnWheel = False
+        Me.PoisonPanel1.HorizontalScrollbarSize = 10
+        Me.PoisonPanel1.Location = New System.Drawing.Point(23, 110)
+        Me.PoisonPanel1.Name = "PoisonPanel1"
+        Me.PoisonPanel1.Size = New System.Drawing.Size(250, 642)
+        Me.PoisonPanel1.TabIndex = 10
+        Me.PoisonPanel1.VerticalScrollbarBarColor = True
+        Me.PoisonPanel1.VerticalScrollbarHighlightOnWheel = False
+        Me.PoisonPanel1.VerticalScrollbarSize = 10
+        '
+        'lblRoomInfo
+        '
+        Me.lblRoomInfo.AutoSize = True
+        Me.lblRoomInfo.Location = New System.Drawing.Point(17, 227)
+        Me.lblRoomInfo.Name = "lblRoomInfo"
+        Me.lblRoomInfo.Size = New System.Drawing.Size(105, 19)
+        Me.lblRoomInfo.TabIndex = 14
+        Me.lblRoomInfo.Text = "Select room first"
+        '
+        'PoisonLabel8
+        '
+        Me.PoisonLabel8.AutoSize = True
+        Me.PoisonLabel8.Location = New System.Drawing.Point(17, 445)
+        Me.PoisonLabel8.Name = "PoisonLabel8"
+        Me.PoisonLabel8.Size = New System.Drawing.Size(61, 19)
+        Me.PoisonLabel8.TabIndex = 13
+        Me.PoisonLabel8.Text = "Total Fee"
+        '
+        'lblDays
+        '
+        Me.lblDays.AutoSize = True
+        Me.lblDays.Location = New System.Drawing.Point(83, 483)
+        Me.lblDays.Name = "lblDays"
+        Me.lblDays.Size = New System.Drawing.Size(46, 19)
+        Me.lblDays.TabIndex = 12
+        Me.lblDays.Text = "0 days"
+        '
+        'PoisonLabel6
+        '
+        Me.PoisonLabel6.AutoSize = True
+        Me.PoisonLabel6.Location = New System.Drawing.Point(106, 445)
+        Me.PoisonLabel6.Name = "PoisonLabel6"
+        Me.PoisonLabel6.Size = New System.Drawing.Size(103, 19)
+        Me.PoisonLabel6.TabIndex = 11
+        Me.PoisonLabel6.Text = "Duration of Stay"
+        '
+        'lblGuestPhone
+        '
+        Me.lblGuestPhone.AutoSize = True
+        Me.lblGuestPhone.Location = New System.Drawing.Point(15, 198)
+        Me.lblGuestPhone.Name = "lblGuestPhone"
+        Me.lblGuestPhone.Size = New System.Drawing.Size(46, 19)
+        Me.lblGuestPhone.TabIndex = 10
+        Me.lblGuestPhone.Text = "Phone"
+        '
+        'PoisonLabel4
+        '
+        Me.PoisonLabel4.AutoSize = True
+        Me.PoisonLabel4.Location = New System.Drawing.Point(15, 179)
+        Me.PoisonLabel4.Name = "PoisonLabel4"
+        Me.PoisonLabel4.Size = New System.Drawing.Size(83, 19)
+        Me.PoisonLabel4.TabIndex = 9
+        Me.PoisonLabel4.Text = "Guest Details"
+        '
+        'btnClear
+        '
+        Me.btnClear.Location = New System.Drawing.Point(441, 773)
+        Me.btnClear.Name = "btnClear"
+        Me.btnClear.Size = New System.Drawing.Size(105, 35)
+        Me.btnClear.TabIndex = 11
+        Me.btnClear.Text = "🔄 Clear"
+        Me.btnClear.UseSelectable = True
+        '
+        'btnRefresh
+        '
+        Me.btnRefresh.Location = New System.Drawing.Point(291, 773)
+        Me.btnRefresh.Name = "btnRefresh"
+        Me.btnRefresh.Size = New System.Drawing.Size(105, 35)
+        Me.btnRefresh.TabIndex = 12
+        Me.btnRefresh.Text = "↻ Refresh"
+        Me.btnRefresh.UseSelectable = True
+        '
+        'PoisonPanel2
+        '
+        Me.PoisonPanel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PoisonPanel2.Controls.Add(Me.dgvRentals)
+        Me.PoisonPanel2.HorizontalScrollbarBarColor = True
+        Me.PoisonPanel2.HorizontalScrollbarHighlightOnWheel = False
+        Me.PoisonPanel2.HorizontalScrollbarSize = 10
+        Me.PoisonPanel2.Location = New System.Drawing.Point(290, 110)
+        Me.PoisonPanel2.Name = "PoisonPanel2"
+        Me.PoisonPanel2.Size = New System.Drawing.Size(672, 482)
+        Me.PoisonPanel2.TabIndex = 13
+        Me.PoisonPanel2.VerticalScrollbarBarColor = True
+        Me.PoisonPanel2.VerticalScrollbarHighlightOnWheel = False
+        Me.PoisonPanel2.VerticalScrollbarSize = 10
+        '
+        'PoisonLabel2
+        '
+        Me.PoisonLabel2.AutoSize = True
+        Me.PoisonLabel2.Location = New System.Drawing.Point(808, 73)
+        Me.PoisonLabel2.Name = "PoisonLabel2"
+        Me.PoisonLabel2.Size = New System.Drawing.Size(125, 19)
+        Me.PoisonLabel2.TabIndex = 14
+        Me.PoisonLabel2.Text = "📋 Booking History"
+        '
+        'PoisonTile1
+        '
+        Me.PoisonTile1.ActiveControl = Nothing
+        Me.PoisonTile1.Location = New System.Drawing.Point(23, 758)
+        Me.PoisonTile1.Name = "PoisonTile1"
+        Me.PoisonTile1.Size = New System.Drawing.Size(250, 50)
+        Me.PoisonTile1.TabIndex = 15
+        Me.PoisonTile1.Text = "Total Bookings: 0"
+        Me.PoisonTile1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.PoisonTile1.UseSelectable = True
+        '
+        'txtSearch
+        '
+        '
+        '
+        '
+        Me.txtSearch.CustomButton.Image = Nothing
+        Me.txtSearch.CustomButton.Location = New System.Drawing.Point(196, 1)
+        Me.txtSearch.CustomButton.Name = ""
+        Me.txtSearch.CustomButton.Size = New System.Drawing.Size(21, 21)
+        Me.txtSearch.CustomButton.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Blue
+        Me.txtSearch.CustomButton.TabIndex = 1
+        Me.txtSearch.CustomButton.Theme = ReaLTaiizor.[Enum].Poison.ThemeStyle.Light
+        Me.txtSearch.CustomButton.UseSelectable = True
+        Me.txtSearch.CustomButton.Visible = False
+        Me.txtSearch.Lines = New String(-1) {}
+        Me.txtSearch.Location = New System.Drawing.Point(526, 69)
+        Me.txtSearch.MaxLength = 32767
+        Me.txtSearch.Name = "txtSearch"
+        Me.txtSearch.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtSearch.PromptText = "Search bookings..."
+        Me.txtSearch.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtSearch.SelectedText = ""
+        Me.txtSearch.SelectionLength = 0
+        Me.txtSearch.SelectionStart = 0
+        Me.txtSearch.ShortcutsEnabled = True
+        Me.txtSearch.Size = New System.Drawing.Size(218, 23)
+        Me.txtSearch.TabIndex = 16
+        Me.txtSearch.UseSelectable = True
+        Me.txtSearch.WaterMark = "Search bookings..."
+        Me.txtSearch.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.txtSearch.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
+        '
+        'PoisonLabel5
+        '
+        Me.PoisonLabel5.AutoSize = True
+        Me.PoisonLabel5.Location = New System.Drawing.Point(441, 73)
+        Me.PoisonLabel5.Name = "PoisonLabel5"
+        Me.PoisonLabel5.Size = New System.Drawing.Size(71, 19)
+        Me.PoisonLabel5.TabIndex = 17
+        Me.PoisonLabel5.Text = "🔍 Search"
         '
         'FrmRental
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(1015, 831)
+        Me.Controls.Add(Me.PoisonLabel5)
+        Me.Controls.Add(Me.txtSearch)
+        Me.Controls.Add(Me.PoisonTile1)
+        Me.Controls.Add(Me.PoisonLabel2)
+        Me.Controls.Add(Me.PoisonPanel2)
+        Me.Controls.Add(Me.btnRefresh)
+        Me.Controls.Add(Me.btnClear)
+        Me.Controls.Add(Me.PoisonPanel1)
+        Me.Controls.Add(Me.PoisonLabel1)
         Me.Controls.Add(Me.btnBack)
-        Me.Controls.Add(Me.btnRent)
-        Me.Controls.Add(Me.btnCalculate)
-        Me.Controls.Add(Me.dtReturn)
-        Me.Controls.Add(Me.dtDate)
-        Me.Controls.Add(Me.cbCust)
-        Me.Controls.Add(Me.cbRoom)
-        Me.Controls.Add(Me.lblReturn)
-        Me.Controls.Add(Me.lblName)
-        Me.Controls.Add(Me.lblFee)
-        Me.Controls.Add(Me.PoisonLabel3)
-        Me.Controls.Add(Me.lblDate)
-        Me.Controls.Add(Me.lblRoom)
-        Me.Controls.Add(Me.dgvRentals)
         Me.Name = "FrmRental"
-        Me.Text = "NEW RENTAL BOOKING"
+        Me.Resizable = False
+        Me.ShadowType = ReaLTaiizor.[Enum].Poison.FormShadowType.AeroShadow
+        Me.Text = "Room Booking - Hotel Management"
         CType(Me.PoisonStyleManager1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvRentals, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PoisonPanel1.ResumeLayout(False)
+        Me.PoisonPanel1.PerformLayout()
+        Me.PoisonPanel2.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -241,7 +464,7 @@ Partial Class FrmRental
     Friend WithEvents PoisonStyleManager1 As ReaLTaiizor.Manager.PoisonStyleManager
     Friend WithEvents dgvRentals As ReaLTaiizor.Controls.PoisonDataGridView
     Friend WithEvents lblReturn As ReaLTaiizor.Controls.PoisonLabel
-    Friend WithEvents lblName As ReaLTaiizor.Controls.PoisonLabel
+    Friend WithEvents lblGuestName As ReaLTaiizor.Controls.PoisonLabel
     Friend WithEvents lblFee As ReaLTaiizor.Controls.PoisonLabel
     Friend WithEvents PoisonLabel3 As ReaLTaiizor.Controls.PoisonLabel
     Friend WithEvents lblDate As ReaLTaiizor.Controls.PoisonLabel
@@ -249,8 +472,23 @@ Partial Class FrmRental
     Friend WithEvents btnBack As ReaLTaiizor.Controls.PoisonButton
     Friend WithEvents btnRent As ReaLTaiizor.Controls.PoisonButton
     Friend WithEvents btnCalculate As ReaLTaiizor.Controls.PoisonButton
-    Friend WithEvents dtReturn As DateTimePicker
-    Friend WithEvents dtDate As DateTimePicker
+    Friend WithEvents dtCheckOut As ReaLTaiizor.Controls.PoisonDateTime
+    Friend WithEvents dtCheckIn As ReaLTaiizor.Controls.PoisonDateTime
     Friend WithEvents cbCust As ReaLTaiizor.Controls.PoisonComboBox
     Friend WithEvents cbRoom As ReaLTaiizor.Controls.PoisonComboBox
+    Friend WithEvents PoisonLabel1 As ReaLTaiizor.Controls.PoisonLabel
+    Friend WithEvents PoisonPanel1 As ReaLTaiizor.Controls.PoisonPanel
+    Friend WithEvents btnClear As ReaLTaiizor.Controls.PoisonButton
+    Friend WithEvents btnRefresh As ReaLTaiizor.Controls.PoisonButton
+    Friend WithEvents PoisonPanel2 As ReaLTaiizor.Controls.PoisonPanel
+    Friend WithEvents PoisonLabel2 As ReaLTaiizor.Controls.PoisonLabel
+    Friend WithEvents PoisonTile1 As ReaLTaiizor.Controls.PoisonTile
+    Friend WithEvents txtSearch As ReaLTaiizor.Controls.PoisonTextBox
+    Friend WithEvents PoisonLabel5 As ReaLTaiizor.Controls.PoisonLabel
+    Friend WithEvents lblGuestPhone As ReaLTaiizor.Controls.PoisonLabel
+    Friend WithEvents PoisonLabel4 As ReaLTaiizor.Controls.PoisonLabel
+    Friend WithEvents lblDays As ReaLTaiizor.Controls.PoisonLabel
+    Friend WithEvents PoisonLabel6 As ReaLTaiizor.Controls.PoisonLabel
+    Friend WithEvents PoisonLabel8 As ReaLTaiizor.Controls.PoisonLabel
+    Friend WithEvents lblRoomInfo As ReaLTaiizor.Controls.PoisonLabel
 End Class
