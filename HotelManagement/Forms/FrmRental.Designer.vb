@@ -115,7 +115,7 @@ Partial Class FrmRental
         Me.dgvRentals.RowTemplate.Height = 30
         Me.dgvRentals.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvRentals.Size = New System.Drawing.Size(670, 480)
-        Me.dgvRentals.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Blue
+        Me.dgvRentals.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Red
         Me.dgvRentals.TabIndex = 0
         '
         'lblRoom
@@ -151,7 +151,7 @@ Partial Class FrmRental
         Me.lblFee.Location = New System.Drawing.Point(17, 483)
         Me.lblFee.Name = "lblFee"
         Me.lblFee.Size = New System.Drawing.Size(44, 19)
-        Me.lblFee.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Blue
+        Me.lblFee.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Red
         Me.lblFee.TabIndex = 3
         Me.lblFee.Text = "₹ 0.00"
         Me.lblFee.UseStyleColors = True
@@ -400,7 +400,7 @@ Partial Class FrmRental
         Me.txtSearch.CustomButton.Location = New System.Drawing.Point(196, 1)
         Me.txtSearch.CustomButton.Name = ""
         Me.txtSearch.CustomButton.Size = New System.Drawing.Size(21, 21)
-        Me.txtSearch.CustomButton.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Blue
+        Me.txtSearch.CustomButton.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Red
         Me.txtSearch.CustomButton.TabIndex = 1
         Me.txtSearch.CustomButton.Theme = ReaLTaiizor.[Enum].Poison.ThemeStyle.Light
         Me.txtSearch.CustomButton.UseSelectable = True

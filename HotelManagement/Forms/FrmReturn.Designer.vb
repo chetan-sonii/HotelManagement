@@ -180,7 +180,7 @@ Partial Class FrmReturn
         Me.txtFine.CustomButton.Location = New System.Drawing.Point(158, 1)
         Me.txtFine.CustomButton.Name = ""
         Me.txtFine.CustomButton.Size = New System.Drawing.Size(41, 41)
-        Me.txtFine.CustomButton.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Blue
+        Me.txtFine.CustomButton.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Red
         Me.txtFine.CustomButton.TabIndex = 1
         Me.txtFine.CustomButton.Theme = ReaLTaiizor.[Enum].Poison.ThemeStyle.Light
         Me.txtFine.CustomButton.UseSelectable = True
@@ -212,7 +212,7 @@ Partial Class FrmReturn
         Me.txtDueDate.CustomButton.Location = New System.Drawing.Point(158, 1)
         Me.txtDueDate.CustomButton.Name = ""
         Me.txtDueDate.CustomButton.Size = New System.Drawing.Size(41, 41)
-        Me.txtDueDate.CustomButton.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Blue
+        Me.txtDueDate.CustomButton.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Red
         Me.txtDueDate.CustomButton.TabIndex = 1
         Me.txtDueDate.CustomButton.Theme = ReaLTaiizor.[Enum].Poison.ThemeStyle.Light
         Me.txtDueDate.CustomButton.UseSelectable = True
@@ -243,7 +243,7 @@ Partial Class FrmReturn
         Me.txtCustName.CustomButton.Location = New System.Drawing.Point(158, 1)
         Me.txtCustName.CustomButton.Name = ""
         Me.txtCustName.CustomButton.Size = New System.Drawing.Size(41, 41)
-        Me.txtCustName.CustomButton.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Blue
+        Me.txtCustName.CustomButton.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Red
         Me.txtCustName.CustomButton.TabIndex = 1
         Me.txtCustName.CustomButton.Theme = ReaLTaiizor.[Enum].Poison.ThemeStyle.Light
         Me.txtCustName.CustomButton.UseSelectable = True
@@ -274,7 +274,7 @@ Partial Class FrmReturn
         Me.txtRoomId.CustomButton.Location = New System.Drawing.Point(158, 1)
         Me.txtRoomId.CustomButton.Name = ""
         Me.txtRoomId.CustomButton.Size = New System.Drawing.Size(41, 41)
-        Me.txtRoomId.CustomButton.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Blue
+        Me.txtRoomId.CustomButton.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Red
         Me.txtRoomId.CustomButton.TabIndex = 1
         Me.txtRoomId.CustomButton.Theme = ReaLTaiizor.[Enum].Poison.ThemeStyle.Light
         Me.txtRoomId.CustomButton.UseSelectable = True
@@ -378,7 +378,7 @@ Partial Class FrmReturn
         Me.txtSearch.CustomButton.Location = New System.Drawing.Point(394, 1)
         Me.txtSearch.CustomButton.Name = ""
         Me.txtSearch.CustomButton.Size = New System.Drawing.Size(21, 21)
-        Me.txtSearch.CustomButton.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Blue
+        Me.txtSearch.CustomButton.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Red
         Me.txtSearch.CustomButton.TabIndex = 1
         Me.txtSearch.CustomButton.Theme = ReaLTaiizor.[Enum].Poison.ThemeStyle.Light
         Me.txtSearch.CustomButton.UseSelectable = True

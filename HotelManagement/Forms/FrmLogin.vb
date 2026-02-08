@@ -15,7 +15,7 @@ Public Class FrmLogin
         ' Initialize style manager
         _loginStyleManager = New PoisonStyleManager()
         _loginStyleManager.Owner = Me
-        _loginStyleManager.Style = ColorStyle.Blue
+        _loginStyleManager.Style = ColorStyle.Red
         _loginStyleManager.Theme = ThemeStyle.Light
         Me.StyleManager = _loginStyleManager
     End Sub

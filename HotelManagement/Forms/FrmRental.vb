@@ -14,7 +14,7 @@ Public Class FrmRental
         ' Initialize style manager
         _styleManager = New PoisonStyleManager()
         _styleManager.Owner = Me
-        _styleManager.Style = ColorStyle.Blue
+        _styleManager.Style = ColorStyle.Red
         _styleManager.Theme = ThemeStyle.Light
         Me.StyleManager = _styleManager
     End Sub

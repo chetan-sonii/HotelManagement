@@ -170,7 +170,7 @@ Partial Class FrmUserDashboard
         Me.txtSearchRoom.CustomButton.Location = New System.Drawing.Point(224, 1)
         Me.txtSearchRoom.CustomButton.Name = ""
         Me.txtSearchRoom.CustomButton.Size = New System.Drawing.Size(23, 23)
-        Me.txtSearchRoom.CustomButton.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Blue
+        Me.txtSearchRoom.CustomButton.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Red
         Me.txtSearchRoom.CustomButton.TabIndex = 1
         Me.txtSearchRoom.CustomButton.Theme = ReaLTaiizor.[Enum].Poison.ThemeStyle.Light
         Me.txtSearchRoom.CustomButton.UseSelectable = True

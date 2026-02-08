@@ -123,7 +123,7 @@ Partial Class FrmRegister
         Me.txtName.CustomButton.Location = New System.Drawing.Point(538, 1)
         Me.txtName.CustomButton.Name = ""
         Me.txtName.CustomButton.Size = New System.Drawing.Size(21, 21)
-        Me.txtName.CustomButton.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Blue
+        Me.txtName.CustomButton.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Red
         Me.txtName.CustomButton.TabIndex = 1
         Me.txtName.CustomButton.Theme = ReaLTaiizor.[Enum].Poison.ThemeStyle.Light
         Me.txtName.CustomButton.UseSelectable = True
@@ -155,7 +155,7 @@ Partial Class FrmRegister
         Me.txtPass.CustomButton.Location = New System.Drawing.Point(538, 1)
         Me.txtPass.CustomButton.Name = ""
         Me.txtPass.CustomButton.Size = New System.Drawing.Size(21, 21)
-        Me.txtPass.CustomButton.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Blue
+        Me.txtPass.CustomButton.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Red
         Me.txtPass.CustomButton.TabIndex = 1
         Me.txtPass.CustomButton.Theme = ReaLTaiizor.[Enum].Poison.ThemeStyle.Light
         Me.txtPass.CustomButton.UseSelectable = True
@@ -188,7 +188,7 @@ Partial Class FrmRegister
         Me.txtPhone.CustomButton.Location = New System.Drawing.Point(538, 1)
         Me.txtPhone.CustomButton.Name = ""
         Me.txtPhone.CustomButton.Size = New System.Drawing.Size(21, 21)
-        Me.txtPhone.CustomButton.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Blue
+        Me.txtPhone.CustomButton.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Red
         Me.txtPhone.CustomButton.TabIndex = 1
         Me.txtPhone.CustomButton.Theme = ReaLTaiizor.[Enum].Poison.ThemeStyle.Light
         Me.txtPhone.CustomButton.UseSelectable = True
@@ -220,7 +220,7 @@ Partial Class FrmRegister
         Me.txtEmail.CustomButton.Location = New System.Drawing.Point(538, 1)
         Me.txtEmail.CustomButton.Name = ""
         Me.txtEmail.CustomButton.Size = New System.Drawing.Size(21, 21)
-        Me.txtEmail.CustomButton.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Blue
+        Me.txtEmail.CustomButton.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Red
         Me.txtEmail.CustomButton.TabIndex = 1
         Me.txtEmail.CustomButton.Theme = ReaLTaiizor.[Enum].Poison.ThemeStyle.Light
         Me.txtEmail.CustomButton.UseSelectable = True
@@ -262,7 +262,7 @@ Partial Class FrmRegister
         Me.txtConfirm.CustomButton.Location = New System.Drawing.Point(538, 1)
         Me.txtConfirm.CustomButton.Name = ""
         Me.txtConfirm.CustomButton.Size = New System.Drawing.Size(21, 21)
-        Me.txtConfirm.CustomButton.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Blue
+        Me.txtConfirm.CustomButton.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Red
         Me.txtConfirm.CustomButton.TabIndex = 1
         Me.txtConfirm.CustomButton.Theme = ReaLTaiizor.[Enum].Poison.ThemeStyle.Light
         Me.txtConfirm.CustomButton.UseSelectable = True
@@ -306,7 +306,7 @@ Partial Class FrmRegister
         Me.txtAddress.CustomButton.Margin = New System.Windows.Forms.Padding(2)
         Me.txtAddress.CustomButton.Name = ""
         Me.txtAddress.CustomButton.Size = New System.Drawing.Size(45, 45)
-        Me.txtAddress.CustomButton.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Blue
+        Me.txtAddress.CustomButton.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Red
         Me.txtAddress.CustomButton.TabIndex = 1
         Me.txtAddress.CustomButton.Theme = ReaLTaiizor.[Enum].Poison.ThemeStyle.Light
         Me.txtAddress.CustomButton.UseSelectable = True

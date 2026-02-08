@@ -106,7 +106,7 @@ Partial Class FrmRequests
         Me.dgvReturnRequests.RowTemplate.Height = 30
         Me.dgvReturnRequests.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvReturnRequests.Size = New System.Drawing.Size(1050, 210)
-        Me.dgvReturnRequests.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Blue
+        Me.dgvReturnRequests.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Red
         Me.dgvReturnRequests.TabIndex = 1
         '
         'PoisonLabel1
@@ -205,7 +205,7 @@ Partial Class FrmRequests
         Me.dgvRentRequests.RowTemplate.Height = 30
         Me.dgvRentRequests.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvRentRequests.Size = New System.Drawing.Size(1050, 210)
-        Me.dgvRentRequests.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Blue
+        Me.dgvRentRequests.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Red
         Me.dgvRentRequests.TabIndex = 7
         '
         'PoisonLabel3

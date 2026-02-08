@@ -48,7 +48,7 @@ Partial Class FrmMain
         Me.PoisonTabControl1.Name = "PoisonTabControl1"
         Me.PoisonTabControl1.SelectedIndex = 0
         Me.PoisonTabControl1.Size = New System.Drawing.Size(960, 540)
-        Me.PoisonTabControl1.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Blue
+        Me.PoisonTabControl1.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Red
         Me.PoisonTabControl1.TabIndex = 0
         Me.PoisonTabControl1.UseSelectable = True
         Me.PoisonTabControl1.UseStyleColors = True
@@ -68,7 +68,7 @@ Partial Class FrmMain
         Me.tabDashboard.Location = New System.Drawing.Point(4, 38)
         Me.tabDashboard.Name = "tabDashboard"
         Me.tabDashboard.Size = New System.Drawing.Size(952, 498)
-        Me.tabDashboard.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Blue
+        Me.tabDashboard.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Red
         Me.tabDashboard.TabIndex = 0
         Me.tabDashboard.Text = "📊 Admin Dashboard"
         Me.tabDashboard.VerticalScrollbarBarColor = True
@@ -173,7 +173,7 @@ Partial Class FrmMain
         Me.tileRooms.Location = New System.Drawing.Point(15, 95)
         Me.tileRooms.Name = "tileRooms"
         Me.tileRooms.Size = New System.Drawing.Size(280, 150)
-        Me.tileRooms.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Blue
+        Me.tileRooms.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Red
         Me.tileRooms.TabIndex = 2
         Me.tileRooms.Text = "🚙 Available Rooms"
         Me.tileRooms.UseSelectable = True

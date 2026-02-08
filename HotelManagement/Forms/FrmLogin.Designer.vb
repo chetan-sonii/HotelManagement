@@ -65,7 +65,7 @@ Partial Class FrmLogin
         Me.txtUser.CustomButton.Location = New System.Drawing.Point(228, 1)
         Me.txtUser.CustomButton.Name = ""
         Me.txtUser.CustomButton.Size = New System.Drawing.Size(31, 31)
-        Me.txtUser.CustomButton.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Blue
+        Me.txtUser.CustomButton.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Red
         Me.txtUser.CustomButton.TabIndex = 1
         Me.txtUser.CustomButton.Theme = ReaLTaiizor.[Enum].Poison.ThemeStyle.Light
         Me.txtUser.CustomButton.UseSelectable = True
@@ -97,7 +97,7 @@ Partial Class FrmLogin
         Me.txtPass.CustomButton.Location = New System.Drawing.Point(228, 1)
         Me.txtPass.CustomButton.Name = ""
         Me.txtPass.CustomButton.Size = New System.Drawing.Size(31, 31)
-        Me.txtPass.CustomButton.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Blue
+        Me.txtPass.CustomButton.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Red
         Me.txtPass.CustomButton.TabIndex = 1
         Me.txtPass.CustomButton.Theme = ReaLTaiizor.[Enum].Poison.ThemeStyle.Light
         Me.txtPass.CustomButton.UseSelectable = True
@@ -224,7 +224,7 @@ Partial Class FrmLogin
         Me.btnRegister.Location = New System.Drawing.Point(150, 190)
         Me.btnRegister.Name = "btnRegister"
         Me.btnRegister.Size = New System.Drawing.Size(135, 23)
-        Me.btnRegister.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Blue
+        Me.btnRegister.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Red
         Me.btnRegister.TabIndex = 7
         Me.btnRegister.Text = "New User? Register"
         Me.btnRegister.UseSelectable = True
