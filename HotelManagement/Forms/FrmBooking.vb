@@ -3,7 +3,7 @@ Imports ReaLTaiizor.Manager
 Imports ReaLTaiizor.Enum.Poison
 Imports MySql.Data.MySqlClient
 
-Public Class FrmRental
+Public Class FrmBooking
     Inherits PoisonForm
 
     Private _styleManager As PoisonStyleManager
@@ -19,10 +19,10 @@ Public Class FrmRental
         Me.StyleManager = _styleManager
     End Sub
 
-    Private Sub FrmRental_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub FrmBooking_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         FillRoomCombo()
         FillGuestCombo()
-        LoadRentalHistory()
+        LoadBookingHistory()
         UpdateStatistics()
         ConfigureDataGridView()
 
@@ -36,19 +36,19 @@ Public Class FrmRental
     ' ==========================================
     Private Sub ConfigureDataGridView()
         Try
-            If dgvRentals.Columns.Count > 0 Then
-                dgvRentals.Columns(0).HeaderText = "Booking ID"
-                dgvRentals.Columns(1).HeaderText = "Room No"
-                dgvRentals.Columns(2).HeaderText = "Guest ID"
-                dgvRentals.Columns(3).HeaderText = "Check-In"
-                dgvRentals.Columns(4).HeaderText = "Check-Out"
-                dgvRentals.Columns(5).HeaderText = "Fees (₹)"
+            If dgvBookings.Columns.Count > 0 Then
+                dgvBookings.Columns(0).HeaderText = "Booking ID"
+                dgvBookings.Columns(1).HeaderText = "Room No"
+                dgvBookings.Columns(2).HeaderText = "Guest ID"
+                dgvBookings.Columns(3).HeaderText = "Check-In"
+                dgvBookings.Columns(4).HeaderText = "Check-Out"
+                dgvBookings.Columns(5).HeaderText = "Fees (₹)"
 
-                If dgvRentals.Columns.Count > 6 Then
-                    dgvRentals.Columns(6).HeaderText = "Status"
+                If dgvBookings.Columns.Count > 6 Then
+                    dgvBookings.Columns(6).HeaderText = "Status"
                 End If
 
-                dgvRentals.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+                dgvBookings.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
             End If
         Catch ex As Exception
             ' Silently handle configuration errors
@@ -72,7 +72,7 @@ Public Class FrmRental
             Next
 
             If cbRoom.Items.Count = 0 Then
-                MsgBox("No rooms are currently available for booking.", MsgBoxStyle.Information, "No Availability")
+                MsgBox("No rooms are curBookly available for booking.", MsgBoxStyle.Information, "No Availability")
             End If
         Catch ex As Exception
             MsgBox("Error loading rooms: " & ex.Message, MsgBoxStyle.Critical)
@@ -242,7 +242,7 @@ Public Class FrmRental
     ' ==========================================
     ' CONFIRM BOOKING
     ' ==========================================
-    Private Sub btnRent_Click(sender As Object, e As EventArgs) Handles btnRent.Click
+    Private Sub btnBook_Click(sender As Object, e As EventArgs) Handles btnBook.Click
         ' Validation
         If cbRoom.SelectedIndex = -1 Then
             MsgBox("Please select a room.", MsgBoxStyle.Exclamation, "Room Required")
@@ -315,7 +315,7 @@ Public Class FrmRental
                    MsgBoxStyle.Information, "Success")
 
             ' Refresh and clear
-            LoadRentalHistory()
+            LoadBookingHistory()
             FillRoomCombo()
             ClearFields()
 
@@ -327,11 +327,11 @@ Public Class FrmRental
     ' ==========================================
     ' LOAD BOOKING HISTORY
     ' ==========================================
-    Private Sub LoadRentalHistory()
+    Private Sub LoadBookingHistory()
         Try
-            Dim query As String = "SELECT * FROM tbl_bookings ORDER BY rent_id DESC"
+            Dim query As String = "SELECT * FROM tbl_bookings ORDER BY Book_id DESC"
             Dim dt As DataTable = DatabaseConnection.RunQuery(query)
-            dgvRentals.DataSource = dt
+            dgvBookings.DataSource = dt
 
             ConfigureDataGridView()
             UpdateStatistics()
@@ -365,20 +365,20 @@ Public Class FrmRental
     Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
         Try
             If String.IsNullOrWhiteSpace(txtSearch.Text) Then
-                LoadRentalHistory()
+                LoadBookingHistory()
                 Return
             End If
 
             Dim searchText As String = txtSearch.Text.Trim().Replace("'", "''")
             Dim query As String = "SELECT * FROM tbl_bookings WHERE " &
-                                 "rent_id LIKE '%" & searchText & "%' OR " &
+                                 "Book_id LIKE '%" & searchText & "%' OR " &
                                  "room_no LIKE '%" & searchText & "%' OR " &
                                  "cust_id LIKE '%" & searchText & "%' OR " &
                                  "status LIKE '%" & searchText & "%' " &
-                                 "ORDER BY rent_id DESC"
+                                 "ORDER BY Book_id DESC"
 
             Dim dt As DataTable = DatabaseConnection.RunQuery(query)
-            dgvRentals.DataSource = dt
+            dgvBookings.DataSource = dt
             ConfigureDataGridView()
         Catch ex As Exception
             ' Silently handle search errors
@@ -410,7 +410,7 @@ Public Class FrmRental
     ' REFRESH BUTTON
     ' ==========================================
     Private Sub btnRefresh_Click(sender As Object, e As EventArgs) Handles btnRefresh.Click
-        LoadRentalHistory()
+        LoadBookingHistory()
         FillRoomCombo()
         FillGuestCombo()
         txtSearch.Text = ""

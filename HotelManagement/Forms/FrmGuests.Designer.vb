@@ -505,7 +505,7 @@ Partial Class FrmGuests
         Me.Padding = New System.Windows.Forms.Padding(20, 60, 20, 20)
         Me.Resizable = False
         Me.ShadowType = ReaLTaiizor.[Enum].Poison.FormShadowType.AeroShadow
-        Me.Text = "Guest Management - Room Rental System"
+        Me.Text = "Guest Management - Room Booking System"
         CType(Me.PoisonStyleManager1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvGuests, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PoisonPanel1.ResumeLayout(False)

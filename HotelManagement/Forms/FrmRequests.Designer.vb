@@ -35,20 +35,20 @@ Partial Class FrmRequests
         Me.PoisonLabel2 = New ReaLTaiizor.Controls.PoisonLabel()
         Me.btnBack = New ReaLTaiizor.Controls.PoisonButton()
         Me.btnConfirmReturn = New ReaLTaiizor.Controls.PoisonButton()
-        Me.btnApproveRent = New ReaLTaiizor.Controls.PoisonButton()
-        Me.dgvRentRequests = New ReaLTaiizor.Controls.PoisonDataGridView()
+        Me.btnApproveBook = New ReaLTaiizor.Controls.PoisonButton()
+        Me.dgvBookRequests = New ReaLTaiizor.Controls.PoisonDataGridView()
         Me.PoisonLabel3 = New ReaLTaiizor.Controls.PoisonLabel()
-        Me.btnRefreshRent = New ReaLTaiizor.Controls.PoisonButton()
+        Me.btnRefreshBook = New ReaLTaiizor.Controls.PoisonButton()
         Me.btnRefreshReturn = New ReaLTaiizor.Controls.PoisonButton()
         Me.PoisonPanel1 = New ReaLTaiizor.Controls.PoisonPanel()
         Me.PoisonPanel2 = New ReaLTaiizor.Controls.PoisonPanel()
         Me.PoisonTile1 = New ReaLTaiizor.Controls.PoisonTile()
         Me.PoisonTile2 = New ReaLTaiizor.Controls.PoisonTile()
-        Me.btnRejectRent = New ReaLTaiizor.Controls.PoisonButton()
+        Me.btnRejectBook = New ReaLTaiizor.Controls.PoisonButton()
         Me.btnViewDetails = New ReaLTaiizor.Controls.PoisonButton()
         CType(Me.PoisonStyleManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvReturnRequests, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dgvRentRequests, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvBookRequests, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PoisonPanel1.SuspendLayout()
         Me.PoisonPanel2.SuspendLayout()
         Me.SuspendLayout()
@@ -146,25 +146,25 @@ Partial Class FrmRequests
         Me.btnConfirmReturn.Text = "✓ Confirm Return"
         Me.btnConfirmReturn.UseSelectable = True
         '
-        'btnApproveRent
+        'btnApproveBook
         '
-        Me.btnApproveRent.Highlight = True
-        Me.btnApproveRent.Location = New System.Drawing.Point(23, 340)
-        Me.btnApproveRent.Name = "btnApproveRent"
-        Me.btnApproveRent.Size = New System.Drawing.Size(135, 35)
-        Me.btnApproveRent.TabIndex = 6
-        Me.btnApproveRent.Text = "✓ Approve Booking"
-        Me.btnApproveRent.UseSelectable = True
+        Me.btnApproveBook.Highlight = True
+        Me.btnApproveBook.Location = New System.Drawing.Point(23, 340)
+        Me.btnApproveBook.Name = "btnApproveBook"
+        Me.btnApproveBook.Size = New System.Drawing.Size(135, 35)
+        Me.btnApproveBook.TabIndex = 6
+        Me.btnApproveBook.Text = "✓ Approve Booking"
+        Me.btnApproveBook.UseSelectable = True
         '
-        'dgvRentRequests
+        'dgvBookRequests
         '
-        Me.dgvRentRequests.AllowUserToAddRows = False
-        Me.dgvRentRequests.AllowUserToDeleteRows = False
-        Me.dgvRentRequests.AllowUserToResizeRows = False
-        Me.dgvRentRequests.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dgvRentRequests.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.dgvRentRequests.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
-        Me.dgvRentRequests.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.dgvBookRequests.AllowUserToAddRows = False
+        Me.dgvBookRequests.AllowUserToDeleteRows = False
+        Me.dgvBookRequests.AllowUserToResizeRows = False
+        Me.dgvBookRequests.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.dgvBookRequests.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.dgvBookRequests.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
+        Me.dgvBookRequests.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
         DataGridViewCellStyle4.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
@@ -172,9 +172,9 @@ Partial Class FrmRequests
         DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
         DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
         DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvRentRequests.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
-        Me.dgvRentRequests.ColumnHeadersHeight = 35
-        Me.dgvRentRequests.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.dgvBookRequests.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
+        Me.dgvBookRequests.ColumnHeadersHeight = 35
+        Me.dgvBookRequests.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         DataGridViewCellStyle5.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
@@ -182,16 +182,16 @@ Partial Class FrmRequests
         DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
         DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
         DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvRentRequests.DefaultCellStyle = DataGridViewCellStyle5
-        Me.dgvRentRequests.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dgvRentRequests.EnableHeadersVisualStyles = False
-        Me.dgvRentRequests.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        Me.dgvRentRequests.GridColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dgvRentRequests.Location = New System.Drawing.Point(0, 0)
-        Me.dgvRentRequests.MultiSelect = False
-        Me.dgvRentRequests.Name = "dgvRentRequests"
-        Me.dgvRentRequests.ReadOnly = True
-        Me.dgvRentRequests.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.dgvBookRequests.DefaultCellStyle = DataGridViewCellStyle5
+        Me.dgvBookRequests.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgvBookRequests.EnableHeadersVisualStyles = False
+        Me.dgvBookRequests.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        Me.dgvBookRequests.GridColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.dgvBookRequests.Location = New System.Drawing.Point(0, 0)
+        Me.dgvBookRequests.MultiSelect = False
+        Me.dgvBookRequests.Name = "dgvBookRequests"
+        Me.dgvBookRequests.ReadOnly = True
+        Me.dgvBookRequests.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
         DataGridViewCellStyle6.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
@@ -199,14 +199,14 @@ Partial Class FrmRequests
         DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
         DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
         DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvRentRequests.RowHeadersDefaultCellStyle = DataGridViewCellStyle6
-        Me.dgvRentRequests.RowHeadersVisible = False
-        Me.dgvRentRequests.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
-        Me.dgvRentRequests.RowTemplate.Height = 30
-        Me.dgvRentRequests.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvRentRequests.Size = New System.Drawing.Size(1050, 210)
-        Me.dgvRentRequests.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Red
-        Me.dgvRentRequests.TabIndex = 7
+        Me.dgvBookRequests.RowHeadersDefaultCellStyle = DataGridViewCellStyle6
+        Me.dgvBookRequests.RowHeadersVisible = False
+        Me.dgvBookRequests.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
+        Me.dgvBookRequests.RowTemplate.Height = 30
+        Me.dgvBookRequests.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvBookRequests.Size = New System.Drawing.Size(1050, 210)
+        Me.dgvBookRequests.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Red
+        Me.dgvBookRequests.TabIndex = 7
         '
         'PoisonLabel3
         '
@@ -219,14 +219,14 @@ Partial Class FrmRequests
         Me.PoisonLabel3.UseCustomForeColor = True
         Me.PoisonLabel3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
         '
-        'btnRefreshRent
+        'btnRefreshBook
         '
-        Me.btnRefreshRent.Location = New System.Drawing.Point(304, 340)
-        Me.btnRefreshRent.Name = "btnRefreshRent"
-        Me.btnRefreshRent.Size = New System.Drawing.Size(105, 35)
-        Me.btnRefreshRent.TabIndex = 9
-        Me.btnRefreshRent.Text = "↻ Refresh"
-        Me.btnRefreshRent.UseSelectable = True
+        Me.btnRefreshBook.Location = New System.Drawing.Point(304, 340)
+        Me.btnRefreshBook.Name = "btnRefreshBook"
+        Me.btnRefreshBook.Size = New System.Drawing.Size(105, 35)
+        Me.btnRefreshBook.TabIndex = 9
+        Me.btnRefreshBook.Text = "↻ Refresh"
+        Me.btnRefreshBook.UseSelectable = True
         '
         'btnRefreshReturn
         '
@@ -240,7 +240,7 @@ Partial Class FrmRequests
         'PoisonPanel1
         '
         Me.PoisonPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PoisonPanel1.Controls.Add(Me.dgvRentRequests)
+        Me.PoisonPanel1.Controls.Add(Me.dgvBookRequests)
         Me.PoisonPanel1.HorizontalScrollbarBarColor = True
         Me.PoisonPanel1.HorizontalScrollbarHighlightOnWheel = False
         Me.PoisonPanel1.HorizontalScrollbarSize = 10
@@ -289,14 +289,14 @@ Partial Class FrmRequests
         Me.PoisonTile2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.PoisonTile2.UseSelectable = True
         '
-        'btnRejectRent
+        'btnRejectBook
         '
-        Me.btnRejectRent.Location = New System.Drawing.Point(164, 340)
-        Me.btnRejectRent.Name = "btnRejectRent"
-        Me.btnRejectRent.Size = New System.Drawing.Size(135, 35)
-        Me.btnRejectRent.TabIndex = 15
-        Me.btnRejectRent.Text = "✖ Reject Booking"
-        Me.btnRejectRent.UseSelectable = True
+        Me.btnRejectBook.Location = New System.Drawing.Point(164, 340)
+        Me.btnRejectBook.Name = "btnRejectBook"
+        Me.btnRejectBook.Size = New System.Drawing.Size(135, 35)
+        Me.btnRejectBook.TabIndex = 15
+        Me.btnRejectBook.Text = "✖ Reject Booking"
+        Me.btnRejectBook.UseSelectable = True
         '
         'btnViewDetails
         '
@@ -313,15 +313,15 @@ Partial Class FrmRequests
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1100, 730)
         Me.Controls.Add(Me.btnViewDetails)
-        Me.Controls.Add(Me.btnRejectRent)
+        Me.Controls.Add(Me.btnRejectBook)
         Me.Controls.Add(Me.PoisonTile2)
         Me.Controls.Add(Me.PoisonTile1)
         Me.Controls.Add(Me.PoisonPanel2)
         Me.Controls.Add(Me.PoisonPanel1)
         Me.Controls.Add(Me.btnRefreshReturn)
-        Me.Controls.Add(Me.btnRefreshRent)
+        Me.Controls.Add(Me.btnRefreshBook)
         Me.Controls.Add(Me.PoisonLabel3)
-        Me.Controls.Add(Me.btnApproveRent)
+        Me.Controls.Add(Me.btnApproveBook)
         Me.Controls.Add(Me.btnConfirmReturn)
         Me.Controls.Add(Me.btnBack)
         Me.Controls.Add(Me.PoisonLabel2)
@@ -333,7 +333,7 @@ Partial Class FrmRequests
         Me.Text = "Booking && Return Requests - Hotel Management"
         CType(Me.PoisonStyleManager1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvReturnRequests, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dgvRentRequests, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvBookRequests, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PoisonPanel1.ResumeLayout(False)
         Me.PoisonPanel2.ResumeLayout(False)
         Me.ResumeLayout(False)
@@ -347,15 +347,15 @@ Partial Class FrmRequests
     Friend WithEvents PoisonLabel2 As ReaLTaiizor.Controls.PoisonLabel
     Friend WithEvents btnBack As ReaLTaiizor.Controls.PoisonButton
     Friend WithEvents btnConfirmReturn As ReaLTaiizor.Controls.PoisonButton
-    Friend WithEvents btnApproveRent As ReaLTaiizor.Controls.PoisonButton
-    Friend WithEvents dgvRentRequests As ReaLTaiizor.Controls.PoisonDataGridView
+    Friend WithEvents btnApproveBook As ReaLTaiizor.Controls.PoisonButton
+    Friend WithEvents dgvBookRequests As ReaLTaiizor.Controls.PoisonDataGridView
     Friend WithEvents PoisonLabel3 As ReaLTaiizor.Controls.PoisonLabel
-    Friend WithEvents btnRefreshRent As ReaLTaiizor.Controls.PoisonButton
+    Friend WithEvents btnRefreshBook As ReaLTaiizor.Controls.PoisonButton
     Friend WithEvents btnRefreshReturn As ReaLTaiizor.Controls.PoisonButton
     Friend WithEvents PoisonPanel1 As ReaLTaiizor.Controls.PoisonPanel
     Friend WithEvents PoisonPanel2 As ReaLTaiizor.Controls.PoisonPanel
     Friend WithEvents PoisonTile1 As ReaLTaiizor.Controls.PoisonTile
     Friend WithEvents PoisonTile2 As ReaLTaiizor.Controls.PoisonTile
-    Friend WithEvents btnRejectRent As ReaLTaiizor.Controls.PoisonButton
+    Friend WithEvents btnRejectBook As ReaLTaiizor.Controls.PoisonButton
     Friend WithEvents btnViewDetails As ReaLTaiizor.Controls.PoisonButton
 End Class

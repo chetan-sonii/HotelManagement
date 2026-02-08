@@ -20,7 +20,7 @@ Public Class FrmRequests
     End Sub
 
     Private Sub FrmRequests_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        LoadRentRequests()
+        LoadBookRequests()
         LoadReturnRequests()
         UpdateStatistics()
         ConfigureDataGridViews()
@@ -31,26 +31,26 @@ Public Class FrmRequests
     ' ==========================================
     Private Sub ConfigureDataGridViews()
         Try
-            ' Configure Rent Requests Grid
-            If dgvRentRequests.Columns.Count > 0 Then
-                dgvRentRequests.Columns(0).HeaderText = "Booking ID"
-                dgvRentRequests.Columns(1).HeaderText = "Room No"
-                dgvRentRequests.Columns(2).HeaderText = "Guest ID"
+            ' Configure Book Requests Grid
+            If dgvBookRequests.Columns.Count > 0 Then
+                dgvBookRequests.Columns(0).HeaderText = "Booking ID"
+                dgvBookRequests.Columns(1).HeaderText = "Room No"
+                dgvBookRequests.Columns(2).HeaderText = "Guest ID"
 
-                If dgvRentRequests.Columns.Count > 3 Then
-                    dgvRentRequests.Columns(3).HeaderText = "Check-In"
+                If dgvBookRequests.Columns.Count > 3 Then
+                    dgvBookRequests.Columns(3).HeaderText = "Check-In"
                 End If
-                If dgvRentRequests.Columns.Count > 4 Then
-                    dgvRentRequests.Columns(4).HeaderText = "Check-Out"
+                If dgvBookRequests.Columns.Count > 4 Then
+                    dgvBookRequests.Columns(4).HeaderText = "Check-Out"
                 End If
-                If dgvRentRequests.Columns.Count > 5 Then
-                    dgvRentRequests.Columns(5).HeaderText = "Guest Name"
+                If dgvBookRequests.Columns.Count > 5 Then
+                    dgvBookRequests.Columns(5).HeaderText = "Guest Name"
                 End If
-                If dgvRentRequests.Columns.Count > 6 Then
-                    dgvRentRequests.Columns(6).HeaderText = "Status"
+                If dgvBookRequests.Columns.Count > 6 Then
+                    dgvBookRequests.Columns(6).HeaderText = "Status"
                 End If
 
-                dgvRentRequests.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+                dgvBookRequests.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
             End If
 
             ' Configure Return Requests Grid
@@ -80,20 +80,20 @@ Public Class FrmRequests
     End Sub
 
     ' ==========================================
-    ' LOAD RENT/BOOKING REQUESTS
+    ' LOAD Book/BOOKING REQUESTS
     ' ==========================================
-    Private Sub LoadRentRequests()
+    Private Sub LoadBookRequests()
         Try
             ' Enhanced query with guest information
-            Dim query As String = "SELECT b.rent_id, b.room_no, b.cust_id, b.check_in, b.check_out, " &
+            Dim query As String = "SELECT b.Book_id, b.room_no, b.cust_id, b.check_in, b.check_out, " &
                                  "g.cust_name, b.status " &
                                  "FROM tbl_bookings b " &
                                  "LEFT JOIN tbl_guests g ON b.cust_id = g.cust_id " &
                                  "WHERE b.status='Pending' " &
-                                 "ORDER BY b.rent_id DESC"
+                                 "ORDER BY b.Book_id DESC"
 
             Dim dt As DataTable = DatabaseConnection.RunQuery(query)
-            dgvRentRequests.DataSource = dt
+            dgvBookRequests.DataSource = dt
 
             ConfigureDataGridViews()
             UpdateStatistics()
@@ -108,12 +108,12 @@ Public Class FrmRequests
     Private Sub LoadReturnRequests()
         Try
             ' Enhanced query with guest information
-            Dim query As String = "SELECT b.rent_id, b.room_no, b.cust_id, b.check_in, b.check_out, " &
+            Dim query As String = "SELECT b.Book_id, b.room_no, b.cust_id, b.check_in, b.check_out, " &
                                  "g.cust_name, b.status " &
                                  "FROM tbl_bookings b " &
                                  "LEFT JOIN tbl_guests g ON b.cust_id = g.cust_id " &
                                  "WHERE b.status='ReturnPending' " &
-                                 "ORDER BY b.rent_id DESC"
+                                 "ORDER BY b.Book_id DESC"
 
             Dim dt As DataTable = DatabaseConnection.RunQuery(query)
             dgvReturnRequests.DataSource = dt
@@ -131,11 +131,11 @@ Public Class FrmRequests
     Private Sub UpdateStatistics()
         Try
             ' Count pending bookings
-            Dim rentQuery As String = "SELECT COUNT(*) FROM tbl_bookings WHERE status='Pending'"
-            Dim rentDt As DataTable = DatabaseConnection.RunQuery(rentQuery)
-            Dim pendingRent As Integer = 0
-            If rentDt.Rows.Count > 0 Then
-                pendingRent = Convert.ToInt32(rentDt.Rows(0)(0))
+            Dim BookQuery As String = "SELECT COUNT(*) FROM tbl_bookings WHERE status='Pending'"
+            Dim BookDt As DataTable = DatabaseConnection.RunQuery(BookQuery)
+            Dim pendingBook As Integer = 0
+            If BookDt.Rows.Count > 0 Then
+                pendingBook = Convert.ToInt32(BookDt.Rows(0)(0))
             End If
 
             ' Count pending returns
@@ -147,7 +147,7 @@ Public Class FrmRequests
             End If
 
             ' Update tiles
-            PoisonTile1.Text = "Pending Bookings: " & pendingRent.ToString()
+            PoisonTile1.Text = "Pending Bookings: " & pendingBook.ToString()
             PoisonTile2.Text = "Pending Returns: " & pendingReturn.ToString()
         Catch ex As Exception
             PoisonTile1.Text = "Pending Bookings: 0"
@@ -158,29 +158,29 @@ Public Class FrmRequests
     ' ==========================================
     ' APPROVE BOOKING REQUEST
     ' ==========================================
-    Private Sub btnApproveRent_Click(sender As Object, e As EventArgs) Handles btnApproveRent.Click
+    Private Sub btnApproveBook_Click(sender As Object, e As EventArgs) Handles btnApproveBook.Click
         ' Validate selection
-        If dgvRentRequests.SelectedRows.Count = 0 Then
+        If dgvBookRequests.SelectedRows.Count = 0 Then
             MsgBox("Please select a booking request to approve.", MsgBoxStyle.Exclamation, "No Selection")
             Return
         End If
 
         ' Safety check for empty row
-        If dgvRentRequests.SelectedRows(0).IsNewRow Then
+        If dgvBookRequests.SelectedRows(0).IsNewRow Then
             MsgBox("Invalid selection. Please select a valid booking record.", MsgBoxStyle.Exclamation, "Invalid Selection")
             Return
         End If
 
         Try
-            Dim row As DataGridViewRow = dgvRentRequests.SelectedRows(0)
+            Dim row As DataGridViewRow = dgvBookRequests.SelectedRows(0)
 
             ' Validate cell data
-            If row.Cells("rent_id").Value Is Nothing OrElse IsDBNull(row.Cells("rent_id").Value) Then
+            If row.Cells("Book_id").Value Is Nothing OrElse IsDBNull(row.Cells("Book_id").Value) Then
                 MsgBox("Error: Selected row has no Booking ID.", MsgBoxStyle.Critical, "Invalid Data")
                 Return
             End If
 
-            Dim rentId As String = row.Cells("rent_id").Value.ToString()
+            Dim BookId As String = row.Cells("Book_id").Value.ToString()
             Dim roomNo As String = row.Cells("room_no").Value.ToString()
             Dim guestName As String = ""
 
@@ -198,14 +198,14 @@ Public Class FrmRequests
 
             If result = MsgBoxResult.Yes Then
                 ' Update booking status to Active
-                DatabaseConnection.ExecuteQuery("UPDATE tbl_bookings SET status='Active' WHERE rent_id=" & rentId)
+                DatabaseConnection.ExecuteQuery("UPDATE tbl_bookings SET status='Active' WHERE Book_id=" & BookId)
 
                 ' Mark room as unavailable
                 DatabaseConnection.ExecuteQuery("UPDATE tbl_rooms SET available='No' WHERE room_no='" & roomNo.Replace("'", "''") & "'")
 
                 MsgBox("✓ Booking approved successfully!" & vbCrLf & "Room " & roomNo & " is now occupied.", MsgBoxStyle.Information, "Success")
 
-                LoadRentRequests()
+                LoadBookRequests()
             End If
 
         Catch ex As Exception
@@ -216,20 +216,20 @@ Public Class FrmRequests
     ' ==========================================
     ' REJECT BOOKING REQUEST
     ' ==========================================
-    Private Sub btnRejectRent_Click(sender As Object, e As EventArgs) Handles btnRejectRent.Click
-        If dgvRentRequests.SelectedRows.Count = 0 Then
+    Private Sub btnRejectBook_Click(sender As Object, e As EventArgs) Handles btnRejectBook.Click
+        If dgvBookRequests.SelectedRows.Count = 0 Then
             MsgBox("Please select a booking request to reject.", MsgBoxStyle.Exclamation, "No Selection")
             Return
         End If
 
-        If dgvRentRequests.SelectedRows(0).IsNewRow Then Return
+        If dgvBookRequests.SelectedRows(0).IsNewRow Then Return
 
         Try
-            Dim row As DataGridViewRow = dgvRentRequests.SelectedRows(0)
+            Dim row As DataGridViewRow = dgvBookRequests.SelectedRows(0)
 
-            If row.Cells("rent_id").Value Is Nothing Then Return
+            If row.Cells("Book_id").Value Is Nothing Then Return
 
-            Dim rentId As String = row.Cells("rent_id").Value.ToString()
+            Dim BookId As String = row.Cells("Book_id").Value.ToString()
             Dim roomNo As String = row.Cells("room_no").Value.ToString()
 
             Dim result = MsgBox("Are you sure you want to reject this booking?" & vbCrLf &
@@ -239,11 +239,11 @@ Public Class FrmRequests
 
             If result = MsgBoxResult.Yes Then
                 ' Update booking status to Rejected
-                DatabaseConnection.ExecuteQuery("UPDATE tbl_bookings SET status='Rejected' WHERE rent_id=" & rentId)
+                DatabaseConnection.ExecuteQuery("UPDATE tbl_bookings SET status='Rejected' WHERE Book_id=" & BookId)
 
                 MsgBox("✓ Booking rejected successfully.", MsgBoxStyle.Information, "Success")
 
-                LoadRentRequests()
+                LoadBookRequests()
             End If
 
         Catch ex As Exception
@@ -266,9 +266,9 @@ Public Class FrmRequests
             Dim row As DataGridViewRow = dgvReturnRequests.SelectedRows(0)
 
             ' Validate data
-            If row.Cells("rent_id").Value Is Nothing Then Return
+            If row.Cells("Book_id").Value Is Nothing Then Return
 
-            Dim rentId As String = row.Cells("rent_id").Value.ToString()
+            Dim BookId As String = row.Cells("Book_id").Value.ToString()
             Dim roomNo As String = row.Cells("room_no").Value.ToString()
             Dim guestName As String = ""
 
@@ -285,7 +285,7 @@ Public Class FrmRequests
 
             If result = MsgBoxResult.Yes Then
                 ' Update booking status to Returned
-                DatabaseConnection.ExecuteQuery("UPDATE tbl_bookings SET status='Returned' WHERE rent_id=" & rentId)
+                DatabaseConnection.ExecuteQuery("UPDATE tbl_bookings SET status='Returned' WHERE Book_id=" & BookId)
 
                 ' Mark room as available
                 DatabaseConnection.ExecuteQuery("UPDATE tbl_rooms SET available='Yes' WHERE room_no='" & roomNo.Replace("'", "''") & "'")
@@ -314,16 +314,16 @@ Public Class FrmRequests
         Try
             Dim row As DataGridViewRow = dgvReturnRequests.SelectedRows(0)
 
-            If row.Cells("rent_id").Value Is Nothing Then Return
+            If row.Cells("Book_id").Value Is Nothing Then Return
 
-            Dim rentId As String = row.Cells("rent_id").Value.ToString()
+            Dim BookId As String = row.Cells("Book_id").Value.ToString()
 
             ' Query full booking details
             Dim query As String = "SELECT b.*, g.cust_name, g.phone, g.email, r.brand, r.model, r.price " &
                                  "FROM tbl_bookings b " &
                                  "LEFT JOIN tbl_guests g ON b.cust_id = g.cust_id " &
                                  "LEFT JOIN tbl_rooms r ON b.room_no = r.room_no " &
-                                 "WHERE b.rent_id=" & rentId
+                                 "WHERE b.Book_id=" & BookId
 
             Dim dt As DataTable = DatabaseConnection.RunQuery(query)
 
@@ -331,7 +331,7 @@ Public Class FrmRequests
                 Dim detailRow As DataRow = dt.Rows(0)
 
                 Dim details As String = "📋 BOOKING DETAILS" & vbCrLf & vbCrLf &
-                                       "Booking ID: " & detailRow("rent_id").ToString() & vbCrLf &
+                                       "Booking ID: " & detailRow("Book_id").ToString() & vbCrLf &
                                        "Room Number: " & detailRow("room_no").ToString() & vbCrLf &
                                        "Room Type: " & detailRow("brand").ToString() & vbCrLf &
                                        "Bed Type: " & detailRow("model").ToString() & vbCrLf & vbCrLf &
@@ -354,8 +354,8 @@ Public Class FrmRequests
     ' ==========================================
     ' REFRESH BUTTONS
     ' ==========================================
-    Private Sub btnRefreshRent_Click(sender As Object, e As EventArgs) Handles btnRefreshRent.Click
-        LoadRentRequests()
+    Private Sub btnRefreshBook_Click(sender As Object, e As EventArgs) Handles btnRefreshBook.Click
+        LoadBookRequests()
         MsgBox("✓ Booking requests refreshed!", MsgBoxStyle.Information, "Refreshed")
     End Sub
 

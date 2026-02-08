@@ -20,7 +20,7 @@ Public Class FrmReturn
     Private Sub FrmReturn_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ConfigureForm()
         ConfigureDataGridView()
-        LoadRentedRooms()
+        LoadBookedRooms()
         ClearFields()
     End Sub
 
@@ -47,7 +47,7 @@ Public Class FrmReturn
     ' DATAGRIDVIEW CONFIGURATION
     ' ==========================================
     Private Sub ConfigureDataGridView()
-        With dgvRented
+        With dgvBooked
             .AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
             .SelectionMode = DataGridViewSelectionMode.FullRowSelect
             .MultiSelect = False
@@ -62,11 +62,11 @@ Public Class FrmReturn
     End Sub
 
     ' ==========================================
-    ' 1. LOAD ONLY RENTED RoomS
+    ' 1. LOAD ONLY BookED RoomS
     ' ==========================================
-    Private Sub LoadRentedRooms()
+    Private Sub LoadBookedRooms()
         Try
-            Dim query As String = "SELECT r.rent_id AS 'Rent ID', " &
+            Dim query As String = "SELECT r.Book_id AS 'Book ID', " &
                                   "r.room_no AS 'Room Registration', " &
                                   "c.cust_name AS 'Guest Name', " &
                                   "DATE_FORMAT(r.check_out, '%Y-%m-%d') AS 'Due Date' " &
@@ -77,33 +77,33 @@ Public Class FrmReturn
                                   "ORDER BY r.check_out ASC"
 
             Dim dt As DataTable = DatabaseConnection.RunQuery(query)
-            dgvRented.DataSource = dt
+            dgvBooked.DataSource = dt
 
-            ' Hide Rent ID column if exists
-            If dgvRented.Columns.Contains("Rent ID") Then
-                dgvRented.Columns("Rent ID").Visible = False
+            ' Hide Book ID column if exists
+            If dgvBooked.Columns.Contains("Book ID") Then
+                dgvBooked.Columns("Book ID").Visible = False
             End If
 
             ' Update status label
-            lblStatus.Text = "Total Rented Rooms: " & dt.Rows.Count.ToString()
+            lblStatus.Text = "Total Booked Rooms: " & dt.Rows.Count.ToString()
 
         Catch ex As Exception
-            MsgBox("Error loading rented Rooms: " & ex.Message, MsgBoxStyle.Critical, "Database Error")
+            MsgBox("Error loading Booked Rooms: " & ex.Message, MsgBoxStyle.Critical, "Database Error")
         End Try
     End Sub
 
     ' ==========================================
     ' 2. GRID CLICK (Select a Room)
     ' ==========================================
-    Private Sub dgvRented_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvRented.CellClick
+    Private Sub dgvBooked_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvBooked.CellClick
         If e.RowIndex >= 0 Then
             Try
-                Dim row As DataGridViewRow = dgvRented.Rows(e.RowIndex)
+                Dim row As DataGridViewRow = dgvBooked.Rows(e.RowIndex)
 
                 ' Get the actual column names from the DataGridView
-                Dim RoomRegColumn As String = If(dgvRented.Columns.Contains("Room Registration"), "Room Registration", "room_no")
-                Dim custNameColumn As String = If(dgvRented.Columns.Contains("Guest Name"), "Guest Name", "cust_name")
-                Dim dueDateColumn As String = If(dgvRented.Columns.Contains("Due Date"), "Due Date", "check_out")
+                Dim RoomRegColumn As String = If(dgvBooked.Columns.Contains("Room Registration"), "Room Registration", "room_no")
+                Dim custNameColumn As String = If(dgvBooked.Columns.Contains("Guest Name"), "Guest Name", "cust_name")
+                Dim dueDateColumn As String = If(dgvBooked.Columns.Contains("Due Date"), "Due Date", "check_out")
 
                 txtRoomId.Text = row.Cells(RoomRegColumn).Value.ToString()
                 txtCustName.Text = row.Cells(custNameColumn).Value.ToString()
@@ -133,7 +133,7 @@ Public Class FrmReturn
 
     Private Sub CalculateFineAmount()
         If String.IsNullOrEmpty(txtDueDate.Text) Then
-            MsgBox("Please select a rented Room first.", MsgBoxStyle.Information, "No Selection")
+            MsgBox("Please select a Booked Room first.", MsgBoxStyle.Information, "No Selection")
             Return
         End If
 
@@ -195,20 +195,20 @@ Public Class FrmReturn
             Dim queryUpdate As String = $"UPDATE tbl_rooms SET available='Yes' WHERE room_no='{txtRoomId.Text}'"
             DatabaseConnection.ExecuteQuery(queryUpdate)
 
-            ' Optional: Update rental record with actual return date and fine
-            Dim queryUpdateRental As String = $"UPDATE tbl_bookings SET " &
+            ' Optional: Update Booking record with actual return date and fine
+            Dim queryUpdateBooking As String = $"UPDATE tbl_bookings SET " &
                                              $"actual_check_out = NOW(), " &
                                              $"fine_amount = {Val(txtFine.Text.Replace(",", ""))} " &
                                              $"WHERE room_no='{txtRoomId.Text}' AND actual_check_out IS NULL"
-            DatabaseConnection.ExecuteQuery(queryUpdateRental)
+            DatabaseConnection.ExecuteQuery(queryUpdateBooking)
 
             MsgBox($"Room {txtRoomId.Text} returned successfully!" & vbCrLf &
-                   "The vehicle is now available for rent.",
+                   "The vehicle is now available for Book.",
                    MsgBoxStyle.Information,
                    "Success")
 
             ' Refresh and clear
-            LoadRentedRooms()
+            LoadBookedRooms()
             ClearFields()
 
         Catch ex As Exception
@@ -220,7 +220,7 @@ Public Class FrmReturn
     ' 5. REFRESH BUTTON
     ' ==========================================
     Private Sub btnRefresh_Click(sender As Object, e As EventArgs) Handles btnRefresh.Click
-        LoadRentedRooms()
+        LoadBookedRooms()
         ClearFields()
         MsgBox("List refreshed successfully!", MsgBoxStyle.Information, "Refresh")
     End Sub
@@ -250,8 +250,8 @@ Public Class FrmReturn
         lblFineStatus.Visible = False
 
         ' Clear selection in grid
-        If dgvRented.Rows.Count > 0 Then
-            dgvRented.ClearSelection()
+        If dgvBooked.Rows.Count > 0 Then
+            dgvBooked.ClearSelection()
         End If
     End Sub
 
@@ -259,9 +259,9 @@ Public Class FrmReturn
     ' SEARCH FUNCTIONALITY
     ' ==========================================
     Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
-        If dgvRented.DataSource IsNot Nothing Then
+        If dgvBooked.DataSource IsNot Nothing Then
             Try
-                Dim dv As DataView = CType(dgvRented.DataSource, DataTable).DefaultView
+                Dim dv As DataView = CType(dgvBooked.DataSource, DataTable).DefaultView
 
                 If String.IsNullOrWhiteSpace(txtSearch.Text) Then
                     dv.RowFilter = ""
@@ -271,7 +271,7 @@ Public Class FrmReturn
                                   $"[Guest Name] LIKE '%{txtSearch.Text}%'"
                 End If
 
-                lblStatus.Text = "Showing " & dv.Count & " of " & CType(dgvRented.DataSource, DataTable).Rows.Count & " Rooms"
+                lblStatus.Text = "Showing " & dv.Count & " of " & CType(dgvBooked.DataSource, DataTable).Rows.Count & " Rooms"
 
             Catch ex As Exception
                 ' Ignore filter errors

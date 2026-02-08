@@ -181,10 +181,10 @@
     <Compile Include="Forms\FrmRegister.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FrmRental.Designer.vb">
-      <DependentUpon>FrmRental.vb</DependentUpon>
+    <Compile Include="Forms\FrmBooking.Designer.vb">
+      <DependentUpon>FrmBooking.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FrmRental.vb">
+    <Compile Include="Forms\FrmBooking.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FrmLogin.Designer.vb">
@@ -255,8 +255,8 @@
     <EmbeddedResource Include="Forms\FrmRegister.resx">
       <DependentUpon>FrmRegister.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmRental.resx">
-      <DependentUpon>FrmRental.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\FrmBooking.resx">
+      <DependentUpon>FrmBooking.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmRequests.resx">
       <DependentUpon>FrmRequests.vb</DependentUpon>

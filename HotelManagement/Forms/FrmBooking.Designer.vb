@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class FrmRental
+Partial Class FrmBooking
     Inherits ReaLTaiizor.Forms.PoisonForm
 
     'Form overrides dispose to clean up the component list.
@@ -27,7 +27,7 @@ Partial Class FrmRental
         Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PoisonStyleManager1 = New ReaLTaiizor.Manager.PoisonStyleManager(Me.components)
-        Me.dgvRentals = New ReaLTaiizor.Controls.PoisonDataGridView()
+        Me.dgvBookings = New ReaLTaiizor.Controls.PoisonDataGridView()
         Me.lblRoom = New ReaLTaiizor.Controls.PoisonLabel()
         Me.lblDate = New ReaLTaiizor.Controls.PoisonLabel()
         Me.PoisonLabel3 = New ReaLTaiizor.Controls.PoisonLabel()
@@ -39,7 +39,7 @@ Partial Class FrmRental
         Me.dtCheckIn = New ReaLTaiizor.Controls.PoisonDateTime()
         Me.dtCheckOut = New ReaLTaiizor.Controls.PoisonDateTime()
         Me.btnCalculate = New ReaLTaiizor.Controls.PoisonButton()
-        Me.btnRent = New ReaLTaiizor.Controls.PoisonButton()
+        Me.btnBook = New ReaLTaiizor.Controls.PoisonButton()
         Me.btnBack = New ReaLTaiizor.Controls.PoisonButton()
         Me.PoisonLabel1 = New ReaLTaiizor.Controls.PoisonLabel()
         Me.PoisonPanel1 = New ReaLTaiizor.Controls.PoisonPanel()
@@ -57,7 +57,7 @@ Partial Class FrmRental
         Me.txtSearch = New ReaLTaiizor.Controls.PoisonTextBox()
         Me.PoisonLabel5 = New ReaLTaiizor.Controls.PoisonLabel()
         CType(Me.PoisonStyleManager1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dgvRentals, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvBookings, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PoisonPanel1.SuspendLayout()
         Me.PoisonPanel2.SuspendLayout()
         Me.SuspendLayout()
@@ -66,15 +66,15 @@ Partial Class FrmRental
         '
         Me.PoisonStyleManager1.Owner = Me
         '
-        'dgvRentals
+        'dgvBookings
         '
-        Me.dgvRentals.AllowUserToAddRows = False
-        Me.dgvRentals.AllowUserToDeleteRows = False
-        Me.dgvRentals.AllowUserToResizeRows = False
-        Me.dgvRentals.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dgvRentals.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.dgvRentals.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
-        Me.dgvRentals.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.dgvBookings.AllowUserToAddRows = False
+        Me.dgvBookings.AllowUserToDeleteRows = False
+        Me.dgvBookings.AllowUserToResizeRows = False
+        Me.dgvBookings.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.dgvBookings.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.dgvBookings.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
+        Me.dgvBookings.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
         DataGridViewCellStyle10.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
@@ -82,9 +82,9 @@ Partial Class FrmRental
         DataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
         DataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
         DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvRentals.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle10
-        Me.dgvRentals.ColumnHeadersHeight = 35
-        Me.dgvRentals.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.dgvBookings.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle10
+        Me.dgvBookings.ColumnHeadersHeight = 35
+        Me.dgvBookings.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         DataGridViewCellStyle11.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
@@ -92,16 +92,16 @@ Partial Class FrmRental
         DataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
         DataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
         DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvRentals.DefaultCellStyle = DataGridViewCellStyle11
-        Me.dgvRentals.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dgvRentals.EnableHeadersVisualStyles = False
-        Me.dgvRentals.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        Me.dgvRentals.GridColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dgvRentals.Location = New System.Drawing.Point(0, 0)
-        Me.dgvRentals.MultiSelect = False
-        Me.dgvRentals.Name = "dgvRentals"
-        Me.dgvRentals.ReadOnly = True
-        Me.dgvRentals.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.dgvBookings.DefaultCellStyle = DataGridViewCellStyle11
+        Me.dgvBookings.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgvBookings.EnableHeadersVisualStyles = False
+        Me.dgvBookings.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        Me.dgvBookings.GridColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.dgvBookings.Location = New System.Drawing.Point(0, 0)
+        Me.dgvBookings.MultiSelect = False
+        Me.dgvBookings.Name = "dgvBookings"
+        Me.dgvBookings.ReadOnly = True
+        Me.dgvBookings.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
         DataGridViewCellStyle12.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
@@ -109,14 +109,14 @@ Partial Class FrmRental
         DataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
         DataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
         DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvRentals.RowHeadersDefaultCellStyle = DataGridViewCellStyle12
-        Me.dgvRentals.RowHeadersVisible = False
-        Me.dgvRentals.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
-        Me.dgvRentals.RowTemplate.Height = 30
-        Me.dgvRentals.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvRentals.Size = New System.Drawing.Size(670, 480)
-        Me.dgvRentals.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Red
-        Me.dgvRentals.TabIndex = 0
+        Me.dgvBookings.RowHeadersDefaultCellStyle = DataGridViewCellStyle12
+        Me.dgvBookings.RowHeadersVisible = False
+        Me.dgvBookings.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
+        Me.dgvBookings.RowTemplate.Height = 30
+        Me.dgvBookings.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvBookings.Size = New System.Drawing.Size(670, 480)
+        Me.dgvBookings.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Red
+        Me.dgvBookings.TabIndex = 0
         '
         'lblRoom
         '
@@ -222,15 +222,15 @@ Partial Class FrmRental
         Me.btnCalculate.Text = "💰 Calculate Total Fee"
         Me.btnCalculate.UseSelectable = True
         '
-        'btnRent
+        'btnBook
         '
-        Me.btnRent.Highlight = True
-        Me.btnRent.Location = New System.Drawing.Point(15, 581)
-        Me.btnRent.Name = "btnRent"
-        Me.btnRent.Size = New System.Drawing.Size(220, 40)
-        Me.btnRent.TabIndex = 8
-        Me.btnRent.Text = "✓ Confirm Booking"
-        Me.btnRent.UseSelectable = True
+        Me.btnBook.Highlight = True
+        Me.btnBook.Location = New System.Drawing.Point(15, 581)
+        Me.btnBook.Name = "btnBook"
+        Me.btnBook.Size = New System.Drawing.Size(220, 40)
+        Me.btnBook.TabIndex = 8
+        Me.btnBook.Text = "✓ Confirm Booking"
+        Me.btnBook.UseSelectable = True
         '
         'btnBack
         '
@@ -263,7 +263,7 @@ Partial Class FrmRental
         Me.PoisonPanel1.Controls.Add(Me.PoisonLabel4)
         Me.PoisonPanel1.Controls.Add(Me.lblRoom)
         Me.PoisonPanel1.Controls.Add(Me.cbRoom)
-        Me.PoisonPanel1.Controls.Add(Me.btnRent)
+        Me.PoisonPanel1.Controls.Add(Me.btnBook)
         Me.PoisonPanel1.Controls.Add(Me.PoisonLabel3)
         Me.PoisonPanel1.Controls.Add(Me.btnCalculate)
         Me.PoisonPanel1.Controls.Add(Me.cbCust)
@@ -359,7 +359,7 @@ Partial Class FrmRental
         'PoisonPanel2
         '
         Me.PoisonPanel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PoisonPanel2.Controls.Add(Me.dgvRentals)
+        Me.PoisonPanel2.Controls.Add(Me.dgvBookings)
         Me.PoisonPanel2.HorizontalScrollbarBarColor = True
         Me.PoisonPanel2.HorizontalScrollbarHighlightOnWheel = False
         Me.PoisonPanel2.HorizontalScrollbarSize = 10
@@ -432,7 +432,7 @@ Partial Class FrmRental
         Me.PoisonLabel5.TabIndex = 17
         Me.PoisonLabel5.Text = "🔍 Search"
         '
-        'FrmRental
+        'FrmBooking
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -447,12 +447,12 @@ Partial Class FrmRental
         Me.Controls.Add(Me.PoisonPanel1)
         Me.Controls.Add(Me.PoisonLabel1)
         Me.Controls.Add(Me.btnBack)
-        Me.Name = "FrmRental"
+        Me.Name = "FrmBooking"
         Me.Resizable = False
         Me.ShadowType = ReaLTaiizor.[Enum].Poison.FormShadowType.AeroShadow
         Me.Text = "Room Booking - Hotel Management"
         CType(Me.PoisonStyleManager1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dgvRentals, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvBookings, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PoisonPanel1.ResumeLayout(False)
         Me.PoisonPanel1.PerformLayout()
         Me.PoisonPanel2.ResumeLayout(False)
@@ -462,7 +462,7 @@ Partial Class FrmRental
     End Sub
 
     Friend WithEvents PoisonStyleManager1 As ReaLTaiizor.Manager.PoisonStyleManager
-    Friend WithEvents dgvRentals As ReaLTaiizor.Controls.PoisonDataGridView
+    Friend WithEvents dgvBookings As ReaLTaiizor.Controls.PoisonDataGridView
     Friend WithEvents lblReturn As ReaLTaiizor.Controls.PoisonLabel
     Friend WithEvents lblGuestName As ReaLTaiizor.Controls.PoisonLabel
     Friend WithEvents lblFee As ReaLTaiizor.Controls.PoisonLabel
@@ -470,7 +470,7 @@ Partial Class FrmRental
     Friend WithEvents lblDate As ReaLTaiizor.Controls.PoisonLabel
     Friend WithEvents lblRoom As ReaLTaiizor.Controls.PoisonLabel
     Friend WithEvents btnBack As ReaLTaiizor.Controls.PoisonButton
-    Friend WithEvents btnRent As ReaLTaiizor.Controls.PoisonButton
+    Friend WithEvents btnBook As ReaLTaiizor.Controls.PoisonButton
     Friend WithEvents btnCalculate As ReaLTaiizor.Controls.PoisonButton
     Friend WithEvents dtCheckOut As ReaLTaiizor.Controls.PoisonDateTime
     Friend WithEvents dtCheckIn As ReaLTaiizor.Controls.PoisonDateTime

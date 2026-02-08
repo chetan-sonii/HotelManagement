@@ -48,8 +48,8 @@ Public Class FrmLogin
 
             If dtAdmin.Rows.Count > 0 Then
                 ' ADMIN FOUND
-                UserSession.CurrentUserID = 0
-                UserSession.CurrentUserName = "Administrator"
+                UserSession.CurBookUserID = 0
+                UserSession.CurBookUserName = "Administrator"
 
                 MsgBox("Welcome Admin!", MsgBoxStyle.Information)
                 Dim f As New FrmMain()
@@ -65,10 +65,10 @@ Public Class FrmLogin
 
             If dtCust.Rows.Count > 0 Then
                 ' Guest FOUND
-                UserSession.CurrentUserID = Convert.ToInt32(dtCust.Rows(0)("cust_id"))
-                UserSession.CurrentUserName = dtCust.Rows(0)("cust_name").ToString()
+                UserSession.CurBookUserID = Convert.ToInt32(dtCust.Rows(0)("cust_id"))
+                UserSession.CurBookUserName = dtCust.Rows(0)("cust_name").ToString()
 
-                MsgBox("Welcome " & UserSession.CurrentUserName, MsgBoxStyle.Information)
+                MsgBox("Welcome " & UserSession.CurBookUserName, MsgBoxStyle.Information)
 
                 Dim f As New FrmUserDashboard()
                 '  userId:=Convert.ToInt32(dtCust.Rows(0)("cust_id")),

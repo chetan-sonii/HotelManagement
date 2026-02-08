@@ -524,7 +524,7 @@ Partial Class FrmRooms
         Me.Name = "FrmRooms"
         Me.Resizable = False
         Me.ShadowType = ReaLTaiizor.[Enum].Poison.FormShadowType.AeroShadow
-        Me.Text = "Room Rental Management System"
+        Me.Text = "Room Booking Management System"
         CType(Me.PoisonStyleManager1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvRooms, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PoisonPanel1.ResumeLayout(False)

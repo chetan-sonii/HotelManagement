@@ -28,18 +28,18 @@ Public Class FrmUserDashboard
 
         ' FIX 2: Get details from Global Session
         ' (Ensure you created the UserSession module as discussed previously)
-        lblWelcome.Text = $"Welcome, {UserSession.CurrentUserName}!"
+        lblWelcome.Text = $"Welcome, {UserSession.CurBookUserName}!"
         ' Note: If you don't have email in UserSession, you can query it or just hide the label.
-        ' lblUserEmail.Text = UserSession.CurrentUserEmail 
+        ' lblUserEmail.Text = UserSession.CurBookUserEmail 
 
         ConfigureDataGridViews()
         LoadAvailableRooms()
-        LoadMyRentals()
+        LoadMyBookings()
     End Sub
 
     Private Sub ConfigureDataGridViews()
         ' Common settings for both grids to prevent UI glitches
-        Dim grids() As DataGridView = {dgvAvailable, dgvMyRentals}
+        Dim grids() As DataGridView = {dgvAvailable, dgvMyBookings}
 
         For Each dgv In grids
             With dgv
@@ -83,25 +83,25 @@ Public Class FrmUserDashboard
     End Sub
 
     ' ========================================================
-    ' 2. LOAD MY RENTALS
+    ' 2. LOAD MY BookingS
     ' ========================================================
-    Private Sub LoadMyRentals()
+    Private Sub LoadMyBookings()
         Try
-            ' Join tables to get Room Details + Rental Status
-            Dim query As String = "SELECT r.rent_id, c.brand, c.model, " &
+            ' Join tables to get Room Details + Booking Status
+            Dim query As String = "SELECT r.Book_id, c.brand, c.model, " &
                                   "r.check_in AS 'Start Date', r.check_out AS 'Return Date', " &
                                   "r.fees AS 'Total Fees', r.status AS 'Status', r.room_no " &
                                   "FROM tbl_bookings r " &
                                   "JOIN tbl_rooms c ON r.room_no = c.room_no " &
-                                  "WHERE r.cust_id = " & UserSession.CurrentUserID &
+                                  "WHERE r.cust_id = " & UserSession.CurBookUserID &
                                   " ORDER BY r.check_in DESC"
 
             Dim dt As DataTable = DatabaseConnection.RunQuery(query)
-            dgvMyRentals.DataSource = dt
+            dgvMyBookings.DataSource = dt
 
             ' Hide technical columns
-            If dgvMyRentals.Columns.Contains("rent_id") Then dgvMyRentals.Columns("rent_id").Visible = False
-            If dgvMyRentals.Columns.Contains("room_no") Then dgvMyRentals.Columns("room_no").Visible = False
+            If dgvMyBookings.Columns.Contains("Book_id") Then dgvMyBookings.Columns("Book_id").Visible = False
+            If dgvMyBookings.Columns.Contains("room_no") Then dgvMyBookings.Columns("room_no").Visible = False
 
         Catch ex As Exception
             MsgBox("Error loading history: " & ex.Message)
@@ -147,7 +147,7 @@ Public Class FrmUserDashboard
         Try
             ' Get Room Details
             Dim row As DataGridViewRow = dgvAvailable.SelectedRows(0)
-            Dim RoomReg As String = row.Cells("Reg No").Value.ToString()
+            Dim RoomReg As String = row.Cells("Room No").Value.ToString()
             Dim price As Decimal = Convert.ToDecimal(row.Cells("Price/Day").Value)
             Dim brand As String = row.Cells("Brand").Value.ToString()
             Dim model As String = row.Cells("Model").Value.ToString()
@@ -162,14 +162,14 @@ Public Class FrmUserDashboard
             Dim tomorrow As String = DateTime.Now.AddDays(1).ToString("yyyy-MM-dd")
 
             Dim query As String = "INSERT INTO tbl_bookings (room_no, cust_id, check_in, check_out, fees, status) " &
-                                  "VALUES ('" & RoomReg & "', " & UserSession.CurrentUserID & ", '" & today & "', '" & tomorrow & "', " & price & ", 'Pending')"
+                                  "VALUES ('" & RoomReg & "', " & UserSession.CurBookUserID & ", '" & today & "', '" & tomorrow & "', " & price & ", 'Pending')"
 
             DatabaseConnection.ExecuteQuery(query)
 
             MsgBox("Booking Request Sent! Please wait for Admin approval.", MsgBoxStyle.Information)
 
             ' We switch tabs to show them the pending request
-            LoadMyRentals()
+            LoadMyBookings()
             ' If you have a TabControl, you can select the history tab here:
             ' PoisonTabControl1.SelectedIndex = 1 
 
@@ -182,13 +182,13 @@ Public Class FrmUserDashboard
     ' 5. RETURN LOGIC (The Request Workflow)
     ' ========================================================
     Private Sub btnReturn_Click(sender As Object, e As EventArgs) Handles btnReturn.Click
-        If dgvMyRentals.SelectedRows.Count = 0 Then
-            MsgBox("Select a rental to return.")
+        If dgvMyBookings.SelectedRows.Count = 0 Then
+            MsgBox("Select a Booking to return.")
             Return
         End If
 
         Try
-            Dim row As DataGridViewRow = dgvMyRentals.SelectedRows(0)
+            Dim row As DataGridViewRow = dgvMyBookings.SelectedRows(0)
             Dim status As String = row.Cells("Status").Value.ToString()
             Dim RoomReg As String = row.Cells("room_no").Value.ToString()
 
@@ -216,7 +216,7 @@ Public Class FrmUserDashboard
             DatabaseConnection.ExecuteQuery(query)
 
             MsgBox("Return Request Sent! Please hand over keys to Admin.", MsgBoxStyle.Information)
-            LoadMyRentals()
+            LoadMyBookings()
 
         Catch ex As Exception
             MsgBox("Return Error: " & ex.Message)

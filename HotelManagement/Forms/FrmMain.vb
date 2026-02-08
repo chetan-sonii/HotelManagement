@@ -53,10 +53,10 @@ Public Class FrmMain
             End If
 
             ' Count Occupied Rooms (Rooms that are NOT available)
-            Dim dtRent As DataTable = DatabaseConnection.RunQuery("SELECT COUNT(*) FROM tbl_rooms WHERE available='No'")
-            If dtRent IsNot Nothing AndAlso dtRent.Rows.Count > 0 Then
-                If tileRentals IsNot Nothing Then
-                    tileRentals.TileCount = CInt(dtRent.Rows(0)(0))
+            Dim dtBook As DataTable = DatabaseConnection.RunQuery("SELECT COUNT(*) FROM tbl_rooms WHERE available='No'")
+            If dtBook IsNot Nothing AndAlso dtBook.Rows.Count > 0 Then
+                If tileBookings IsNot Nothing Then
+                    tileBookings.TileCount = CInt(dtBook.Rows(0)(0))
                 End If
             End If
 
@@ -122,13 +122,13 @@ Public Class FrmMain
         End Try
     End Sub
 
-    Private Sub tileRentals_Click(sender As Object, e As EventArgs) Handles tileRentals.Click
+    Private Sub tileBookings_Click(sender As Object, e As EventArgs) Handles tileBookings.Click
         Try
-            Dim f As New FrmRental()
+            Dim f As New FrmBooking()
             f.ShowDialog()
             LoadDashboardStats()
         Catch ex As Exception
-            MsgBox("Error opening Rental Management: " & ex.Message, MsgBoxStyle.Critical, "Error")
+            MsgBox("Error opening Booking Management: " & ex.Message, MsgBoxStyle.Critical, "Error")
         End Try
     End Sub
 

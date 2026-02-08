@@ -31,7 +31,7 @@ Partial Class FrmMain
         Me.tileRequests = New ReaLTaiizor.Controls.PoisonTile()
         Me.tileReturn = New ReaLTaiizor.Controls.PoisonTile()
         Me.btnlogout = New ReaLTaiizor.Controls.PoisonButton()
-        Me.tileRentals = New ReaLTaiizor.Controls.PoisonTile()
+        Me.tileBookings = New ReaLTaiizor.Controls.PoisonTile()
         Me.tileRooms = New ReaLTaiizor.Controls.PoisonTile()
         Me.tileCust = New ReaLTaiizor.Controls.PoisonTile()
         Me.MySqlCommand1 = New MySql.Data.MySqlClient.MySqlCommand()
@@ -59,7 +59,7 @@ Partial Class FrmMain
         Me.tabDashboard.Controls.Add(Me.tileRequests)
         Me.tabDashboard.Controls.Add(Me.tileReturn)
         Me.tabDashboard.Controls.Add(Me.btnlogout)
-        Me.tabDashboard.Controls.Add(Me.tileRentals)
+        Me.tabDashboard.Controls.Add(Me.tileBookings)
         Me.tabDashboard.Controls.Add(Me.tileRooms)
         Me.tabDashboard.Controls.Add(Me.tileCust)
         Me.tabDashboard.HorizontalScrollbarBarColor = True
@@ -155,17 +155,17 @@ Partial Class FrmMain
         Me.btnlogout.Text = "🚪 LOGOUT"
         Me.btnlogout.UseSelectable = True
         '
-        'tileRentals
+        'tileBookings
         '
-        Me.tileRentals.ActiveControl = Nothing
-        Me.tileRentals.Location = New System.Drawing.Point(334, 292)
-        Me.tileRentals.Name = "tileRentals"
-        Me.tileRentals.Size = New System.Drawing.Size(280, 150)
-        Me.tileRentals.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Orange
-        Me.tileRentals.TabIndex = 2
-        Me.tileRentals.Text = "🚗 Occupied Rooms"
-        Me.tileRentals.UseSelectable = True
-        Me.tileRentals.UseTileImage = True
+        Me.tileBookings.ActiveControl = Nothing
+        Me.tileBookings.Location = New System.Drawing.Point(334, 292)
+        Me.tileBookings.Name = "tileBookings"
+        Me.tileBookings.Size = New System.Drawing.Size(280, 150)
+        Me.tileBookings.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Orange
+        Me.tileBookings.TabIndex = 2
+        Me.tileBookings.Text = "🚗 Occupied Rooms"
+        Me.tileBookings.UseSelectable = True
+        Me.tileBookings.UseTileImage = True
         '
         'tileRooms
         '
@@ -206,7 +206,7 @@ Partial Class FrmMain
         Me.Controls.Add(Me.PoisonTabControl1)
         Me.MinimumSize = New System.Drawing.Size(1000, 620)
         Me.Name = "FrmMain"
-        Me.Text = "Room RENTAL MANAGEMENT SYSTEM - ADMIN PANEL"
+        Me.Text = "Room Booking MANAGEMENT SYSTEM - ADMIN PANEL"
         Me.PoisonTabControl1.ResumeLayout(False)
         Me.tabDashboard.ResumeLayout(False)
         Me.PoisonPanel1.ResumeLayout(False)
@@ -218,7 +218,7 @@ Partial Class FrmMain
     Friend WithEvents tabDashboard As ReaLTaiizor.Controls.PoisonTabPage
     Friend WithEvents tileCust As ReaLTaiizor.Controls.PoisonTile
     Friend WithEvents tileRooms As ReaLTaiizor.Controls.PoisonTile
-    Friend WithEvents tileRentals As ReaLTaiizor.Controls.PoisonTile
+    Friend WithEvents tileBookings As ReaLTaiizor.Controls.PoisonTile
     Friend WithEvents btnlogout As ReaLTaiizor.Controls.PoisonButton
     Friend WithEvents MySqlCommand1 As MySql.Data.MySqlClient.MySqlCommand
     Friend WithEvents tileReturn As ReaLTaiizor.Controls.PoisonTile

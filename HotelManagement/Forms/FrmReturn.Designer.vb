@@ -25,7 +25,7 @@ Partial Class FrmReturn
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Me.dgvRented = New ReaLTaiizor.Controls.PoisonDataGridView()
+        Me.dgvBooked = New ReaLTaiizor.Controls.PoisonDataGridView()
         Me.PoisonPanel1 = New ReaLTaiizor.Controls.PoisonPanel()
         Me.lblFineStatus = New ReaLTaiizor.Controls.PoisonLabel()
         Me.btnRefresh = New ReaLTaiizor.Controls.PoisonButton()
@@ -45,18 +45,18 @@ Partial Class FrmReturn
         Me.lblStatus = New ReaLTaiizor.Controls.PoisonLabel()
         Me.txtSearch = New ReaLTaiizor.Controls.PoisonTextBox()
         Me.PoisonLabel2 = New ReaLTaiizor.Controls.PoisonLabel()
-        CType(Me.dgvRented, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvBooked, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PoisonPanel1.SuspendLayout()
         Me.PoisonPanel2.SuspendLayout()
         Me.SuspendLayout()
         '
-        'dgvRented
+        'dgvBooked
         '
-        Me.dgvRented.AllowUserToResizeRows = False
-        Me.dgvRented.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dgvRented.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.dgvRented.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
-        Me.dgvRented.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.dgvBooked.AllowUserToResizeRows = False
+        Me.dgvBooked.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.dgvBooked.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.dgvBooked.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
+        Me.dgvBooked.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
@@ -64,9 +64,9 @@ Partial Class FrmReturn
         DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvRented.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
-        Me.dgvRented.ColumnHeadersHeight = 40
-        Me.dgvRented.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.dgvBooked.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.dgvBooked.ColumnHeadersHeight = 40
+        Me.dgvBooked.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
@@ -74,14 +74,14 @@ Partial Class FrmReturn
         DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvRented.DefaultCellStyle = DataGridViewCellStyle2
-        Me.dgvRented.EnableHeadersVisualStyles = False
-        Me.dgvRented.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        Me.dgvRented.GridColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dgvRented.Location = New System.Drawing.Point(15, 65)
-        Me.dgvRented.Name = "dgvRented"
-        Me.dgvRented.ReadOnly = True
-        Me.dgvRented.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.dgvBooked.DefaultCellStyle = DataGridViewCellStyle2
+        Me.dgvBooked.EnableHeadersVisualStyles = False
+        Me.dgvBooked.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        Me.dgvBooked.GridColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.dgvBooked.Location = New System.Drawing.Point(15, 65)
+        Me.dgvBooked.Name = "dgvBooked"
+        Me.dgvBooked.ReadOnly = True
+        Me.dgvBooked.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
@@ -89,12 +89,12 @@ Partial Class FrmReturn
         DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvRented.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
-        Me.dgvRented.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
-        Me.dgvRented.RowTemplate.Height = 35
-        Me.dgvRented.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvRented.Size = New System.Drawing.Size(430, 345)
-        Me.dgvRented.TabIndex = 0
+        Me.dgvBooked.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
+        Me.dgvBooked.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
+        Me.dgvBooked.RowTemplate.Height = 35
+        Me.dgvBooked.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvBooked.Size = New System.Drawing.Size(430, 345)
+        Me.dgvBooked.TabIndex = 0
         '
         'PoisonPanel1
         '
@@ -348,7 +348,7 @@ Partial Class FrmReturn
         Me.PoisonPanel2.Controls.Add(Me.lblStatus)
         Me.PoisonPanel2.Controls.Add(Me.txtSearch)
         Me.PoisonPanel2.Controls.Add(Me.PoisonLabel2)
-        Me.PoisonPanel2.Controls.Add(Me.dgvRented)
+        Me.PoisonPanel2.Controls.Add(Me.dgvBooked)
         Me.PoisonPanel2.HorizontalScrollbarBarColor = True
         Me.PoisonPanel2.HorizontalScrollbarHighlightOnWheel = False
         Me.PoisonPanel2.HorizontalScrollbarSize = 10
@@ -367,7 +367,7 @@ Partial Class FrmReturn
         Me.lblStatus.Name = "lblStatus"
         Me.lblStatus.Size = New System.Drawing.Size(120, 15)
         Me.lblStatus.TabIndex = 3
-        Me.lblStatus.Text = "Total Rented Rooms: 0"
+        Me.lblStatus.Text = "Total Booked Rooms: 0"
         '
         'txtSearch
         '
@@ -407,7 +407,7 @@ Partial Class FrmReturn
         Me.PoisonLabel2.Name = "PoisonLabel2"
         Me.PoisonLabel2.Size = New System.Drawing.Size(200, 25)
         Me.PoisonLabel2.TabIndex = 1
-        Me.PoisonLabel2.Text = "🚙 Currently Rented"
+        Me.PoisonLabel2.Text = "🚙 CurBookly Booked"
         Me.PoisonLabel2.UseStyleColors = True
         '
         'FrmReturn
@@ -422,7 +422,7 @@ Partial Class FrmReturn
         Me.Name = "FrmReturn"
         Me.Padding = New System.Windows.Forms.Padding(20, 70, 20, 20)
         Me.Text = "Room RETURN MANAGEMENT"
-        CType(Me.dgvRented, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvBooked, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PoisonPanel1.ResumeLayout(False)
         Me.PoisonPanel1.PerformLayout()
         Me.PoisonPanel2.ResumeLayout(False)
@@ -431,7 +431,7 @@ Partial Class FrmReturn
 
     End Sub
 
-    Friend WithEvents dgvRented As ReaLTaiizor.Controls.PoisonDataGridView
+    Friend WithEvents dgvBooked As ReaLTaiizor.Controls.PoisonDataGridView
     Friend WithEvents PoisonPanel1 As ReaLTaiizor.Controls.PoisonPanel
     Friend WithEvents lblRoom As ReaLTaiizor.Controls.PoisonLabel
     Friend WithEvents PoisonLabel1 As ReaLTaiizor.Controls.PoisonLabel

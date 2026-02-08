@@ -169,7 +169,7 @@ Public Class FrmRegister
             Dim dt As DataTable = DatabaseConnection.RunQuery(checkQuery, checkParams)
             
             If dt.Rows.Count > 0 AndAlso Convert.ToInt32(dt.Rows(0)(0)) > 0 Then
-                ReaLTaiizor.Controls.PoisonMessageBox.Show(Me, "This email is already registered. Please use a different email or login.", "Email Already Exists", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                ReaLTaiizor.Controls.PoisonMessageBox.Show(Me, "This email is already registered. Please use a diffeBook email or login.", "Email Already Exists", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 txtEmail.Focus()
                 Return
             End If

@@ -183,7 +183,7 @@ Public Class FrmGuests
             Dim phone As String = txtPhone.Text.Trim().Replace("'", "''")
             Dim email As String = txtEmail.Text.Trim().Replace("'", "''")
 
-            ' Check for duplicate phone (excluding current record)
+            ' Check for duplicate phone (excluding curBook record)
             Dim checkQuery As String = "SELECT COUNT(*) FROM tbl_guests WHERE phone='" & phone & "' AND cust_id<>" & id
             Dim checkDt As DataTable = DatabaseConnection.RunQuery(checkQuery)
             
