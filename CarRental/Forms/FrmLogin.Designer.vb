@@ -1,9 +1,9 @@
-<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FrmLogin
     Inherits ReaLTaiizor.Forms.PoisonForm
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class FrmLogin
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.PoisonStyleManager1 = New ReaLTaiizor.Manager.PoisonStyleManager(Me.components)
@@ -53,7 +53,7 @@ Partial Class FrmLogin
         Me.lblTitle.Name = "lblTitle"
         Me.lblTitle.Size = New System.Drawing.Size(220, 19)
         Me.lblTitle.TabIndex = 0
-        Me.lblTitle.Text = "🚗 Car Rental Management System"
+        Me.lblTitle.Text = "🚗 Room Rental Management System"
         Me.lblTitle.UseCustomForeColor = True
         '
         'txtUser
@@ -216,7 +216,7 @@ Partial Class FrmLogin
         Me.PoisonLabel3.Name = "PoisonLabel3"
         Me.PoisonLabel3.Size = New System.Drawing.Size(279, 19)
         Me.PoisonLabel3.TabIndex = 9
-        Me.PoisonLabel3.Text = "© 2026 Car Rental System. All rights reserved."
+        Me.PoisonLabel3.Text = "© 2026 Room Rental System. All rights reserved."
         Me.PoisonLabel3.UseCustomForeColor = True
         '
         'btnRegister
@@ -243,7 +243,7 @@ Partial Class FrmLogin
         Me.Name = "FrmLogin"
         Me.Resizable = False
         Me.ShadowType = ReaLTaiizor.[Enum].Poison.FormShadowType.AeroShadow
-        Me.Text = "Login - Car Rental System"
+        Me.Text = "Login - Room Rental System"
         CType(Me.PoisonStyleManager1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PoisonPanel1.ResumeLayout(False)
         Me.PoisonPanel1.PerformLayout()

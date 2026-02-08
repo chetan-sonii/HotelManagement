@@ -35,11 +35,11 @@ Partial Class FrmReturn
         Me.txtFine = New ReaLTaiizor.Controls.PoisonTextBox()
         Me.txtDueDate = New ReaLTaiizor.Controls.PoisonTextBox()
         Me.txtCustName = New ReaLTaiizor.Controls.PoisonTextBox()
-        Me.txtCarId = New ReaLTaiizor.Controls.PoisonTextBox()
+        Me.txtRoomId = New ReaLTaiizor.Controls.PoisonTextBox()
         Me.lblDelay = New ReaLTaiizor.Controls.PoisonLabel()
         Me.lblDate = New ReaLTaiizor.Controls.PoisonLabel()
         Me.lblCust = New ReaLTaiizor.Controls.PoisonLabel()
-        Me.lblCar = New ReaLTaiizor.Controls.PoisonLabel()
+        Me.lblRoom = New ReaLTaiizor.Controls.PoisonLabel()
         Me.PoisonLabel1 = New ReaLTaiizor.Controls.PoisonLabel()
         Me.PoisonPanel2 = New ReaLTaiizor.Controls.PoisonPanel()
         Me.lblStatus = New ReaLTaiizor.Controls.PoisonLabel()
@@ -107,11 +107,11 @@ Partial Class FrmReturn
         Me.PoisonPanel1.Controls.Add(Me.txtFine)
         Me.PoisonPanel1.Controls.Add(Me.txtDueDate)
         Me.PoisonPanel1.Controls.Add(Me.txtCustName)
-        Me.PoisonPanel1.Controls.Add(Me.txtCarId)
+        Me.PoisonPanel1.Controls.Add(Me.txtRoomId)
         Me.PoisonPanel1.Controls.Add(Me.lblDelay)
         Me.PoisonPanel1.Controls.Add(Me.lblDate)
         Me.PoisonPanel1.Controls.Add(Me.lblCust)
-        Me.PoisonPanel1.Controls.Add(Me.lblCar)
+        Me.PoisonPanel1.Controls.Add(Me.lblRoom)
         Me.PoisonPanel1.Controls.Add(Me.PoisonLabel1)
         Me.PoisonPanel1.HorizontalScrollbarBarColor = True
         Me.PoisonPanel1.HorizontalScrollbarHighlightOnWheel = False
@@ -261,40 +261,40 @@ Partial Class FrmReturn
         Me.txtCustName.Size = New System.Drawing.Size(200, 43)
         Me.txtCustName.TabIndex = 8
         Me.txtCustName.UseSelectable = True
-        Me.txtCustName.WaterMark = "Customer name"
+        Me.txtCustName.WaterMark = "Guest name"
         Me.txtCustName.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.txtCustName.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
-        'txtCarId
+        'txtRoomId
         '
         '
         '
         '
-        Me.txtCarId.CustomButton.Image = Nothing
-        Me.txtCarId.CustomButton.Location = New System.Drawing.Point(158, 1)
-        Me.txtCarId.CustomButton.Name = ""
-        Me.txtCarId.CustomButton.Size = New System.Drawing.Size(41, 41)
-        Me.txtCarId.CustomButton.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Blue
-        Me.txtCarId.CustomButton.TabIndex = 1
-        Me.txtCarId.CustomButton.Theme = ReaLTaiizor.[Enum].Poison.ThemeStyle.Light
-        Me.txtCarId.CustomButton.UseSelectable = True
-        Me.txtCarId.CustomButton.Visible = False
-        Me.txtCarId.Lines = New String(-1) {}
-        Me.txtCarId.Location = New System.Drawing.Point(145, 60)
-        Me.txtCarId.MaxLength = 32767
-        Me.txtCarId.Name = "txtCarId"
-        Me.txtCarId.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtCarId.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.txtCarId.SelectedText = ""
-        Me.txtCarId.SelectionLength = 0
-        Me.txtCarId.SelectionStart = 0
-        Me.txtCarId.ShortcutsEnabled = True
-        Me.txtCarId.Size = New System.Drawing.Size(200, 43)
-        Me.txtCarId.TabIndex = 7
-        Me.txtCarId.UseSelectable = True
-        Me.txtCarId.WaterMark = "Car registration"
-        Me.txtCarId.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.txtCarId.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
+        Me.txtRoomId.CustomButton.Image = Nothing
+        Me.txtRoomId.CustomButton.Location = New System.Drawing.Point(158, 1)
+        Me.txtRoomId.CustomButton.Name = ""
+        Me.txtRoomId.CustomButton.Size = New System.Drawing.Size(41, 41)
+        Me.txtRoomId.CustomButton.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Blue
+        Me.txtRoomId.CustomButton.TabIndex = 1
+        Me.txtRoomId.CustomButton.Theme = ReaLTaiizor.[Enum].Poison.ThemeStyle.Light
+        Me.txtRoomId.CustomButton.UseSelectable = True
+        Me.txtRoomId.CustomButton.Visible = False
+        Me.txtRoomId.Lines = New String(-1) {}
+        Me.txtRoomId.Location = New System.Drawing.Point(145, 60)
+        Me.txtRoomId.MaxLength = 32767
+        Me.txtRoomId.Name = "txtRoomId"
+        Me.txtRoomId.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtRoomId.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtRoomId.SelectedText = ""
+        Me.txtRoomId.SelectionLength = 0
+        Me.txtRoomId.SelectionStart = 0
+        Me.txtRoomId.ShortcutsEnabled = True
+        Me.txtRoomId.Size = New System.Drawing.Size(200, 43)
+        Me.txtRoomId.TabIndex = 7
+        Me.txtRoomId.UseSelectable = True
+        Me.txtRoomId.WaterMark = "Room registration"
+        Me.txtRoomId.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.txtRoomId.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'lblDelay
         '
@@ -321,16 +321,16 @@ Partial Class FrmReturn
         Me.lblCust.Name = "lblCust"
         Me.lblCust.Size = New System.Drawing.Size(94, 19)
         Me.lblCust.TabIndex = 4
-        Me.lblCust.Text = "👤 Customer:"
+        Me.lblCust.Text = "👤 Guest:"
         '
-        'lblCar
+        'lblRoom
         '
-        Me.lblCar.AutoSize = True
-        Me.lblCar.Location = New System.Drawing.Point(40, 70)
-        Me.lblCar.Name = "lblCar"
-        Me.lblCar.Size = New System.Drawing.Size(97, 19)
-        Me.lblCar.TabIndex = 3
-        Me.lblCar.Text = "🚗 Car Reg #:"
+        Me.lblRoom.AutoSize = True
+        Me.lblRoom.Location = New System.Drawing.Point(40, 70)
+        Me.lblRoom.Name = "lblRoom"
+        Me.lblRoom.Size = New System.Drawing.Size(97, 19)
+        Me.lblRoom.TabIndex = 3
+        Me.lblRoom.Text = "🚗 Room Reg #:"
         '
         'PoisonLabel1
         '
@@ -367,7 +367,7 @@ Partial Class FrmReturn
         Me.lblStatus.Name = "lblStatus"
         Me.lblStatus.Size = New System.Drawing.Size(120, 15)
         Me.lblStatus.TabIndex = 3
-        Me.lblStatus.Text = "Total Rented Cars: 0"
+        Me.lblStatus.Text = "Total Rented Rooms: 0"
         '
         'txtSearch
         '
@@ -396,7 +396,7 @@ Partial Class FrmReturn
         Me.txtSearch.Size = New System.Drawing.Size(416, 23)
         Me.txtSearch.TabIndex = 2
         Me.txtSearch.UseSelectable = True
-        Me.txtSearch.WaterMark = "Search by car registration or customer name..."
+        Me.txtSearch.WaterMark = "Search by Room registration or Guest name..."
         Me.txtSearch.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.txtSearch.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
@@ -421,7 +421,7 @@ Partial Class FrmReturn
         Me.MinimumSize = New System.Drawing.Size(860, 580)
         Me.Name = "FrmReturn"
         Me.Padding = New System.Windows.Forms.Padding(20, 70, 20, 20)
-        Me.Text = "CAR RETURN MANAGEMENT"
+        Me.Text = "Room RETURN MANAGEMENT"
         CType(Me.dgvRented, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PoisonPanel1.ResumeLayout(False)
         Me.PoisonPanel1.PerformLayout()
@@ -433,12 +433,12 @@ Partial Class FrmReturn
 
     Friend WithEvents dgvRented As ReaLTaiizor.Controls.PoisonDataGridView
     Friend WithEvents PoisonPanel1 As ReaLTaiizor.Controls.PoisonPanel
-    Friend WithEvents lblCar As ReaLTaiizor.Controls.PoisonLabel
+    Friend WithEvents lblRoom As ReaLTaiizor.Controls.PoisonLabel
     Friend WithEvents PoisonLabel1 As ReaLTaiizor.Controls.PoisonLabel
     Friend WithEvents lblCust As ReaLTaiizor.Controls.PoisonLabel
     Friend WithEvents lblDate As ReaLTaiizor.Controls.PoisonLabel
     Friend WithEvents lblDelay As ReaLTaiizor.Controls.PoisonLabel
-    Friend WithEvents txtCarId As ReaLTaiizor.Controls.PoisonTextBox
+    Friend WithEvents txtRoomId As ReaLTaiizor.Controls.PoisonTextBox
     Friend WithEvents txtCustName As ReaLTaiizor.Controls.PoisonTextBox
     Friend WithEvents txtDueDate As ReaLTaiizor.Controls.PoisonTextBox
     Friend WithEvents txtFine As ReaLTaiizor.Controls.PoisonTextBox

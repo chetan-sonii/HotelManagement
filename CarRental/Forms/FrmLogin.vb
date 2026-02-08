@@ -55,16 +55,16 @@ Public Class FrmLogin
                 Dim f As New FrmMain()
                 f.Show()
                 Me.Hide()
-                Return ' Stop here so we don't check customers
+                Return ' Stop here so we don't check Guests
             End If
 
-            ' 2. CHECK CUSTOMER LOGIN (Table: tbl_customers)
+            ' 2. CHECK Guest LOGIN (Table: tbl_guests)
             ' FIX: We now check the 'email' column instead of 'cust_name'
-            Dim queryCust As String = "SELECT * FROM tbl_customers WHERE email='" & txtUser.Text & "' AND password='" & txtPass.Text & "'"
+            Dim queryCust As String = "SELECT * FROM tbl_guests WHERE email='" & txtUser.Text & "' AND password='" & txtPass.Text & "'"
             Dim dtCust As DataTable = DatabaseConnection.RunQuery(queryCust)
 
             If dtCust.Rows.Count > 0 Then
-                ' CUSTOMER FOUND
+                ' Guest FOUND
                 UserSession.CurrentUserID = Convert.ToInt32(dtCust.Rows(0)("cust_id"))
                 UserSession.CurrentUserName = dtCust.Rows(0)("cust_name").ToString()
 

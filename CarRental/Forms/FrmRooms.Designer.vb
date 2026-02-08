@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class FrmCars
+Partial Class FrmRooms
     Inherits ReaLTaiizor.Forms.PoisonForm
 
     'Form overrides dispose to clean up the component list.
@@ -27,7 +27,7 @@ Partial Class FrmCars
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PoisonStyleManager1 = New ReaLTaiizor.Manager.PoisonStyleManager(Me.components)
-        Me.dgvCars = New ReaLTaiizor.Controls.PoisonDataGridView()
+        Me.dgvRooms = New ReaLTaiizor.Controls.PoisonDataGridView()
         Me.txtRegNo = New ReaLTaiizor.Controls.PoisonTextBox()
         Me.txtBrand = New ReaLTaiizor.Controls.PoisonTextBox()
         Me.txtModel = New ReaLTaiizor.Controls.PoisonTextBox()
@@ -47,15 +47,15 @@ Partial Class FrmCars
         Me.PoisonLabel6 = New ReaLTaiizor.Controls.PoisonLabel()
         Me.txtSearch = New ReaLTaiizor.Controls.PoisonTextBox()
         Me.PoisonLabel7 = New ReaLTaiizor.Controls.PoisonLabel()
-        Me.lblTotalCars = New ReaLTaiizor.Controls.PoisonLabel()
-        Me.lblAvailableCars = New ReaLTaiizor.Controls.PoisonLabel()
+        Me.lblTotalRooms = New ReaLTaiizor.Controls.PoisonLabel()
+        Me.lblAvailableRooms = New ReaLTaiizor.Controls.PoisonLabel()
         Me.PoisonPanel1 = New ReaLTaiizor.Controls.PoisonPanel()
         Me.PoisonPanel2 = New ReaLTaiizor.Controls.PoisonPanel()
         Me.PoisonPanel3 = New ReaLTaiizor.Controls.PoisonPanel()
         Me.PoisonTile1 = New ReaLTaiizor.Controls.PoisonTile()
         Me.PoisonTile2 = New ReaLTaiizor.Controls.PoisonTile()
         CType(Me.PoisonStyleManager1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dgvCars, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvRooms, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PoisonPanel1.SuspendLayout()
         Me.PoisonPanel2.SuspendLayout()
         Me.PoisonPanel3.SuspendLayout()
@@ -65,15 +65,15 @@ Partial Class FrmCars
         '
         Me.PoisonStyleManager1.Owner = Me
         '
-        'dgvCars
+        'dgvRooms
         '
-        Me.dgvCars.AllowUserToAddRows = False
-        Me.dgvCars.AllowUserToDeleteRows = False
-        Me.dgvCars.AllowUserToResizeRows = False
-        Me.dgvCars.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dgvCars.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.dgvCars.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
-        Me.dgvCars.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.dgvRooms.AllowUserToAddRows = False
+        Me.dgvRooms.AllowUserToDeleteRows = False
+        Me.dgvRooms.AllowUserToResizeRows = False
+        Me.dgvRooms.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.dgvRooms.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.dgvRooms.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
+        Me.dgvRooms.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
@@ -81,9 +81,9 @@ Partial Class FrmCars
         DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvCars.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
-        Me.dgvCars.ColumnHeadersHeight = 35
-        Me.dgvCars.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.dgvRooms.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.dgvRooms.ColumnHeadersHeight = 35
+        Me.dgvRooms.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
@@ -91,16 +91,16 @@ Partial Class FrmCars
         DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvCars.DefaultCellStyle = DataGridViewCellStyle2
-        Me.dgvCars.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dgvCars.EnableHeadersVisualStyles = False
-        Me.dgvCars.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        Me.dgvCars.GridColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dgvCars.Location = New System.Drawing.Point(0, 0)
-        Me.dgvCars.MultiSelect = False
-        Me.dgvCars.Name = "dgvCars"
-        Me.dgvCars.ReadOnly = True
-        Me.dgvCars.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.dgvRooms.DefaultCellStyle = DataGridViewCellStyle2
+        Me.dgvRooms.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgvRooms.EnableHeadersVisualStyles = False
+        Me.dgvRooms.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        Me.dgvRooms.GridColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.dgvRooms.Location = New System.Drawing.Point(0, 0)
+        Me.dgvRooms.MultiSelect = False
+        Me.dgvRooms.Name = "dgvRooms"
+        Me.dgvRooms.ReadOnly = True
+        Me.dgvRooms.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
@@ -108,14 +108,14 @@ Partial Class FrmCars
         DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvCars.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
-        Me.dgvCars.RowHeadersVisible = False
-        Me.dgvCars.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
-        Me.dgvCars.RowTemplate.Height = 30
-        Me.dgvCars.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvCars.Size = New System.Drawing.Size(670, 410)
-        Me.dgvCars.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Blue
-        Me.dgvCars.TabIndex = 0
+        Me.dgvRooms.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
+        Me.dgvRooms.RowHeadersVisible = False
+        Me.dgvRooms.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
+        Me.dgvRooms.RowTemplate.Height = 30
+        Me.dgvRooms.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvRooms.Size = New System.Drawing.Size(670, 410)
+        Me.dgvRooms.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Blue
+        Me.dgvRooms.TabIndex = 0
         '
         'txtRegNo
         '
@@ -263,7 +263,7 @@ Partial Class FrmCars
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(105, 35)
         Me.btnAdd.TabIndex = 6
-        Me.btnAdd.Text = "➕ Add Car"
+        Me.btnAdd.Text = "➕ Add Room"
         Me.btnAdd.UseSelectable = True
         '
         'btnEdit
@@ -364,7 +364,7 @@ Partial Class FrmCars
         Me.PoisonLabel6.Name = "PoisonLabel6"
         Me.PoisonLabel6.Size = New System.Drawing.Size(111, 19)
         Me.PoisonLabel6.TabIndex = 15
-        Me.PoisonLabel6.Text = "🚗 Car Inventory"
+        Me.PoisonLabel6.Text = "🚗 Room Inventory"
         Me.PoisonLabel6.UseCustomForeColor = True
         '
         'txtSearch
@@ -408,23 +408,23 @@ Partial Class FrmCars
         Me.PoisonLabel7.TabIndex = 17
         Me.PoisonLabel7.Text = "🔍 Search"
         '
-        'lblTotalCars
+        'lblTotalRooms
         '
-        Me.lblTotalCars.AutoSize = True
-        Me.lblTotalCars.Location = New System.Drawing.Point(10, 25)
-        Me.lblTotalCars.Name = "lblTotalCars"
-        Me.lblTotalCars.Size = New System.Drawing.Size(14, 15)
-        Me.lblTotalCars.TabIndex = 18
-        Me.lblTotalCars.Text = "0"
+        Me.lblTotalRooms.AutoSize = True
+        Me.lblTotalRooms.Location = New System.Drawing.Point(10, 25)
+        Me.lblTotalRooms.Name = "lblTotalRooms"
+        Me.lblTotalRooms.Size = New System.Drawing.Size(14, 15)
+        Me.lblTotalRooms.TabIndex = 18
+        Me.lblTotalRooms.Text = "0"
         '
-        'lblAvailableCars
+        'lblAvailableRooms
         '
-        Me.lblAvailableCars.AutoSize = True
-        Me.lblAvailableCars.Location = New System.Drawing.Point(10, 25)
-        Me.lblAvailableCars.Name = "lblAvailableCars"
-        Me.lblAvailableCars.Size = New System.Drawing.Size(16, 19)
-        Me.lblAvailableCars.TabIndex = 19
-        Me.lblAvailableCars.Text = "0"
+        Me.lblAvailableRooms.AutoSize = True
+        Me.lblAvailableRooms.Location = New System.Drawing.Point(10, 25)
+        Me.lblAvailableRooms.Name = "lblAvailableRooms"
+        Me.lblAvailableRooms.Size = New System.Drawing.Size(16, 19)
+        Me.lblAvailableRooms.TabIndex = 19
+        Me.lblAvailableRooms.Text = "0"
         '
         'PoisonPanel1
         '
@@ -459,7 +459,7 @@ Partial Class FrmCars
         'PoisonPanel2
         '
         Me.PoisonPanel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PoisonPanel2.Controls.Add(Me.dgvCars)
+        Me.PoisonPanel2.Controls.Add(Me.dgvRooms)
         Me.PoisonPanel2.HorizontalScrollbarBarColor = True
         Me.PoisonPanel2.HorizontalScrollbarHighlightOnWheel = False
         Me.PoisonPanel2.HorizontalScrollbarSize = 10
@@ -474,7 +474,7 @@ Partial Class FrmCars
         'PoisonPanel3
         '
         Me.PoisonPanel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PoisonPanel3.Controls.Add(Me.lblAvailableCars)
+        Me.PoisonPanel3.Controls.Add(Me.lblAvailableRooms)
         Me.PoisonPanel3.HorizontalScrollbarBarColor = True
         Me.PoisonPanel3.HorizontalScrollbarHighlightOnWheel = False
         Me.PoisonPanel3.HorizontalScrollbarSize = 10
@@ -493,7 +493,7 @@ Partial Class FrmCars
         Me.PoisonTile1.Name = "PoisonTile1"
         Me.PoisonTile1.Size = New System.Drawing.Size(200, 50)
         Me.PoisonTile1.TabIndex = 23
-        Me.PoisonTile1.Text = "Total Cars"
+        Me.PoisonTile1.Text = "Total Rooms"
         Me.PoisonTile1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.PoisonTile1.UseSelectable = True
         '
@@ -504,11 +504,11 @@ Partial Class FrmCars
         Me.PoisonTile2.Name = "PoisonTile2"
         Me.PoisonTile2.Size = New System.Drawing.Size(200, 50)
         Me.PoisonTile2.TabIndex = 24
-        Me.PoisonTile2.Text = "Available Cars"
+        Me.PoisonTile2.Text = "Available Rooms"
         Me.PoisonTile2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.PoisonTile2.UseSelectable = True
         '
-        'FrmCars
+        'FrmRooms
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -521,12 +521,12 @@ Partial Class FrmCars
         Me.Controls.Add(Me.PoisonLabel7)
         Me.Controls.Add(Me.txtSearch)
         Me.Controls.Add(Me.PoisonLabel6)
-        Me.Name = "FrmCars"
+        Me.Name = "FrmRooms"
         Me.Resizable = False
         Me.ShadowType = ReaLTaiizor.[Enum].Poison.FormShadowType.AeroShadow
-        Me.Text = "Car Rental Management System"
+        Me.Text = "Room Rental Management System"
         CType(Me.PoisonStyleManager1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dgvCars, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvRooms, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PoisonPanel1.ResumeLayout(False)
         Me.PoisonPanel1.PerformLayout()
         Me.PoisonPanel2.ResumeLayout(False)
@@ -538,7 +538,7 @@ Partial Class FrmCars
     End Sub
 
     Friend WithEvents PoisonStyleManager1 As ReaLTaiizor.Manager.PoisonStyleManager
-    Friend WithEvents dgvCars As ReaLTaiizor.Controls.PoisonDataGridView
+    Friend WithEvents dgvRooms As ReaLTaiizor.Controls.PoisonDataGridView
     Friend WithEvents btnBack As ReaLTaiizor.Controls.PoisonButton
     Friend WithEvents btnDelete As ReaLTaiizor.Controls.PoisonButton
     Friend WithEvents btnEdit As ReaLTaiizor.Controls.PoisonButton
@@ -558,8 +558,8 @@ Partial Class FrmCars
     Friend WithEvents PoisonLabel6 As ReaLTaiizor.Controls.PoisonLabel
     Friend WithEvents txtSearch As ReaLTaiizor.Controls.PoisonTextBox
     Friend WithEvents PoisonLabel7 As ReaLTaiizor.Controls.PoisonLabel
-    Friend WithEvents lblTotalCars As ReaLTaiizor.Controls.PoisonLabel
-    Friend WithEvents lblAvailableCars As ReaLTaiizor.Controls.PoisonLabel
+    Friend WithEvents lblTotalRooms As ReaLTaiizor.Controls.PoisonLabel
+    Friend WithEvents lblAvailableRooms As ReaLTaiizor.Controls.PoisonLabel
     Friend WithEvents PoisonPanel1 As ReaLTaiizor.Controls.PoisonPanel
     Friend WithEvents PoisonPanel2 As ReaLTaiizor.Controls.PoisonPanel
     Friend WithEvents PoisonPanel3 As ReaLTaiizor.Controls.PoisonPanel

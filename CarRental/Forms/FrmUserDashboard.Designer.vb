@@ -33,11 +33,11 @@ Partial Class FrmUserDashboard
         Me.PoisonTabControl1 = New ReaLTaiizor.Controls.PoisonTabControl()
         Me.tabRent = New ReaLTaiizor.Controls.PoisonTabPage()
         Me.PoisonPanel1 = New ReaLTaiizor.Controls.PoisonPanel()
-        Me.lblCarDetails = New ReaLTaiizor.Controls.PoisonLabel()
-        Me.lblSelectedCar = New ReaLTaiizor.Controls.PoisonLabel()
+        Me.lblRoomDetails = New ReaLTaiizor.Controls.PoisonLabel()
+        Me.lblSelectedRoom = New ReaLTaiizor.Controls.PoisonLabel()
         Me.PoisonLabel3 = New ReaLTaiizor.Controls.PoisonLabel()
-        Me.btnRefreshCars = New ReaLTaiizor.Controls.PoisonButton()
-        Me.txtSearchCar = New ReaLTaiizor.Controls.PoisonTextBox()
+        Me.btnRefreshRooms = New ReaLTaiizor.Controls.PoisonButton()
+        Me.txtSearchRoom = New ReaLTaiizor.Controls.PoisonTextBox()
         Me.PoisonLabel1 = New ReaLTaiizor.Controls.PoisonLabel()
         Me.btnBook = New ReaLTaiizor.Controls.PoisonButton()
         Me.dgvAvailable = New ReaLTaiizor.Controls.PoisonDataGridView()
@@ -92,7 +92,7 @@ Partial Class FrmUserDashboard
         Me.tabRent.Name = "tabRent"
         Me.tabRent.Size = New System.Drawing.Size(1147, 538)
         Me.tabRent.TabIndex = 0
-        Me.tabRent.Text = "   Browse Available Cars   "
+        Me.tabRent.Text = "   Browse Available Rooms   "
         Me.tabRent.VerticalScrollbarBarColor = True
         Me.tabRent.VerticalScrollbarHighlightOnWheel = False
         Me.tabRent.VerticalScrollbarSize = 10
@@ -100,11 +100,11 @@ Partial Class FrmUserDashboard
         'PoisonPanel1
         '
         Me.PoisonPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PoisonPanel1.Controls.Add(Me.lblCarDetails)
-        Me.PoisonPanel1.Controls.Add(Me.lblSelectedCar)
+        Me.PoisonPanel1.Controls.Add(Me.lblRoomDetails)
+        Me.PoisonPanel1.Controls.Add(Me.lblSelectedRoom)
         Me.PoisonPanel1.Controls.Add(Me.PoisonLabel3)
-        Me.PoisonPanel1.Controls.Add(Me.btnRefreshCars)
-        Me.PoisonPanel1.Controls.Add(Me.txtSearchCar)
+        Me.PoisonPanel1.Controls.Add(Me.btnRefreshRooms)
+        Me.PoisonPanel1.Controls.Add(Me.txtSearchRoom)
         Me.PoisonPanel1.Controls.Add(Me.PoisonLabel1)
         Me.PoisonPanel1.Controls.Add(Me.btnBook)
         Me.PoisonPanel1.HorizontalScrollbarBarColor = True
@@ -118,28 +118,28 @@ Partial Class FrmUserDashboard
         Me.PoisonPanel1.VerticalScrollbarHighlightOnWheel = False
         Me.PoisonPanel1.VerticalScrollbarSize = 10
         '
-        'lblCarDetails
+        'lblRoomDetails
         '
-        Me.lblCarDetails.AutoSize = True
-        Me.lblCarDetails.Location = New System.Drawing.Point(15, 220)
-        Me.lblCarDetails.MaximumSize = New System.Drawing.Size(250, 0)
-        Me.lblCarDetails.Name = "lblCarDetails"
-        Me.lblCarDetails.Size = New System.Drawing.Size(238, 57)
-        Me.lblCarDetails.TabIndex = 8
-        Me.lblCarDetails.Text = "Select a car from the grid to view" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "detailed information including:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "• Price per day" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "• Availabili" &
+        Me.lblRoomDetails.AutoSize = True
+        Me.lblRoomDetails.Location = New System.Drawing.Point(15, 220)
+        Me.lblRoomDetails.MaximumSize = New System.Drawing.Size(250, 0)
+        Me.lblRoomDetails.Name = "lblRoomDetails"
+        Me.lblRoomDetails.Size = New System.Drawing.Size(238, 57)
+        Me.lblRoomDetails.TabIndex = 8
+        Me.lblRoomDetails.Text = "Select a Room from the grid to view" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "detailed information including:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "• Price per day" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "• Availabili" &
     "ty status"
-        Me.lblCarDetails.WrapToLine = True
+        Me.lblRoomDetails.WrapToLine = True
         '
-        'lblSelectedCar
+        'lblSelectedRoom
         '
-        Me.lblSelectedCar.AutoSize = True
+        Me.lblSelectedRoom.AutoSize = True
 
-        Me.lblSelectedCar.Location = New System.Drawing.Point(15, 190)
-        Me.lblSelectedCar.Name = "lblSelectedCar"
-        Me.lblSelectedCar.Size = New System.Drawing.Size(111, 19)
-        Me.lblSelectedCar.TabIndex = 7
-        Me.lblSelectedCar.Text = "No car selected"
-        Me.lblSelectedCar.UseStyleColors = True
+        Me.lblSelectedRoom.Location = New System.Drawing.Point(15, 190)
+        Me.lblSelectedRoom.Name = "lblSelectedRoom"
+        Me.lblSelectedRoom.Size = New System.Drawing.Size(111, 19)
+        Me.lblSelectedRoom.TabIndex = 7
+        Me.lblSelectedRoom.Text = "No Room selected"
+        Me.lblSelectedRoom.UseStyleColors = True
         '
         'PoisonLabel3
         '
@@ -151,46 +151,46 @@ Partial Class FrmUserDashboard
         Me.PoisonLabel3.TabIndex = 6
         Me.PoisonLabel3.Text = "Selected Vehicle:"
         '
-        'btnRefreshCars
+        'btnRefreshRooms
         '
-        Me.btnRefreshCars.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnRefreshCars.Location = New System.Drawing.Point(15, 110)
-        Me.btnRefreshCars.Name = "btnRefreshCars"
-        Me.btnRefreshCars.Size = New System.Drawing.Size(250, 35)
-        Me.btnRefreshCars.TabIndex = 5
-        Me.btnRefreshCars.Text = "🔄 Refresh Car List"
-        Me.btnRefreshCars.UseSelectable = True
+        Me.btnRefreshRooms.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnRefreshRooms.Location = New System.Drawing.Point(15, 110)
+        Me.btnRefreshRooms.Name = "btnRefreshRooms"
+        Me.btnRefreshRooms.Size = New System.Drawing.Size(250, 35)
+        Me.btnRefreshRooms.TabIndex = 5
+        Me.btnRefreshRooms.Text = "🔄 Refresh Room List"
+        Me.btnRefreshRooms.UseSelectable = True
         '
-        'txtSearchCar
-        '
-        '
+        'txtSearchRoom
         '
         '
-        Me.txtSearchCar.CustomButton.Image = Nothing
-        Me.txtSearchCar.CustomButton.Location = New System.Drawing.Point(224, 1)
-        Me.txtSearchCar.CustomButton.Name = ""
-        Me.txtSearchCar.CustomButton.Size = New System.Drawing.Size(23, 23)
-        Me.txtSearchCar.CustomButton.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Blue
-        Me.txtSearchCar.CustomButton.TabIndex = 1
-        Me.txtSearchCar.CustomButton.Theme = ReaLTaiizor.[Enum].Poison.ThemeStyle.Light
-        Me.txtSearchCar.CustomButton.UseSelectable = True
-        Me.txtSearchCar.CustomButton.Visible = False
-        Me.txtSearchCar.Lines = New String(-1) {}
-        Me.txtSearchCar.Location = New System.Drawing.Point(15, 70)
-        Me.txtSearchCar.MaxLength = 32767
-        Me.txtSearchCar.Name = "txtSearchCar"
-        Me.txtSearchCar.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtSearchCar.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.txtSearchCar.SelectedText = ""
-        Me.txtSearchCar.SelectionLength = 0
-        Me.txtSearchCar.SelectionStart = 0
-        Me.txtSearchCar.ShortcutsEnabled = True
-        Me.txtSearchCar.Size = New System.Drawing.Size(248, 25)
-        Me.txtSearchCar.TabIndex = 4
-        Me.txtSearchCar.UseSelectable = True
-        Me.txtSearchCar.WaterMark = "Search by brand, model, type..."
-        Me.txtSearchCar.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.txtSearchCar.WaterMarkFont = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        '
+        '
+        Me.txtSearchRoom.CustomButton.Image = Nothing
+        Me.txtSearchRoom.CustomButton.Location = New System.Drawing.Point(224, 1)
+        Me.txtSearchRoom.CustomButton.Name = ""
+        Me.txtSearchRoom.CustomButton.Size = New System.Drawing.Size(23, 23)
+        Me.txtSearchRoom.CustomButton.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Blue
+        Me.txtSearchRoom.CustomButton.TabIndex = 1
+        Me.txtSearchRoom.CustomButton.Theme = ReaLTaiizor.[Enum].Poison.ThemeStyle.Light
+        Me.txtSearchRoom.CustomButton.UseSelectable = True
+        Me.txtSearchRoom.CustomButton.Visible = False
+        Me.txtSearchRoom.Lines = New String(-1) {}
+        Me.txtSearchRoom.Location = New System.Drawing.Point(15, 70)
+        Me.txtSearchRoom.MaxLength = 32767
+        Me.txtSearchRoom.Name = "txtSearchRoom"
+        Me.txtSearchRoom.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtSearchRoom.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtSearchRoom.SelectedText = ""
+        Me.txtSearchRoom.SelectionLength = 0
+        Me.txtSearchRoom.SelectionStart = 0
+        Me.txtSearchRoom.ShortcutsEnabled = True
+        Me.txtSearchRoom.Size = New System.Drawing.Size(248, 25)
+        Me.txtSearchRoom.TabIndex = 4
+        Me.txtSearchRoom.UseSelectable = True
+        Me.txtSearchRoom.WaterMark = "Search by brand, model, type..."
+        Me.txtSearchRoom.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.txtSearchRoom.WaterMarkFont = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         '
         'PoisonLabel1
         '
@@ -200,7 +200,7 @@ Partial Class FrmUserDashboard
         Me.PoisonLabel1.Name = "PoisonLabel1"
         Me.PoisonLabel1.Size = New System.Drawing.Size(107, 25)
         Me.PoisonLabel1.TabIndex = 1
-        Me.PoisonLabel1.Text = "Search Car"
+        Me.PoisonLabel1.Text = "Search Room"
         Me.PoisonLabel1.UseStyleColors = True
         '
         'btnBook
@@ -211,7 +211,7 @@ Partial Class FrmUserDashboard
         Me.btnBook.Name = "btnBook"
         Me.btnBook.Size = New System.Drawing.Size(250, 40)
         Me.btnBook.TabIndex = 3
-        Me.btnBook.Text = "📅 BOOK SELECTED CAR"
+        Me.btnBook.Text = "📅 BOOK SELECTED Room"
         Me.btnBook.UseSelectable = True
         '
         'dgvAvailable
@@ -360,7 +360,7 @@ Partial Class FrmUserDashboard
         Me.btnReturn.Name = "btnReturn"
         Me.btnReturn.Size = New System.Drawing.Size(250, 40)
         Me.btnReturn.TabIndex = 3
-        Me.btnReturn.Text = "🚗 RETURN SELECTED CAR"
+        Me.btnReturn.Text = "🚗 RETURN SELECTED Room"
         Me.btnReturn.UseSelectable = True
         '
         'dgvMyRentals
@@ -419,7 +419,7 @@ Partial Class FrmUserDashboard
         Me.lblWelcome.Name = "lblWelcome"
         Me.lblWelcome.Size = New System.Drawing.Size(244, 25)
         Me.lblWelcome.TabIndex = 1
-        Me.lblWelcome.Text = "Welcome to Car Rental!"
+        Me.lblWelcome.Text = "Welcome to Room Rental!"
         Me.lblWelcome.UseStyleColors = True
         '
         'btnLogout
@@ -455,7 +455,7 @@ Partial Class FrmUserDashboard
         Me.Resizable = False
         Me.ShadowType = ReaLTaiizor.[Enum].Poison.FormShadowType.AeroShadow
         Me.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Green
-        Me.Text = "User Dashboard - Car Rental System"
+        Me.Text = "User Dashboard - Room Rental System"
         CType(Me.PoisonStyleManager1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PoisonTabControl1.ResumeLayout(False)
         Me.tabRent.ResumeLayout(False)
@@ -485,12 +485,12 @@ Partial Class FrmUserDashboard
     Friend WithEvents PoisonLabel2 As ReaLTaiizor.Controls.PoisonLabel
     Friend WithEvents PoisonPanel1 As ReaLTaiizor.Controls.PoisonPanel
     Friend WithEvents PoisonPanel2 As ReaLTaiizor.Controls.PoisonPanel
-    Friend WithEvents txtSearchCar As ReaLTaiizor.Controls.PoisonTextBox
-    Friend WithEvents btnRefreshCars As ReaLTaiizor.Controls.PoisonButton
+    Friend WithEvents txtSearchRoom As ReaLTaiizor.Controls.PoisonTextBox
+    Friend WithEvents btnRefreshRooms As ReaLTaiizor.Controls.PoisonButton
     Friend WithEvents btnRefreshRentals As ReaLTaiizor.Controls.PoisonButton
     Friend WithEvents PoisonLabel3 As ReaLTaiizor.Controls.PoisonLabel
-    Friend WithEvents lblSelectedCar As ReaLTaiizor.Controls.PoisonLabel
-    Friend WithEvents lblCarDetails As ReaLTaiizor.Controls.PoisonLabel
+    Friend WithEvents lblSelectedRoom As ReaLTaiizor.Controls.PoisonLabel
+    Friend WithEvents lblRoomDetails As ReaLTaiizor.Controls.PoisonLabel
     Friend WithEvents PoisonLabel5 As ReaLTaiizor.Controls.PoisonLabel
     Friend WithEvents lblTotalCost As ReaLTaiizor.Controls.PoisonLabel
     Friend WithEvents lblRentalInfo As ReaLTaiizor.Controls.PoisonLabel

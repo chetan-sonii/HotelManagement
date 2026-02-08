@@ -1,5 +1,5 @@
 <Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class FrmCustomers
+Partial Class FrmGuests
     Inherits ReaLTaiizor.Forms.PoisonForm
 
     'Form overrides dispose to clean up the component list.
@@ -27,7 +27,7 @@ Partial Class FrmCustomers
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PoisonStyleManager1 = New ReaLTaiizor.Manager.PoisonStyleManager(Me.components)
-        Me.dgvCustomers = New ReaLTaiizor.Controls.PoisonDataGridView()
+        Me.dgvGuests = New ReaLTaiizor.Controls.PoisonDataGridView()
         Me.txtId = New ReaLTaiizor.Controls.PoisonTextBox()
         Me.txtName = New ReaLTaiizor.Controls.PoisonTextBox()
         Me.txtAddress = New ReaLTaiizor.Controls.PoisonTextBox()
@@ -52,7 +52,7 @@ Partial Class FrmCustomers
         Me.txtEmail = New ReaLTaiizor.Controls.PoisonTextBox()
         Me.PoisonLabel8 = New ReaLTaiizor.Controls.PoisonLabel()
         CType(Me.PoisonStyleManager1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dgvCustomers, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvGuests, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PoisonPanel1.SuspendLayout()
         Me.PoisonPanel2.SuspendLayout()
         Me.SuspendLayout()
@@ -61,15 +61,15 @@ Partial Class FrmCustomers
         '
         Me.PoisonStyleManager1.Owner = Me
         '
-        'dgvCustomers
+        'dgvGuests
         '
-        Me.dgvCustomers.AllowUserToAddRows = False
-        Me.dgvCustomers.AllowUserToDeleteRows = False
-        Me.dgvCustomers.AllowUserToResizeRows = False
-        Me.dgvCustomers.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dgvCustomers.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.dgvCustomers.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
-        Me.dgvCustomers.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.dgvGuests.AllowUserToAddRows = False
+        Me.dgvGuests.AllowUserToDeleteRows = False
+        Me.dgvGuests.AllowUserToResizeRows = False
+        Me.dgvGuests.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.dgvGuests.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.dgvGuests.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
+        Me.dgvGuests.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
@@ -77,9 +77,9 @@ Partial Class FrmCustomers
         DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvCustomers.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
-        Me.dgvCustomers.ColumnHeadersHeight = 35
-        Me.dgvCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.dgvGuests.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.dgvGuests.ColumnHeadersHeight = 35
+        Me.dgvGuests.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
@@ -87,16 +87,16 @@ Partial Class FrmCustomers
         DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvCustomers.DefaultCellStyle = DataGridViewCellStyle2
-        Me.dgvCustomers.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dgvCustomers.EnableHeadersVisualStyles = False
-        Me.dgvCustomers.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        Me.dgvCustomers.GridColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dgvCustomers.Location = New System.Drawing.Point(0, 0)
-        Me.dgvCustomers.MultiSelect = False
-        Me.dgvCustomers.Name = "dgvCustomers"
-        Me.dgvCustomers.ReadOnly = True
-        Me.dgvCustomers.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.dgvGuests.DefaultCellStyle = DataGridViewCellStyle2
+        Me.dgvGuests.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgvGuests.EnableHeadersVisualStyles = False
+        Me.dgvGuests.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        Me.dgvGuests.GridColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.dgvGuests.Location = New System.Drawing.Point(0, 0)
+        Me.dgvGuests.MultiSelect = False
+        Me.dgvGuests.Name = "dgvGuests"
+        Me.dgvGuests.ReadOnly = True
+        Me.dgvGuests.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
@@ -104,14 +104,14 @@ Partial Class FrmCustomers
         DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvCustomers.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
-        Me.dgvCustomers.RowHeadersVisible = False
-        Me.dgvCustomers.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
-        Me.dgvCustomers.RowTemplate.Height = 30
-        Me.dgvCustomers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvCustomers.Size = New System.Drawing.Size(670, 410)
-        Me.dgvCustomers.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Blue
-        Me.dgvCustomers.TabIndex = 0
+        Me.dgvGuests.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
+        Me.dgvGuests.RowHeadersVisible = False
+        Me.dgvGuests.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
+        Me.dgvGuests.RowTemplate.Height = 30
+        Me.dgvGuests.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvGuests.Size = New System.Drawing.Size(670, 410)
+        Me.dgvGuests.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Blue
+        Me.dgvGuests.TabIndex = 0
         '
         'txtId
         '
@@ -302,7 +302,7 @@ Partial Class FrmCustomers
         Me.PoisonLabel1.Name = "PoisonLabel1"
         Me.PoisonLabel1.Size = New System.Drawing.Size(81, 19)
         Me.PoisonLabel1.TabIndex = 12
-        Me.PoisonLabel1.Text = "Customer ID"
+        Me.PoisonLabel1.Text = "Guest ID"
         '
         'PoisonLabel2
         '
@@ -311,7 +311,7 @@ Partial Class FrmCustomers
         Me.PoisonLabel2.Name = "PoisonLabel2"
         Me.PoisonLabel2.Size = New System.Drawing.Size(102, 19)
         Me.PoisonLabel2.TabIndex = 13
-        Me.PoisonLabel2.Text = "Customer Name"
+        Me.PoisonLabel2.Text = "Guest Name"
         '
         'PoisonLabel3
         '
@@ -347,7 +347,7 @@ Partial Class FrmCustomers
         Me.PoisonLabel6.Name = "PoisonLabel6"
         Me.PoisonLabel6.Size = New System.Drawing.Size(185, 19)
         Me.PoisonLabel6.TabIndex = 17
-        Me.PoisonLabel6.Text = "👥 Customer Management"
+        Me.PoisonLabel6.Text = "👥 Guest Management"
         Me.PoisonLabel6.UseCustomForeColor = True
         Me.PoisonLabel6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
         '
@@ -425,7 +425,7 @@ Partial Class FrmCustomers
         'PoisonPanel2
         '
         Me.PoisonPanel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PoisonPanel2.Controls.Add(Me.dgvCustomers)
+        Me.PoisonPanel2.Controls.Add(Me.dgvGuests)
         Me.PoisonPanel2.HorizontalScrollbarBarColor = True
         Me.PoisonPanel2.HorizontalScrollbarHighlightOnWheel = False
         Me.PoisonPanel2.HorizontalScrollbarSize = 10
@@ -444,7 +444,7 @@ Partial Class FrmCustomers
         Me.PoisonTile1.Name = "PoisonTile1"
         Me.PoisonTile1.Size = New System.Drawing.Size(250, 50)
         Me.PoisonTile1.TabIndex = 22
-        Me.PoisonTile1.Text = "Total Customers: 0"
+        Me.PoisonTile1.Text = "Total Guests: 0"
         Me.PoisonTile1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.PoisonTile1.UseSelectable = True
         '
@@ -490,7 +490,7 @@ Partial Class FrmCustomers
         Me.PoisonLabel8.Text = "* Name and Phone are required"
         Me.PoisonLabel8.UseCustomForeColor = True
         '
-        'FrmCustomers
+        'FrmGuests
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -501,13 +501,13 @@ Partial Class FrmCustomers
         Me.Controls.Add(Me.PoisonLabel7)
         Me.Controls.Add(Me.txtSearch)
         Me.Controls.Add(Me.PoisonLabel6)
-        Me.Name = "FrmCustomers"
+        Me.Name = "FrmGuests"
         Me.Padding = New System.Windows.Forms.Padding(20, 60, 20, 20)
         Me.Resizable = False
         Me.ShadowType = ReaLTaiizor.[Enum].Poison.FormShadowType.AeroShadow
-        Me.Text = "Customer Management - Car Rental System"
+        Me.Text = "Guest Management - Room Rental System"
         CType(Me.PoisonStyleManager1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dgvCustomers, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvGuests, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PoisonPanel1.ResumeLayout(False)
         Me.PoisonPanel1.PerformLayout()
         Me.PoisonPanel2.ResumeLayout(False)
@@ -517,7 +517,7 @@ Partial Class FrmCustomers
     End Sub
 
     Friend WithEvents PoisonStyleManager1 As ReaLTaiizor.Manager.PoisonStyleManager
-    Friend WithEvents dgvCustomers As ReaLTaiizor.Controls.PoisonDataGridView
+    Friend WithEvents dgvGuests As ReaLTaiizor.Controls.PoisonDataGridView
     Friend WithEvents btnBack As ReaLTaiizor.Controls.PoisonButton
     Friend WithEvents btnClear As ReaLTaiizor.Controls.PoisonButton
     Friend WithEvents btnDelete As ReaLTaiizor.Controls.PoisonButton

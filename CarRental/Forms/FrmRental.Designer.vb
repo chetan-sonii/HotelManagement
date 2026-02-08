@@ -28,13 +28,13 @@ Partial Class FrmRental
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PoisonStyleManager1 = New ReaLTaiizor.Manager.PoisonStyleManager(Me.components)
         Me.dgvRentals = New ReaLTaiizor.Controls.PoisonDataGridView()
-        Me.lblCar = New ReaLTaiizor.Controls.PoisonLabel()
+        Me.lblRoom = New ReaLTaiizor.Controls.PoisonLabel()
         Me.lblDate = New ReaLTaiizor.Controls.PoisonLabel()
         Me.PoisonLabel3 = New ReaLTaiizor.Controls.PoisonLabel()
         Me.lblFee = New ReaLTaiizor.Controls.PoisonLabel()
         Me.lblName = New ReaLTaiizor.Controls.PoisonLabel()
         Me.lblReturn = New ReaLTaiizor.Controls.PoisonLabel()
-        Me.cbCar = New ReaLTaiizor.Controls.PoisonComboBox()
+        Me.cbRoom = New ReaLTaiizor.Controls.PoisonComboBox()
         Me.cbCust = New ReaLTaiizor.Controls.PoisonComboBox()
         Me.dtDate = New System.Windows.Forms.DateTimePicker()
         Me.dtReturn = New System.Windows.Forms.DateTimePicker()
@@ -95,14 +95,14 @@ Partial Class FrmRental
         Me.dgvRentals.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Blue
         Me.dgvRentals.TabIndex = 0
         '
-        'lblCar
+        'lblRoom
         '
-        Me.lblCar.AutoSize = True
-        Me.lblCar.Location = New System.Drawing.Point(38, 103)
-        Me.lblCar.Name = "lblCar"
-        Me.lblCar.Size = New System.Drawing.Size(72, 19)
-        Me.lblCar.TabIndex = 1
-        Me.lblCar.Text = "Select Car:"
+        Me.lblRoom.AutoSize = True
+        Me.lblRoom.Location = New System.Drawing.Point(38, 103)
+        Me.lblRoom.Name = "lblRoom"
+        Me.lblRoom.Size = New System.Drawing.Size(72, 19)
+        Me.lblRoom.TabIndex = 1
+        Me.lblRoom.Text = "Select Room:"
         '
         'lblDate
         '
@@ -120,7 +120,7 @@ Partial Class FrmRental
         Me.PoisonLabel3.Name = "PoisonLabel3"
         Me.PoisonLabel3.Size = New System.Drawing.Size(104, 19)
         Me.PoisonLabel3.TabIndex = 3
-        Me.PoisonLabel3.Text = "Select Customer"
+        Me.PoisonLabel3.Text = "Select Guest"
         '
         'lblFee
         '
@@ -138,7 +138,7 @@ Partial Class FrmRental
         Me.lblName.Name = "lblName"
         Me.lblName.Size = New System.Drawing.Size(113, 19)
         Me.lblName.TabIndex = 3
-        Me.lblName.Text = "Customer Name: "
+        Me.lblName.Text = "Guest Name: "
         '
         'lblReturn
         '
@@ -149,15 +149,15 @@ Partial Class FrmRental
         Me.lblReturn.TabIndex = 3
         Me.lblReturn.Text = "Return Date: "
         '
-        'cbCar
+        'cbRoom
         '
-        Me.cbCar.FormattingEnabled = True
-        Me.cbCar.ItemHeight = 23
-        Me.cbCar.Location = New System.Drawing.Point(23, 137)
-        Me.cbCar.Name = "cbCar"
-        Me.cbCar.Size = New System.Drawing.Size(121, 29)
-        Me.cbCar.TabIndex = 4
-        Me.cbCar.UseSelectable = True
+        Me.cbRoom.FormattingEnabled = True
+        Me.cbRoom.ItemHeight = 23
+        Me.cbRoom.Location = New System.Drawing.Point(23, 137)
+        Me.cbRoom.Name = "cbRoom"
+        Me.cbRoom.Size = New System.Drawing.Size(121, 29)
+        Me.cbRoom.TabIndex = 4
+        Me.cbRoom.UseSelectable = True
         '
         'cbCust
         '
@@ -221,13 +221,13 @@ Partial Class FrmRental
         Me.Controls.Add(Me.dtReturn)
         Me.Controls.Add(Me.dtDate)
         Me.Controls.Add(Me.cbCust)
-        Me.Controls.Add(Me.cbCar)
+        Me.Controls.Add(Me.cbRoom)
         Me.Controls.Add(Me.lblReturn)
         Me.Controls.Add(Me.lblName)
         Me.Controls.Add(Me.lblFee)
         Me.Controls.Add(Me.PoisonLabel3)
         Me.Controls.Add(Me.lblDate)
-        Me.Controls.Add(Me.lblCar)
+        Me.Controls.Add(Me.lblRoom)
         Me.Controls.Add(Me.dgvRentals)
         Me.Name = "FrmRental"
         Me.Text = "NEW RENTAL BOOKING"
@@ -245,12 +245,12 @@ Partial Class FrmRental
     Friend WithEvents lblFee As ReaLTaiizor.Controls.PoisonLabel
     Friend WithEvents PoisonLabel3 As ReaLTaiizor.Controls.PoisonLabel
     Friend WithEvents lblDate As ReaLTaiizor.Controls.PoisonLabel
-    Friend WithEvents lblCar As ReaLTaiizor.Controls.PoisonLabel
+    Friend WithEvents lblRoom As ReaLTaiizor.Controls.PoisonLabel
     Friend WithEvents btnBack As ReaLTaiizor.Controls.PoisonButton
     Friend WithEvents btnRent As ReaLTaiizor.Controls.PoisonButton
     Friend WithEvents btnCalculate As ReaLTaiizor.Controls.PoisonButton
     Friend WithEvents dtReturn As DateTimePicker
     Friend WithEvents dtDate As DateTimePicker
     Friend WithEvents cbCust As ReaLTaiizor.Controls.PoisonComboBox
-    Friend WithEvents cbCar As ReaLTaiizor.Controls.PoisonComboBox
+    Friend WithEvents cbRoom As ReaLTaiizor.Controls.PoisonComboBox
 End Class

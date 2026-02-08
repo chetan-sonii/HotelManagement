@@ -12,7 +12,7 @@ Public Class FrmRequests
         InitializeComponent()
         _styleManager = New PoisonStyleManager()
         _styleManager.Owner = Me
-        _styleManager.Style = ColorStyle.Blue
+        _styleManager.Style = ColorStyle.Red
         _styleManager.Theme = ThemeStyle.Light
         Me.StyleManager = _styleManager
     End Sub
@@ -25,13 +25,13 @@ Public Class FrmRequests
     ' 1. LOAD DATA
     Private Sub LoadRentRequests()
         ' Show only Pending rentals
-        Dim query As String = "SELECT rent_id, car_reg, cust_id, status FROM tbl_rentals WHERE status='Pending'"
+        Dim query As String = "SELECT rent_id, room_no, cust_id, status FROM tbl_bookings WHERE status='Pending'"
         dgvRentRequests.DataSource = DatabaseConnection.RunQuery(query)
     End Sub
 
     Private Sub LoadReturnRequests()
         ' Show only ReturnPending rentals
-        Dim query As String = "SELECT rent_id, car_reg, cust_id, status FROM tbl_rentals WHERE status='ReturnPending'"
+        Dim query As String = "SELECT rent_id, room_no, cust_id, status FROM tbl_bookings WHERE status='ReturnPending'"
         dgvReturnRequests.DataSource = DatabaseConnection.RunQuery(query)
     End Sub
     ' ==========================================
@@ -61,11 +61,11 @@ Public Class FrmRequests
             End If
 
             Dim rentId As String = row.Cells("rent_id").Value.ToString()
-            Dim carReg As String = row.Cells("car_reg").Value.ToString()
+            Dim RoomReg As String = row.Cells("room_no").Value.ToString()
 
             ' 2. Execute Updates
-            DatabaseConnection.ExecuteQuery("UPDATE tbl_rentals SET status='Active' WHERE rent_id=" & rentId)
-            DatabaseConnection.ExecuteQuery("UPDATE tbl_cars SET available='No' WHERE reg_no='" & carReg & "'")
+            DatabaseConnection.ExecuteQuery("UPDATE tbl_bookings SET status='Active' WHERE rent_id=" & rentId)
+            DatabaseConnection.ExecuteQuery("UPDATE tbl_rooms SET available='No' WHERE room_no='" & RoomReg & "'")
 
             MsgBox("Rental Approved!")
             LoadRentRequests()
@@ -93,13 +93,13 @@ Public Class FrmRequests
             If row.Cells("rent_id").Value Is Nothing Then Return
 
             Dim rentId As String = row.Cells("rent_id").Value.ToString()
-            Dim carReg As String = row.Cells("car_reg").Value.ToString()
+            Dim RoomReg As String = row.Cells("room_no").Value.ToString()
 
             ' Execute Updates
-            DatabaseConnection.ExecuteQuery("UPDATE tbl_rentals SET status='Returned' WHERE rent_id=" & rentId)
-            DatabaseConnection.ExecuteQuery("UPDATE tbl_cars SET available='Yes' WHERE reg_no='" & carReg & "'")
+            DatabaseConnection.ExecuteQuery("UPDATE tbl_bookings SET status='Returned' WHERE rent_id=" & rentId)
+            DatabaseConnection.ExecuteQuery("UPDATE tbl_rooms SET available='Yes' WHERE room_no='" & RoomReg & "'")
 
-            MsgBox("Return Confirmed. Car is available again.")
+            MsgBox("Return Confirmed. Room is available again.")
             LoadReturnRequests()
 
         Catch ex As Exception

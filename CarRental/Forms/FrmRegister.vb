@@ -162,7 +162,7 @@ Public Class FrmRegister
 
         Try
             ' 2. Check if Email already exists using parameterized query
-            Dim checkQuery As String = "SELECT COUNT(*) FROM tbl_customers WHERE email = @email"
+            Dim checkQuery As String = "SELECT COUNT(*) FROM tbl_guests WHERE email = @email"
             Dim checkParams As New List(Of MySqlParameter)
             checkParams.Add(New MySqlParameter("@email", txtEmail.Text.Trim()))
             
@@ -175,7 +175,7 @@ Public Class FrmRegister
             End If
 
             ' 3. Insert into Database using parameterized query (SECURE)
-            Dim insertQuery As String = "INSERT INTO tbl_customers (cust_name, address, phone, email, password) VALUES (@name, @address, @phone, @email, @password)"
+            Dim insertQuery As String = "INSERT INTO tbl_guests (cust_name, address, phone, email, password) VALUES (@name, @address, @phone, @email, @password)"
             
             Dim insertParams As New List(Of MySqlParameter)
             insertParams.Add(New MySqlParameter("@name", txtName.Text.Trim()))

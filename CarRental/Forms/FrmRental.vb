@@ -12,33 +12,33 @@ Public Class FrmRental
         InitializeComponent()
         _styleManager = New PoisonStyleManager()
         _styleManager.Owner = Me
-        _styleManager.Style = ColorStyle.Blue
+        _styleManager.Style = ColorStyle.Red
         _styleManager.Theme = ThemeStyle.Light
         Me.StyleManager = _styleManager
     End Sub
 
     Private Sub FrmRental_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        FillCarCombo()
-        FillCustomerCombo()
+        FillRoomCombo()
+        FillGuestCombo()
         LoadRentalHistory()
     End Sub
 
     ' ==========================================
     ' 1. FILL DROPDOWNS
     ' ==========================================
-    Private Sub FillCarCombo()
-        ' ONLY show cars that are Available='Yes'
-        Dim query As String = "SELECT reg_no FROM tbl_cars WHERE available='Yes'"
+    Private Sub FillRoomCombo()
+        ' ONLY show Rooms that are Available='Yes'
+        Dim query As String = "SELECT room_no FROM tbl_rooms WHERE available='Yes'"
         Dim dt As DataTable = DatabaseConnection.RunQuery(query)
 
-        cbCar.Items.Clear()
+        cbRoom.Items.Clear()
         For Each row As DataRow In dt.Rows
-            cbCar.Items.Add(row("reg_no").ToString())
+            cbRoom.Items.Add(row("room_no").ToString())
         Next
     End Sub
 
-    Private Sub FillCustomerCombo()
-        Dim query As String = "SELECT cust_id FROM tbl_customers"
+    Private Sub FillGuestCombo()
+        Dim query As String = "SELECT cust_id FROM tbl_guests"
         Dim dt As DataTable = DatabaseConnection.RunQuery(query)
 
         cbCust.Items.Clear()
@@ -48,10 +48,10 @@ Public Class FrmRental
     End Sub
 
     ' ==========================================
-    ' 2. FETCH CUSTOMER NAME (When ID selected)
+    ' 2. FETCH Guest NAME (When ID selected)
     ' ==========================================
     ' ==========================================
-    ' 2. FETCH CUSTOMER NAME (When ID selected)
+    ' 2. FETCH Guest NAME (When ID selected)
     ' ==========================================
     Private Sub cbCust_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbCust.SelectedIndexChanged
 
@@ -61,7 +61,7 @@ Public Class FrmRental
         End If
 
         Try
-            Dim query As String = "SELECT cust_name FROM tbl_customers WHERE cust_id=" & cbCust.SelectedItem.ToString()
+            Dim query As String = "SELECT cust_name FROM tbl_guests WHERE cust_id=" & cbCust.SelectedItem.ToString()
             Dim dt As DataTable = DatabaseConnection.RunQuery(query)
 
             If dt.Rows.Count > 0 Then
@@ -79,14 +79,14 @@ Public Class FrmRental
     ' 3. CALCULATE FEES
     ' ==========================================
     Private Sub btnCalculate_Click(sender As Object, e As EventArgs) Handles btnCalculate.Click
-        If cbCar.SelectedIndex = -1 Then
-            MsgBox("Select a car first")
+        If cbRoom.SelectedIndex = -1 Then
+            MsgBox("Select a Room first")
             Return
         End If
 
         Try
-            ' 1. Get Price Per Day of selected car
-            Dim query As String = "SELECT price FROM tbl_cars WHERE reg_no='" & cbCar.SelectedItem.ToString() & "'"
+            ' 1. Get Price Per Day of selected Room
+            Dim query As String = "SELECT price FROM tbl_rooms WHERE room_no='" & cbRoom.SelectedItem.ToString() & "'"
             Dim dt As DataTable = DatabaseConnection.RunQuery(query)
             Dim pricePerDay As Decimal = 0
 
@@ -116,8 +116,8 @@ Public Class FrmRental
     ' 4. CONFIRM RENTAL (The Big Transaction)
     ' ==========================================
     Private Sub btnRent_Click(sender As Object, e As EventArgs) Handles btnRent.Click
-        If cbCar.SelectedIndex = -1 Or cbCust.SelectedIndex = -1 Then
-            MsgBox("Please select Car and Customer")
+        If cbRoom.SelectedIndex = -1 Or cbCust.SelectedIndex = -1 Then
+            MsgBox("Please select Room and Guest")
             Return
         End If
 
@@ -130,19 +130,19 @@ Public Class FrmRental
             Dim dateOut As String = dtDate.Value.ToString("yyyy-MM-dd")
             Dim dateIn As String = dtReturn.Value.ToString("yyyy-MM-dd")
 
-            Dim queryInsert As String = "INSERT INTO tbl_rentals (car_reg, cust_id, rent_date, return_date, fees) VALUES ('" & cbCar.SelectedItem.ToString() & "', " & cbCust.SelectedItem.ToString() & ", '" & dateOut & "', '" & dateIn & "', " & fee & ")"
+            Dim queryInsert As String = "INSERT INTO tbl_bookings (room_no, cust_id, check_in, check_out, fees) VALUES ('" & cbRoom.SelectedItem.ToString() & "', " & cbCust.SelectedItem.ToString() & ", '" & dateOut & "', '" & dateIn & "', " & fee & ")"
             DatabaseConnection.ExecuteQuery(queryInsert)
 
-            ' C. SQL 2: Update Car Status to 'No'
-            Dim queryUpdate As String = "UPDATE tbl_cars SET available='No' WHERE reg_no='" & cbCar.SelectedItem.ToString() & "'"
+            ' C. SQL 2: Update Room Status to 'No'
+            Dim queryUpdate As String = "UPDATE tbl_rooms SET available='No' WHERE room_no='" & cbRoom.SelectedItem.ToString() & "'"
             DatabaseConnection.ExecuteQuery(queryUpdate)
 
-            MsgBox("Car Rented Successfully!")
+            MsgBox("Room Rented Successfully!")
 
             ' D. Refresh
             LoadRentalHistory()
-            FillCarCombo() ' Remove the rented car from the list
-            cbCar.SelectedIndex = -1
+            FillRoomCombo() ' Remove the rented Room from the list
+            cbRoom.SelectedIndex = -1
             cbCust.SelectedIndex = -1
             lblFee.Text = "Total Fees: 0.00"
 
@@ -155,7 +155,7 @@ Public Class FrmRental
     ' 5. LOAD HISTORY
     ' ==========================================
     Private Sub LoadRentalHistory()
-        Dim query As String = "SELECT * FROM tbl_rentals"
+        Dim query As String = "SELECT * FROM tbl_bookings"
         dgvRentals.DataSource = DatabaseConnection.RunQuery(query)
     End Sub
 

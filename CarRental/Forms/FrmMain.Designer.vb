@@ -32,7 +32,7 @@ Partial Class FrmMain
         Me.tileReturn = New ReaLTaiizor.Controls.PoisonTile()
         Me.btnlogout = New ReaLTaiizor.Controls.PoisonButton()
         Me.tileRentals = New ReaLTaiizor.Controls.PoisonTile()
-        Me.tileCars = New ReaLTaiizor.Controls.PoisonTile()
+        Me.tileRooms = New ReaLTaiizor.Controls.PoisonTile()
         Me.tileCust = New ReaLTaiizor.Controls.PoisonTile()
         Me.MySqlCommand1 = New MySql.Data.MySqlClient.MySqlCommand()
         Me.PoisonTabControl1.SuspendLayout()
@@ -60,7 +60,7 @@ Partial Class FrmMain
         Me.tabDashboard.Controls.Add(Me.tileReturn)
         Me.tabDashboard.Controls.Add(Me.btnlogout)
         Me.tabDashboard.Controls.Add(Me.tileRentals)
-        Me.tabDashboard.Controls.Add(Me.tileCars)
+        Me.tabDashboard.Controls.Add(Me.tileRooms)
         Me.tabDashboard.Controls.Add(Me.tileCust)
         Me.tabDashboard.HorizontalScrollbarBarColor = True
         Me.tabDashboard.HorizontalScrollbarHighlightOnWheel = False
@@ -141,7 +141,7 @@ Partial Class FrmMain
         Me.tileReturn.Size = New System.Drawing.Size(280, 150)
         Me.tileReturn.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Red
         Me.tileReturn.TabIndex = 3
-        Me.tileReturn.Text = "🔙 Return Car"
+        Me.tileReturn.Text = "🔙 Return Room"
         Me.tileReturn.UseSelectable = True
         Me.tileReturn.UseTileImage = True
         '
@@ -163,21 +163,21 @@ Partial Class FrmMain
         Me.tileRentals.Size = New System.Drawing.Size(280, 150)
         Me.tileRentals.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Orange
         Me.tileRentals.TabIndex = 2
-        Me.tileRentals.Text = "🚗 Active Rentals"
+        Me.tileRentals.Text = "🚗 Occupied Rooms"
         Me.tileRentals.UseSelectable = True
         Me.tileRentals.UseTileImage = True
         '
-        'tileCars
+        'tileRooms
         '
-        Me.tileCars.ActiveControl = Nothing
-        Me.tileCars.Location = New System.Drawing.Point(15, 95)
-        Me.tileCars.Name = "tileCars"
-        Me.tileCars.Size = New System.Drawing.Size(280, 150)
-        Me.tileCars.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Blue
-        Me.tileCars.TabIndex = 2
-        Me.tileCars.Text = "🚙 Available Cars"
-        Me.tileCars.UseSelectable = True
-        Me.tileCars.UseTileImage = True
+        Me.tileRooms.ActiveControl = Nothing
+        Me.tileRooms.Location = New System.Drawing.Point(15, 95)
+        Me.tileRooms.Name = "tileRooms"
+        Me.tileRooms.Size = New System.Drawing.Size(280, 150)
+        Me.tileRooms.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Blue
+        Me.tileRooms.TabIndex = 2
+        Me.tileRooms.Text = "🚙 Available Rooms"
+        Me.tileRooms.UseSelectable = True
+        Me.tileRooms.UseTileImage = True
         '
         'tileCust
         '
@@ -187,7 +187,7 @@ Partial Class FrmMain
         Me.tileCust.Size = New System.Drawing.Size(280, 150)
         Me.tileCust.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Green
         Me.tileCust.TabIndex = 2
-        Me.tileCust.Text = "👥 Total Customers"
+        Me.tileCust.Text = "👥 Total Guests"
         Me.tileCust.UseSelectable = True
         Me.tileCust.UseTileImage = True
         '
@@ -206,7 +206,7 @@ Partial Class FrmMain
         Me.Controls.Add(Me.PoisonTabControl1)
         Me.MinimumSize = New System.Drawing.Size(1000, 620)
         Me.Name = "FrmMain"
-        Me.Text = "CAR RENTAL MANAGEMENT SYSTEM - ADMIN PANEL"
+        Me.Text = "Room RENTAL MANAGEMENT SYSTEM - ADMIN PANEL"
         Me.PoisonTabControl1.ResumeLayout(False)
         Me.tabDashboard.ResumeLayout(False)
         Me.PoisonPanel1.ResumeLayout(False)
@@ -217,7 +217,7 @@ Partial Class FrmMain
     Friend WithEvents PoisonTabControl1 As ReaLTaiizor.Controls.PoisonTabControl
     Friend WithEvents tabDashboard As ReaLTaiizor.Controls.PoisonTabPage
     Friend WithEvents tileCust As ReaLTaiizor.Controls.PoisonTile
-    Friend WithEvents tileCars As ReaLTaiizor.Controls.PoisonTile
+    Friend WithEvents tileRooms As ReaLTaiizor.Controls.PoisonTile
     Friend WithEvents tileRentals As ReaLTaiizor.Controls.PoisonTile
     Friend WithEvents btnlogout As ReaLTaiizor.Controls.PoisonButton
     Friend WithEvents MySqlCommand1 As MySql.Data.MySqlClient.MySqlCommand

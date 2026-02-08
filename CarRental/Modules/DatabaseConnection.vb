@@ -5,7 +5,7 @@ Public Module DatabaseConnection
 
     ' Keep the connection string in ONE place
     Public ReadOnly ConnectionString As String =
-        "server=localhost;user=root;password=ChetanRootUser-PWD_Store-7729;database=db_car_rental;"
+        "server=localhost;user=root;password=ChetanRootUser-PWD_Store-7729;database=db_hotel;"
 
 
     ' For SELECT queries (returns DataTable)

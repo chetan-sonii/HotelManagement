@@ -33,7 +33,7 @@ Public Class FrmUserDashboard
         ' lblUserEmail.Text = UserSession.CurrentUserEmail 
 
         ConfigureDataGridViews()
-        LoadAvailableCars()
+        LoadAvailableRooms()
         LoadMyRentals()
     End Sub
 
@@ -58,27 +58,27 @@ Public Class FrmUserDashboard
     End Sub
 
     ' ========================================================
-    ' 1. LOAD AVAILABLE CARS
+    ' 1. LOAD AVAILABLE RoomS
     ' ========================================================
-    Private Sub LoadAvailableCars()
+    Private Sub LoadAvailableRooms()
         Try
             ' We use aliases (AS ...) to make column headers look nice automatically
-            Dim query As String = "SELECT reg_no AS 'Reg No', brand AS 'Brand', model AS 'Model', " &
+            Dim query As String = "SELECT room_no AS 'Reg No', brand AS 'Brand', model AS 'Model', " &
                                   "price AS 'Price/Day', available AS 'Status' " &
-                                  "FROM tbl_cars WHERE available = 'Yes' ORDER BY brand, model"
+                                  "FROM tbl_rooms WHERE available = 'Yes' ORDER BY brand, model"
 
             Dim dt As DataTable = DatabaseConnection.RunQuery(query)
             dgvAvailable.DataSource = dt
 
             ' Update Status Label
             If dt.Rows.Count = 0 Then
-                lblSelectedCar.Text = "No cars available"
+                lblSelectedRoom.Text = "No Rooms available"
             Else
-                lblSelectedCar.Text = $"{dt.Rows.Count} cars available"
+                lblSelectedRoom.Text = $"{dt.Rows.Count} Rooms available"
             End If
 
         Catch ex As Exception
-            MsgBox("Error loading cars: " & ex.Message)
+            MsgBox("Error loading Rooms: " & ex.Message)
         End Try
     End Sub
 
@@ -87,21 +87,21 @@ Public Class FrmUserDashboard
     ' ========================================================
     Private Sub LoadMyRentals()
         Try
-            ' Join tables to get Car Details + Rental Status
+            ' Join tables to get Room Details + Rental Status
             Dim query As String = "SELECT r.rent_id, c.brand, c.model, " &
-                                  "r.rent_date AS 'Start Date', r.return_date AS 'Return Date', " &
-                                  "r.fees AS 'Total Fees', r.status AS 'Status', r.car_reg " &
-                                  "FROM tbl_rentals r " &
-                                  "JOIN tbl_cars c ON r.car_reg = c.reg_no " &
+                                  "r.check_in AS 'Start Date', r.check_out AS 'Return Date', " &
+                                  "r.fees AS 'Total Fees', r.status AS 'Status', r.room_no " &
+                                  "FROM tbl_bookings r " &
+                                  "JOIN tbl_rooms c ON r.room_no = c.room_no " &
                                   "WHERE r.cust_id = " & UserSession.CurrentUserID &
-                                  " ORDER BY r.rent_date DESC"
+                                  " ORDER BY r.check_in DESC"
 
             Dim dt As DataTable = DatabaseConnection.RunQuery(query)
             dgvMyRentals.DataSource = dt
 
             ' Hide technical columns
             If dgvMyRentals.Columns.Contains("rent_id") Then dgvMyRentals.Columns("rent_id").Visible = False
-            If dgvMyRentals.Columns.Contains("car_reg") Then dgvMyRentals.Columns("car_reg").Visible = False
+            If dgvMyRentals.Columns.Contains("room_no") Then dgvMyRentals.Columns("room_no").Visible = False
 
         Catch ex As Exception
             MsgBox("Error loading history: " & ex.Message)
@@ -111,17 +111,17 @@ Public Class FrmUserDashboard
     ' ========================================================
     ' 3. SEARCH (Real-time)
     ' ========================================================
-    Private Sub txtSearchCar_TextChanged(sender As Object, e As EventArgs) Handles txtSearchCar.TextChanged
+    Private Sub txtSearchRoom_TextChanged(sender As Object, e As EventArgs) Handles txtSearchRoom.TextChanged
         Try
-            Dim searchTerm As String = txtSearchCar.Text.Trim()
+            Dim searchTerm As String = txtSearchRoom.Text.Trim()
             If searchTerm = "" Then
-                LoadAvailableCars()
+                LoadAvailableRooms()
                 Return
             End If
 
-            Dim query As String = "SELECT reg_no AS 'Reg No', brand AS 'Brand', model AS 'Model', " &
+            Dim query As String = "SELECT room_no AS 'Reg No', brand AS 'Brand', model AS 'Model', " &
                                   "price AS 'Price/Day', available AS 'Status' " &
-                                  "FROM tbl_cars " &
+                                  "FROM tbl_rooms " &
                                   "WHERE available = 'Yes' AND (brand LIKE @search OR model LIKE @search)"
 
             Dim params As New List(Of MySqlParameter)
@@ -140,14 +140,14 @@ Public Class FrmUserDashboard
     ' ========================================================
     Private Sub btnBook_Click(sender As Object, e As EventArgs) Handles btnBook.Click
         If dgvAvailable.SelectedRows.Count = 0 Then
-            MsgBox("Please select a car first.")
+            MsgBox("Please select a Room first.")
             Return
         End If
 
         Try
-            ' Get Car Details
+            ' Get Room Details
             Dim row As DataGridViewRow = dgvAvailable.SelectedRows(0)
-            Dim carReg As String = row.Cells("Reg No").Value.ToString()
+            Dim RoomReg As String = row.Cells("Reg No").Value.ToString()
             Dim price As Decimal = Convert.ToDecimal(row.Cells("Price/Day").Value)
             Dim brand As String = row.Cells("Brand").Value.ToString()
             Dim model As String = row.Cells("Model").Value.ToString()
@@ -156,13 +156,13 @@ Public Class FrmUserDashboard
             Dim ans = MsgBox($"Request to book {brand} {model} for ₹{price}/day?", MsgBoxStyle.YesNo + MsgBoxStyle.Question)
             If ans = MsgBoxResult.No Then Return
 
-            ' FIX 3: INSERT AS 'PENDING'. Do NOT set car to 'No' yet.
+            ' FIX 3: INSERT AS 'PENDING'. Do NOT set Room to 'No' yet.
             ' The Admin must approve this request.
             Dim today As String = DateTime.Now.ToString("yyyy-MM-dd")
             Dim tomorrow As String = DateTime.Now.AddDays(1).ToString("yyyy-MM-dd")
 
-            Dim query As String = "INSERT INTO tbl_rentals (car_reg, cust_id, rent_date, return_date, fees, status) " &
-                                  "VALUES ('" & carReg & "', " & UserSession.CurrentUserID & ", '" & today & "', '" & tomorrow & "', " & price & ", 'Pending')"
+            Dim query As String = "INSERT INTO tbl_bookings (room_no, cust_id, check_in, check_out, fees, status) " &
+                                  "VALUES ('" & RoomReg & "', " & UserSession.CurrentUserID & ", '" & today & "', '" & tomorrow & "', " & price & ", 'Pending')"
 
             DatabaseConnection.ExecuteQuery(query)
 
@@ -190,11 +190,11 @@ Public Class FrmUserDashboard
         Try
             Dim row As DataGridViewRow = dgvMyRentals.SelectedRows(0)
             Dim status As String = row.Cells("Status").Value.ToString()
-            Dim carReg As String = row.Cells("car_reg").Value.ToString()
+            Dim RoomReg As String = row.Cells("room_no").Value.ToString()
 
             ' Validation
             If status = "Returned" Then
-                MsgBox("This car is already returned.")
+                MsgBox("This Room is already returned.")
                 Return
             End If
             If status = "Pending" Then
@@ -207,12 +207,12 @@ Public Class FrmUserDashboard
             End If
 
             ' Confirmation
-            Dim ans = MsgBox("Request to return this car?", MsgBoxStyle.YesNo + MsgBoxStyle.Question)
+            Dim ans = MsgBox("Request to return this Room?", MsgBoxStyle.YesNo + MsgBoxStyle.Question)
             If ans = MsgBoxResult.No Then Return
 
             ' FIX 4: Just update status to 'ReturnPending'. 
-            ' Do NOT calculate final fees or free the car yet. Admin does that.
-            Dim query As String = "UPDATE tbl_rentals SET status='ReturnPending' WHERE car_reg='" & carReg & "' AND status='Active'"
+            ' Do NOT calculate final fees or free the Room yet. Admin does that.
+            Dim query As String = "UPDATE tbl_bookings SET status='ReturnPending' WHERE room_no='" & RoomReg & "' AND status='Active'"
             DatabaseConnection.ExecuteQuery(query)
 
             MsgBox("Return Request Sent! Please hand over keys to Admin.", MsgBoxStyle.Information)
@@ -234,7 +234,7 @@ Public Class FrmUserDashboard
     Private Sub dgvAvailable_SelectionChanged(sender As Object, e As EventArgs) Handles dgvAvailable.SelectionChanged
         If dgvAvailable.SelectedRows.Count > 0 Then
             Dim row = dgvAvailable.SelectedRows(0)
-            lblSelectedCar.Text = row.Cells("Brand").Value.ToString() & " " & row.Cells("Model").Value.ToString()
+            lblSelectedRoom.Text = row.Cells("Brand").Value.ToString() & " " & row.Cells("Model").Value.ToString()
         End If
     End Sub
 

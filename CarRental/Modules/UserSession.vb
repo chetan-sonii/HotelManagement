@@ -1,6 +1,6 @@
 ﻿Module UserSession
     ' If 0, it means Admin is logged in.
-    ' If > 0, it is the Customer ID.
+    ' If > 0, it is the Guest ID.
     Public CurrentUserID As Integer = 0
 
     ' To show their name on the dashboard

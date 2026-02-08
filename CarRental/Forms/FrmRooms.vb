@@ -3,7 +3,7 @@ Imports ReaLTaiizor.Manager
 Imports ReaLTaiizor.Enum.Poison
 Imports MySql.Data.MySqlClient
 
-Public Class FrmCars
+Public Class FrmRooms
     Inherits PoisonForm
 
     ' Manager defined in code for safety
@@ -15,13 +15,13 @@ Public Class FrmCars
         ' Initialize style manager
         _styleManager = New PoisonStyleManager()
         _styleManager.Owner = Me
-        _styleManager.Style = ColorStyle.Blue
+        _styleManager.Style = ColorStyle.Red
         _styleManager.Theme = ThemeStyle.Light
         Me.StyleManager = _styleManager
     End Sub
 
-    Private Sub FrmCars_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        LoadCarList()
+    Private Sub FrmRooms_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        LoadRoomList()
         UpdateStatistics()
         ConfigureDataGridView()
     End Sub
@@ -32,18 +32,18 @@ Public Class FrmCars
     Private Sub ConfigureDataGridView()
         Try
             ' Set column headers if data exists
-            If dgvCars.Columns.Count > 0 Then
-                dgvCars.Columns(0).HeaderText = "Reg. Number"
-                dgvCars.Columns(1).HeaderText = "Brand"
-                dgvCars.Columns(2).HeaderText = "Model"
-                dgvCars.Columns(3).HeaderText = "Price/Day (₹)"
-                dgvCars.Columns(4).HeaderText = "Available"
+            If dgvRooms.Columns.Count > 0 Then
+                dgvRooms.Columns(0).HeaderText = "Reg. Number"
+                dgvRooms.Columns(1).HeaderText = "Brand"
+                dgvRooms.Columns(2).HeaderText = "Model"
+                dgvRooms.Columns(3).HeaderText = "Price/Day (₹)"
+                dgvRooms.Columns(4).HeaderText = "Available"
 
                 ' Auto-size columns
-                dgvCars.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+                dgvRooms.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
 
                 ' Set minimum column widths
-                For Each col As DataGridViewColumn In dgvCars.Columns
+                For Each col As DataGridViewColumn In dgvRooms.Columns
                     col.MinimumWidth = 100
                 Next
             End If
@@ -55,17 +55,17 @@ Public Class FrmCars
     ' ==========================================
     ' LOAD DATA (Refreshes the Grid)
     ' ==========================================
-    Private Sub LoadCarList()
+    Private Sub LoadRoomList()
         Try
-            Dim query As String = "SELECT * FROM tbl_cars"
+            Dim query As String = "SELECT * FROM tbl_rooms"
             Dim dt As DataTable = DatabaseConnection.RunQuery(query)
-            dgvCars.DataSource = dt
+            dgvRooms.DataSource = dt
 
             ' Configure columns after loading data
             ConfigureDataGridView()
             UpdateStatistics()
         Catch ex As Exception
-            MsgBox("Error loading car list: " & ex.Message, MsgBoxStyle.Critical, "Database Error")
+            MsgBox("Error loading Room list: " & ex.Message, MsgBoxStyle.Critical, "Database Error")
         End Try
     End Sub
 
@@ -74,28 +74,28 @@ Public Class FrmCars
     ' ==========================================
     Private Sub UpdateStatistics()
         Try
-            ' Count total cars
-            Dim totalQuery As String = "SELECT COUNT(*) FROM tbl_cars"
+            ' Count total Rooms
+            Dim totalQuery As String = "SELECT COUNT(*) FROM tbl_rooms"
             Dim totalDt As DataTable = DatabaseConnection.RunQuery(totalQuery)
-            Dim totalCars As Integer = 0
+            Dim totalRooms As Integer = 0
             If totalDt.Rows.Count > 0 Then
-                totalCars = Convert.ToInt32(totalDt.Rows(0)(0))
+                totalRooms = Convert.ToInt32(totalDt.Rows(0)(0))
             End If
 
-            ' Count available cars
-            Dim availQuery As String = "SELECT COUNT(*) FROM tbl_cars WHERE available='Yes'"
+            ' Count available Rooms
+            Dim availQuery As String = "SELECT COUNT(*) FROM tbl_rooms WHERE available='Yes'"
             Dim availDt As DataTable = DatabaseConnection.RunQuery(availQuery)
-            Dim availCars As Integer = 0
+            Dim availRooms As Integer = 0
             If availDt.Rows.Count > 0 Then
-                availCars = Convert.ToInt32(availDt.Rows(0)(0))
+                availRooms = Convert.ToInt32(availDt.Rows(0)(0))
             End If
 
             ' Update tiles
-            PoisonTile1.Text = "Total Cars: " & totalCars.ToString()
-            PoisonTile2.Text = "Available: " & availCars.ToString()
+            PoisonTile1.Text = "Total Rooms: " & totalRooms.ToString()
+            PoisonTile2.Text = "Available: " & availRooms.ToString()
 
         Catch ex As Exception
-            PoisonTile1.Text = "Total Cars: 0"
+            PoisonTile1.Text = "Total Rooms: 0"
             PoisonTile2.Text = "Available: 0"
         End Try
     End Sub
@@ -164,11 +164,11 @@ Public Class FrmCars
 
         Try
             ' Check if registration number already exists
-            Dim checkQuery As String = "SELECT COUNT(*) FROM tbl_cars WHERE reg_no='" & txtRegNo.Text.Trim() & "'"
+            Dim checkQuery As String = "SELECT COUNT(*) FROM tbl_rooms WHERE room_no='" & txtRegNo.Text.Trim() & "'"
             Dim checkDt As DataTable = DatabaseConnection.RunQuery(checkQuery)
 
             If checkDt.Rows.Count > 0 AndAlso Convert.ToInt32(checkDt.Rows(0)(0)) > 0 Then
-                MsgBox("A car with this registration number already exists!", MsgBoxStyle.Exclamation, "Duplicate Entry")
+                MsgBox("A Room with this registration number already exists!", MsgBoxStyle.Exclamation, "Duplicate Entry")
                 txtRegNo.Focus()
                 Return
             End If
@@ -181,14 +181,14 @@ Public Class FrmCars
             Dim available As String = cbAvailable.SelectedItem.ToString()
 
             ' SQL Insert
-            Dim query As String = "INSERT INTO tbl_cars VALUES ('" & regNo & "', '" & brand & "', '" & model & "', " & price & ", '" & available & "')"
+            Dim query As String = "INSERT INTO tbl_rooms VALUES ('" & regNo & "', '" & brand & "', '" & model & "', " & price & ", '" & available & "')"
             DatabaseConnection.ExecuteQuery(query)
 
-            MsgBox("✓ Car added successfully!", MsgBoxStyle.Information, "Success")
-            LoadCarList()
+            MsgBox("✓ Room added successfully!", MsgBoxStyle.Information, "Success")
+            LoadRoomList()
             ClearFields()
         Catch ex As Exception
-            MsgBox("Error adding car: " & ex.Message, MsgBoxStyle.Critical, "Database Error")
+            MsgBox("Error adding Room: " & ex.Message, MsgBoxStyle.Critical, "Database Error")
         End Try
     End Sub
 
@@ -197,7 +197,7 @@ Public Class FrmCars
     ' ==========================================
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
         If String.IsNullOrWhiteSpace(txtRegNo.Text) Then
-            MsgBox("Please select a car from the list to update.", MsgBoxStyle.Exclamation, "No Selection")
+            MsgBox("Please select a Room from the list to update.", MsgBoxStyle.Exclamation, "No Selection")
             Return
         End If
 
@@ -213,14 +213,14 @@ Public Class FrmCars
             Dim price As Decimal = Val(txtPrice.Text.Trim())
             Dim available As String = cbAvailable.SelectedItem.ToString()
 
-            Dim query As String = "UPDATE tbl_cars SET brand='" & brand & "', model='" & model & "', price=" & price & ", available='" & available & "' WHERE reg_no='" & regNo & "'"
+            Dim query As String = "UPDATE tbl_rooms SET brand='" & brand & "', model='" & model & "', price=" & price & ", available='" & available & "' WHERE room_no='" & regNo & "'"
             DatabaseConnection.ExecuteQuery(query)
 
-            MsgBox("✓ Car updated successfully!", MsgBoxStyle.Information, "Success")
-            LoadCarList()
+            MsgBox("✓ Room updated successfully!", MsgBoxStyle.Information, "Success")
+            LoadRoomList()
             ClearFields()
         Catch ex As Exception
-            MsgBox("Error updating car: " & ex.Message, MsgBoxStyle.Critical, "Database Error")
+            MsgBox("Error updating Room: " & ex.Message, MsgBoxStyle.Critical, "Database Error")
         End Try
     End Sub
 
@@ -229,24 +229,24 @@ Public Class FrmCars
     ' ==========================================
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
         If String.IsNullOrWhiteSpace(txtRegNo.Text) Then
-            MsgBox("Please select a car from the list to delete.", MsgBoxStyle.Exclamation, "No Selection")
+            MsgBox("Please select a Room from the list to delete.", MsgBoxStyle.Exclamation, "No Selection")
             Return
         End If
 
         Try
-            Dim result = MsgBox("Are you sure you want to delete car: " & txtRegNo.Text & "?" & vbCrLf & vbCrLf & "This action cannot be undone.", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Confirm Deletion")
+            Dim result = MsgBox("Are you sure you want to delete Room: " & txtRegNo.Text & "?" & vbCrLf & vbCrLf & "This action cannot be undone.", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Confirm Deletion")
 
             If result = MsgBoxResult.Yes Then
                 Dim regNo As String = txtRegNo.Text.Trim().Replace("'", "''")
-                Dim query As String = "DELETE FROM tbl_cars WHERE reg_no='" & regNo & "'"
+                Dim query As String = "DELETE FROM tbl_rooms WHERE room_no='" & regNo & "'"
                 DatabaseConnection.ExecuteQuery(query)
 
-                MsgBox("✓ Car deleted successfully!", MsgBoxStyle.Information, "Success")
-                LoadCarList()
+                MsgBox("✓ Room deleted successfully!", MsgBoxStyle.Information, "Success")
+                LoadRoomList()
                 ClearFields()
             End If
         Catch ex As Exception
-            MsgBox("Error deleting car: " & ex.Message, MsgBoxStyle.Critical, "Database Error")
+            MsgBox("Error deleting Room: " & ex.Message, MsgBoxStyle.Critical, "Database Error")
         End Try
     End Sub
 
@@ -256,19 +256,19 @@ Public Class FrmCars
     Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
         Try
             If String.IsNullOrWhiteSpace(txtSearch.Text) Then
-                LoadCarList()
+                LoadRoomList()
                 Return
             End If
 
             Dim searchText As String = txtSearch.Text.Trim().Replace("'", "''")
-            Dim query As String = "SELECT * FROM tbl_cars WHERE " &
-                                 "reg_no LIKE '%" & searchText & "%' OR " &
+            Dim query As String = "SELECT * FROM tbl_rooms WHERE " &
+                                 "room_no LIKE '%" & searchText & "%' OR " &
                                  "brand LIKE '%" & searchText & "%' OR " &
                                  "model LIKE '%" & searchText & "%' OR " &
                                  "available LIKE '%" & searchText & "%'"
 
             Dim dt As DataTable = DatabaseConnection.RunQuery(query)
-            dgvCars.DataSource = dt
+            dgvRooms.DataSource = dt
             ConfigureDataGridView()
         Catch ex As Exception
             ' Silently handle search errors
@@ -278,10 +278,10 @@ Public Class FrmCars
     ' ==========================================
     ' GRID CLICK (Fill Textboxes)
     ' ==========================================
-    Private Sub dgvCars_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvCars.CellClick
+    Private Sub dgvRooms_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvRooms.CellClick
         If e.RowIndex >= 0 Then
             Try
-                Dim row As DataGridViewRow = dgvCars.Rows(e.RowIndex)
+                Dim row As DataGridViewRow = dgvRooms.Rows(e.RowIndex)
 
                 ' Populate fields from the clicked row
                 txtRegNo.Text = row.Cells(0).Value.ToString()
@@ -297,7 +297,7 @@ Public Class FrmCars
                     cbAvailable.SelectedIndex = 1
                 End If
             Catch ex As Exception
-                MsgBox("Error loading car details: " & ex.Message, MsgBoxStyle.Exclamation)
+                MsgBox("Error loading Room details: " & ex.Message, MsgBoxStyle.Exclamation)
             End Try
         End If
     End Sub
@@ -313,7 +313,7 @@ Public Class FrmCars
     ' REFRESH BUTTON
     ' ==========================================
     Private Sub btnRefresh_Click(sender As Object, e As EventArgs) Handles btnRefresh.Click
-        LoadCarList()
+        LoadRoomList()
         txtSearch.Text = ""
         MsgBox("✓ Data refreshed successfully!", MsgBoxStyle.Information, "Refreshed")
     End Sub

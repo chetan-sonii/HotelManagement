@@ -12,7 +12,7 @@ Public Class FrmMain
         InitializeComponent()
         _styleManager = New PoisonStyleManager()
         _styleManager.Owner = Me
-        _styleManager.Style = ColorStyle.Blue
+        _styleManager.Style = ColorStyle.Red
         _styleManager.Theme = ThemeStyle.Light
         Me.StyleManager = _styleManager
     End Sub
@@ -36,24 +36,24 @@ Public Class FrmMain
     ' ==========================================
     Private Sub LoadDashboardStats()
         Try
-            ' Count Available Cars
-            Dim dtCars As DataTable = DatabaseConnection.RunQuery("SELECT COUNT(*) FROM tbl_cars WHERE available='Yes'")
-            If dtCars IsNot Nothing AndAlso dtCars.Rows.Count > 0 Then
-                If tileCars IsNot Nothing Then
-                    tileCars.TileCount = CInt(dtCars.Rows(0)(0))
+            ' Count Available Rooms
+            Dim dtRooms As DataTable = DatabaseConnection.RunQuery("SELECT COUNT(*) FROM tbl_rooms WHERE available='Yes'")
+            If dtRooms IsNot Nothing AndAlso dtRooms.Rows.Count > 0 Then
+                If tileRooms IsNot Nothing Then
+                    tileRooms.TileCount = CInt(dtRooms.Rows(0)(0))
                 End If
             End If
 
-            ' Count Total Customers
-            Dim dtCust As DataTable = DatabaseConnection.RunQuery("SELECT COUNT(*) FROM tbl_customers")
+            ' Count Total Guests
+            Dim dtCust As DataTable = DatabaseConnection.RunQuery("SELECT COUNT(*) FROM tbl_guests")
             If dtCust IsNot Nothing AndAlso dtCust.Rows.Count > 0 Then
                 If tileCust IsNot Nothing Then
                     tileCust.TileCount = CInt(dtCust.Rows(0)(0))
                 End If
             End If
 
-            ' Count Active Rentals (Cars that are NOT available)
-            Dim dtRent As DataTable = DatabaseConnection.RunQuery("SELECT COUNT(*) FROM tbl_cars WHERE available='No'")
+            ' Count Occupied Rooms (Rooms that are NOT available)
+            Dim dtRent As DataTable = DatabaseConnection.RunQuery("SELECT COUNT(*) FROM tbl_rooms WHERE available='No'")
             If dtRent IsNot Nothing AndAlso dtRent.Rows.Count > 0 Then
                 If tileRentals IsNot Nothing Then
                     tileRentals.TileCount = CInt(dtRent.Rows(0)(0))
@@ -61,7 +61,7 @@ Public Class FrmMain
             End If
 
             ' Count Pending Requests
-            Dim dtRequests As DataTable = DatabaseConnection.RunQuery("SELECT COUNT(*) FROM tbl_rentals WHERE status!='Active'")
+            Dim dtRequests As DataTable = DatabaseConnection.RunQuery("SELECT COUNT(*) FROM tbl_bookings WHERE status!='Active'")
             If dtRequests IsNot Nothing AndAlso dtRequests.Rows.Count > 0 Then
                 If tileRequests IsNot Nothing Then
                     tileRequests.TileCount = CInt(dtRequests.Rows(0)(0))
@@ -102,23 +102,23 @@ Public Class FrmMain
     ' ==========================================
     ' TILE CLICK EVENTS
     ' ==========================================
-    Private Sub tileCars_Click(sender As Object, e As EventArgs) Handles tileCars.Click
+    Private Sub tileRooms_Click(sender As Object, e As EventArgs) Handles tileRooms.Click
         Try
-            Dim f As New FrmCars()
+            Dim f As New FrmRooms()
             f.ShowDialog()
             LoadDashboardStats()
         Catch ex As Exception
-            MsgBox("Error opening Cars Management: " & ex.Message, MsgBoxStyle.Critical, "Error")
+            MsgBox("Error opening Rooms Management: " & ex.Message, MsgBoxStyle.Critical, "Error")
         End Try
     End Sub
 
     Private Sub tileCust_Click(sender As Object, e As EventArgs) Handles tileCust.Click
         Try
-            Dim f As New FrmCustomers()
+            Dim f As New FrmGuests()
             f.ShowDialog()
             LoadDashboardStats()
         Catch ex As Exception
-            MsgBox("Error opening Customer Management: " & ex.Message, MsgBoxStyle.Critical, "Error")
+            MsgBox("Error opening Guest Management: " & ex.Message, MsgBoxStyle.Critical, "Error")
         End Try
     End Sub
 
