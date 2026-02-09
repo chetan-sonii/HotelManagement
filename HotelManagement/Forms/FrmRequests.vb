@@ -319,7 +319,7 @@ Public Class FrmRequests
             Dim BookId As String = row.Cells("Book_id").Value.ToString()
 
             ' Query full booking details
-            Dim query As String = "SELECT b.*, g.cust_name, g.phone, g.email, r.brand, r.model, r.price " &
+            Dim query As String = "SELECT b.*, g.cust_name, g.phone, g.email, r.Room_Type, r.bed_type, r.price " &
                                  "FROM tbl_bookings b " &
                                  "LEFT JOIN tbl_guests g ON b.cust_id = g.cust_id " &
                                  "LEFT JOIN tbl_rooms r ON b.room_no = r.room_no " &
@@ -333,8 +333,8 @@ Public Class FrmRequests
                 Dim details As String = "📋 BOOKING DETAILS" & vbCrLf & vbCrLf &
                                        "Booking ID: " & detailRow("Book_id").ToString() & vbCrLf &
                                        "Room Number: " & detailRow("room_no").ToString() & vbCrLf &
-                                       "Room Type: " & detailRow("brand").ToString() & vbCrLf &
-                                       "Bed Type: " & detailRow("model").ToString() & vbCrLf & vbCrLf &
+                                       "Room Type: " & detailRow("Room_Type").ToString() & vbCrLf &
+                                       "Bed Type: " & detailRow("bed_type").ToString() & vbCrLf & vbCrLf &
                                        "Guest Name: " & detailRow("cust_name").ToString() & vbCrLf &
                                        "Phone: " & detailRow("phone").ToString() & vbCrLf &
                                        "Email: " & detailRow("email").ToString() & vbCrLf & vbCrLf &

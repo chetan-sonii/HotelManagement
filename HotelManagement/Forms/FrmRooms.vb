@@ -33,9 +33,9 @@ Public Class FrmRooms
         Try
             ' Set column headers if data exists
             If dgvRooms.Columns.Count > 0 Then
-                dgvRooms.Columns(0).HeaderText = "Reg. Number"
-                dgvRooms.Columns(1).HeaderText = "Brand"
-                dgvRooms.Columns(2).HeaderText = "Model"
+                dgvRooms.Columns(0).HeaderText = "Room No. Number"
+                dgvRooms.Columns(1).HeaderText = "Room_Type"
+                dgvRooms.Columns(2).HeaderText = "bed_type"
                 dgvRooms.Columns(3).HeaderText = "Price/Day (₹)"
                 dgvRooms.Columns(4).HeaderText = "Available"
 
@@ -111,15 +111,15 @@ Public Class FrmRooms
             Return False
         End If
 
-        If String.IsNullOrWhiteSpace(txtBrand.Text) Then
-            MsgBox("Please enter a Brand.", MsgBoxStyle.Exclamation, "Validation Error")
-            txtBrand.Focus()
+        If String.IsNullOrWhiteSpace(txtRoom_Type.Text) Then
+            MsgBox("Please enter a Room_Type.", MsgBoxStyle.Exclamation, "Validation Error")
+            txtRoom_Type.Focus()
             Return False
         End If
 
-        If String.IsNullOrWhiteSpace(txtModel.Text) Then
-            MsgBox("Please enter a Model.", MsgBoxStyle.Exclamation, "Validation Error")
-            txtModel.Focus()
+        If String.IsNullOrWhiteSpace(txtmodel.Text) Then
+            MsgBox("Please enter a bed_type.", MsgBoxStyle.Exclamation, "Validation Error")
+            txtmodel.Focus()
             Return False
         End If
 
@@ -175,13 +175,13 @@ Public Class FrmRooms
 
             ' Sanitize inputs to prevent SQL injection (basic version - consider using parameters)
             Dim regNo As String = txtRegNo.Text.Trim().Replace("'", "''")
-            Dim brand As String = txtBrand.Text.Trim().Replace("'", "''")
-            Dim model As String = txtModel.Text.Trim().Replace("'", "''")
+            Dim Room_Type As String = txtRoom_Type.Text.Trim().Replace("'", "''")
+            Dim bed_type As String = txtmodel.Text.Trim().Replace("'", "''")
             Dim price As Decimal = Val(txtPrice.Text.Trim())
             Dim available As String = cbAvailable.SelectedItem.ToString()
 
             ' SQL Insert
-            Dim query As String = "INSERT INTO tbl_rooms VALUES ('" & regNo & "', '" & brand & "', '" & model & "', " & price & ", '" & available & "')"
+            Dim query As String = "INSERT INTO tbl_rooms VALUES ('" & regNo & "', '" & Room_Type & "', '" & bed_type & "', " & price & ", '" & available & "')"
             DatabaseConnection.ExecuteQuery(query)
 
             MsgBox("✓ Room added successfully!", MsgBoxStyle.Information, "Success")
@@ -208,12 +208,12 @@ Public Class FrmRooms
         Try
             ' Sanitize inputs
             Dim regNo As String = txtRegNo.Text.Trim().Replace("'", "''")
-            Dim brand As String = txtBrand.Text.Trim().Replace("'", "''")
-            Dim model As String = txtModel.Text.Trim().Replace("'", "''")
+            Dim Room_Type As String = txtRoom_Type.Text.Trim().Replace("'", "''")
+            Dim bed_type As String = txtmodel.Text.Trim().Replace("'", "''")
             Dim price As Decimal = Val(txtPrice.Text.Trim())
             Dim available As String = cbAvailable.SelectedItem.ToString()
 
-            Dim query As String = "UPDATE tbl_rooms SET brand='" & brand & "', model='" & model & "', price=" & price & ", available='" & available & "' WHERE room_no='" & regNo & "'"
+            Dim query As String = "UPDATE tbl_rooms SET Room_Type='" & Room_Type & "', bed_type='" & bed_type & "', price=" & price & ", available='" & available & "' WHERE room_no='" & regNo & "'"
             DatabaseConnection.ExecuteQuery(query)
 
             MsgBox("✓ Room updated successfully!", MsgBoxStyle.Information, "Success")
@@ -263,8 +263,8 @@ Public Class FrmRooms
             Dim searchText As String = txtSearch.Text.Trim().Replace("'", "''")
             Dim query As String = "SELECT * FROM tbl_rooms WHERE " &
                                  "room_no LIKE '%" & searchText & "%' OR " &
-                                 "brand LIKE '%" & searchText & "%' OR " &
-                                 "model LIKE '%" & searchText & "%' OR " &
+                                 "Room_Type LIKE '%" & searchText & "%' OR " &
+                                 "bed_type LIKE '%" & searchText & "%' OR " &
                                  "available LIKE '%" & searchText & "%'"
 
             Dim dt As DataTable = DatabaseConnection.RunQuery(query)
@@ -285,8 +285,8 @@ Public Class FrmRooms
 
                 ' Populate fields from the clicked row
                 txtRegNo.Text = row.Cells(0).Value.ToString()
-                txtBrand.Text = row.Cells(1).Value.ToString()
-                txtModel.Text = row.Cells(2).Value.ToString()
+                txtRoom_Type.Text = row.Cells(1).Value.ToString()
+                txtmodel.Text = row.Cells(2).Value.ToString()
                 txtPrice.Text = row.Cells(3).Value.ToString()
 
                 ' Set combo box selection
@@ -333,8 +333,8 @@ Public Class FrmRooms
     ' ==========================================
     Private Sub ClearFields()
         txtRegNo.Text = ""
-        txtBrand.Text = ""
-        txtModel.Text = ""
+        txtRoom_Type.Text = ""
+        txtmodel.Text = ""
         txtPrice.Text = ""
         cbAvailable.SelectedIndex = -1
         txtRegNo.Focus()

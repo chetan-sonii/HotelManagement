@@ -16,7 +16,7 @@ Namespace My
     
     <Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.10.0.0"),  _
-     Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>  _
+     Global.System.Componentmodel.EditorBrowsableAttribute(Global.System.Componentmodel.EditorBrowsableState.Advanced)>  _
     Partial Friend NotInheritable Class MySettings
         Inherits Global.System.Configuration.ApplicationSettingsBase
         
@@ -28,7 +28,7 @@ Namespace My
 
     Private Shared addedHandlerLockObject As New Object
 
-    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), Global.System.Componentmodel.EditorBrowsableAttribute(Global.System.Componentmodel.EditorBrowsableState.Advanced)> _
     Private Shared Sub AutoSaveSettings(sender As Global.System.Object, e As Global.System.EventArgs)
         If My.Application.SaveMySettingsOnExit Then
             My.Settings.Save()
@@ -63,7 +63,7 @@ Namespace My
      Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute()>  _
     Friend Module MySettingsProperty
         
-        <Global.System.ComponentModel.Design.HelpKeywordAttribute("My.Settings")>  _
+        <Global.System.Componentmodel.Design.HelpKeywordAttribute("My.Settings")>  _
         Friend ReadOnly Property Settings() As Global.HotelManagement.My.MySettings
             Get
                 Return Global.HotelManagement.My.MySettings.Default

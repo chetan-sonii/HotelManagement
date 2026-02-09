@@ -15,14 +15,14 @@ Partial Class FrmRegister
     End Sub
 
     'Required by the Windows Form Designer
-    Private components As System.ComponentModel.IContainer
+    Private components As System.Componentmodel.IContainer
 
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
+        Me.components = New System.Componentmodel.Container()
         Me.PoisonStyleManager1 = New ReaLTaiizor.Manager.PoisonStyleManager(Me.components)
         Me.PoisonLabel1 = New ReaLTaiizor.Controls.PoisonLabel()
         Me.PoisonLabel2 = New ReaLTaiizor.Controls.PoisonLabel()
@@ -44,7 +44,7 @@ Partial Class FrmRegister
         Me.chkShowPassword = New ReaLTaiizor.Controls.PoisonCheckBox()
         Me.lblPasswordStrength = New ReaLTaiizor.Controls.PoisonLabel()
         Me.PoisonProgressBar1 = New ReaLTaiizor.Controls.PoisonProgressBar()
-        CType(Me.PoisonStyleManager1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PoisonStyleManager1, System.Componentmodel.ISupportInitialize).BeginInit()
         Me.PoisonPanel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -420,7 +420,7 @@ Partial Class FrmRegister
         Me.ShadowType = ReaLTaiizor.[Enum].Poison.FormShadowType.AeroShadow
         Me.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Green
         Me.Text = "User Registration"
-        CType(Me.PoisonStyleManager1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PoisonStyleManager1, System.Componentmodel.ISupportInitialize).EndInit()
         Me.PoisonPanel1.ResumeLayout(False)
         Me.PoisonPanel1.PerformLayout()
         Me.ResumeLayout(False)

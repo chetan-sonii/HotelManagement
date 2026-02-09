@@ -330,7 +330,7 @@ Partial Class FrmReturn
         Me.lblRoom.Name = "lblRoom"
         Me.lblRoom.Size = New System.Drawing.Size(97, 19)
         Me.lblRoom.TabIndex = 3
-        Me.lblRoom.Text = "🚗 Room Reg #:"
+        Me.lblRoom.Text = "🚗 Room Room No #:"
         '
         'PoisonLabel1
         '

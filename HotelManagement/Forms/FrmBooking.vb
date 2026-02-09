@@ -42,7 +42,7 @@ Public Class FrmBooking
                 dgvBookings.Columns(2).HeaderText = "Guest ID"
                 dgvBookings.Columns(3).HeaderText = "Check-In"
                 dgvBookings.Columns(4).HeaderText = "Check-Out"
-                dgvBookings.Columns(5).HeaderText = "Fees (₹)"
+                dgvBookings.Columns(5).HeaderText = "Bill (₹)"
 
                 If dgvBookings.Columns.Count > 6 Then
                     dgvBookings.Columns(6).HeaderText = "Status"
@@ -60,7 +60,7 @@ Public Class FrmBooking
     ' ==========================================
     Private Sub FillRoomCombo()
         Try
-            Dim query As String = "SELECT room_no, brand, model FROM tbl_rooms WHERE available='Yes' ORDER BY room_no"
+            Dim query As String = "SELECT room_no, Room_Type, bed_type FROM tbl_rooms WHERE available='Yes' ORDER BY room_no"
             Dim dt As DataTable = DatabaseConnection.RunQuery(query)
 
             cbRoom.Items.Clear()
@@ -108,12 +108,12 @@ Public Class FrmBooking
 
         Try
             Dim roomNo As String = cbRoom.SelectedItem.ToString()
-            Dim query As String = "SELECT brand, model, price FROM tbl_rooms WHERE room_no='" & roomNo.Replace("'", "''") & "'"
+            Dim query As String = "SELECT Room_Type, bed_type, price FROM tbl_rooms WHERE room_no='" & roomNo.Replace("'", "''") & "'"
             Dim dt As DataTable = DatabaseConnection.RunQuery(query)
 
             If dt.Rows.Count > 0 Then
-                Dim roomType As String = dt.Rows(0)("brand").ToString()
-                Dim bedType As String = dt.Rows(0)("model").ToString()
+                Dim roomType As String = dt.Rows(0)("Room_Type").ToString()
+                Dim bedType As String = dt.Rows(0)("bed_type").ToString()
                 Dim price As String = dt.Rows(0)("price").ToString()
 
                 lblRoomInfo.Text = roomType & " | " & bedType & " | ₹" & price & "/day"

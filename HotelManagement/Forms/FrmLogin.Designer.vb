@@ -15,14 +15,14 @@ Partial Class FrmLogin
     End Sub
 
     'Required by the Windows Form Designer
-    Private components As System.ComponentModel.IContainer
+    Private components As System.Componentmodel.IContainer
 
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
+        Me.components = New System.Componentmodel.Container()
         Me.PoisonStyleManager1 = New ReaLTaiizor.Manager.PoisonStyleManager(Me.components)
         Me.lblTitle = New ReaLTaiizor.Controls.PoisonLabel()
         Me.txtUser = New ReaLTaiizor.Controls.PoisonTextBox()
@@ -37,7 +37,7 @@ Partial Class FrmLogin
         Me.btnExit = New ReaLTaiizor.Controls.PoisonButton()
         Me.PoisonLabel3 = New ReaLTaiizor.Controls.PoisonLabel()
         Me.btnRegister = New ReaLTaiizor.Controls.PoisonLinkLabel()
-        CType(Me.PoisonStyleManager1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PoisonStyleManager1, System.Componentmodel.ISupportInitialize).BeginInit()
         Me.PoisonPanel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -244,7 +244,7 @@ Partial Class FrmLogin
         Me.Resizable = False
         Me.ShadowType = ReaLTaiizor.[Enum].Poison.FormShadowType.AeroShadow
         Me.Text = "Login - Room Booking System"
-        CType(Me.PoisonStyleManager1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PoisonStyleManager1, System.Componentmodel.ISupportInitialize).EndInit()
         Me.PoisonPanel1.ResumeLayout(False)
         Me.PoisonPanel1.PerformLayout()
         Me.ResumeLayout(False)

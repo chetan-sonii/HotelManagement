@@ -15,22 +15,22 @@ Partial Class FrmRooms
     End Sub
 
     'Required by the Windows Form Designer
-    Private components As System.ComponentModel.IContainer
+    Private components As System.Componentmodel.IContainer
 
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
+        Me.components = New System.Componentmodel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PoisonStyleManager1 = New ReaLTaiizor.Manager.PoisonStyleManager(Me.components)
         Me.dgvRooms = New ReaLTaiizor.Controls.PoisonDataGridView()
         Me.txtRegNo = New ReaLTaiizor.Controls.PoisonTextBox()
-        Me.txtBrand = New ReaLTaiizor.Controls.PoisonTextBox()
-        Me.txtModel = New ReaLTaiizor.Controls.PoisonTextBox()
+        Me.txtRoom_Type = New ReaLTaiizor.Controls.PoisonTextBox()
+        Me.txtmodel = New ReaLTaiizor.Controls.PoisonTextBox()
         Me.txtPrice = New ReaLTaiizor.Controls.PoisonTextBox()
         Me.cbAvailable = New ReaLTaiizor.Controls.PoisonComboBox()
         Me.btnAdd = New ReaLTaiizor.Controls.PoisonButton()
@@ -54,8 +54,8 @@ Partial Class FrmRooms
         Me.PoisonPanel3 = New ReaLTaiizor.Controls.PoisonPanel()
         Me.PoisonTile1 = New ReaLTaiizor.Controls.PoisonTile()
         Me.PoisonTile2 = New ReaLTaiizor.Controls.PoisonTile()
-        CType(Me.PoisonStyleManager1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dgvRooms, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PoisonStyleManager1, System.Componentmodel.ISupportInitialize).BeginInit()
+        CType(Me.dgvRooms, System.Componentmodel.ISupportInitialize).BeginInit()
         Me.PoisonPanel1.SuspendLayout()
         Me.PoisonPanel2.SuspendLayout()
         Me.PoisonPanel3.SuspendLayout()
@@ -149,69 +149,69 @@ Partial Class FrmRooms
         Me.txtRegNo.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.txtRegNo.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
-        'txtBrand
+        'txtRoom_Type
         '
         '
         '
         '
-        Me.txtBrand.CustomButton.Image = Nothing
-        Me.txtBrand.CustomButton.Location = New System.Drawing.Point(198, 1)
-        Me.txtBrand.CustomButton.Name = ""
-        Me.txtBrand.CustomButton.Size = New System.Drawing.Size(21, 21)
-        Me.txtBrand.CustomButton.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Blue
-        Me.txtBrand.CustomButton.TabIndex = 1
-        Me.txtBrand.CustomButton.Theme = ReaLTaiizor.[Enum].Poison.ThemeStyle.Light
-        Me.txtBrand.CustomButton.UseSelectable = True
-        Me.txtBrand.CustomButton.Visible = False
-        Me.txtBrand.Lines = New String(-1) {}
-        Me.txtBrand.Location = New System.Drawing.Point(15, 95)
-        Me.txtBrand.MaxLength = 32767
-        Me.txtBrand.Name = "txtBrand"
-        Me.txtBrand.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtBrand.PromptText = "e.g., Toyota, Honda"
-        Me.txtBrand.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.txtBrand.SelectedText = ""
-        Me.txtBrand.SelectionLength = 0
-        Me.txtBrand.SelectionStart = 0
-        Me.txtBrand.ShortcutsEnabled = True
-        Me.txtBrand.Size = New System.Drawing.Size(220, 23)
-        Me.txtBrand.TabIndex = 2
-        Me.txtBrand.UseSelectable = True
-        Me.txtBrand.WaterMark = "e.g., Toyota, Honda"
-        Me.txtBrand.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.txtBrand.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
+        Me.txtRoom_Type.CustomButton.Image = Nothing
+        Me.txtRoom_Type.CustomButton.Location = New System.Drawing.Point(198, 1)
+        Me.txtRoom_Type.CustomButton.Name = ""
+        Me.txtRoom_Type.CustomButton.Size = New System.Drawing.Size(21, 21)
+        Me.txtRoom_Type.CustomButton.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Blue
+        Me.txtRoom_Type.CustomButton.TabIndex = 1
+        Me.txtRoom_Type.CustomButton.Theme = ReaLTaiizor.[Enum].Poison.ThemeStyle.Light
+        Me.txtRoom_Type.CustomButton.UseSelectable = True
+        Me.txtRoom_Type.CustomButton.Visible = False
+        Me.txtRoom_Type.Lines = New String(-1) {}
+        Me.txtRoom_Type.Location = New System.Drawing.Point(15, 95)
+        Me.txtRoom_Type.MaxLength = 32767
+        Me.txtRoom_Type.Name = "txtRoom_Type"
+        Me.txtRoom_Type.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtRoom_Type.PromptText = "e.g., Toyota, Honda"
+        Me.txtRoom_Type.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtRoom_Type.SelectedText = ""
+        Me.txtRoom_Type.SelectionLength = 0
+        Me.txtRoom_Type.SelectionStart = 0
+        Me.txtRoom_Type.ShortcutsEnabled = True
+        Me.txtRoom_Type.Size = New System.Drawing.Size(220, 23)
+        Me.txtRoom_Type.TabIndex = 2
+        Me.txtRoom_Type.UseSelectable = True
+        Me.txtRoom_Type.WaterMark = "e.g., Toyota, Honda"
+        Me.txtRoom_Type.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.txtRoom_Type.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
-        'txtModel
-        '
-        '
+        'txtmodel
         '
         '
-        Me.txtModel.CustomButton.Image = Nothing
-        Me.txtModel.CustomButton.Location = New System.Drawing.Point(198, 1)
-        Me.txtModel.CustomButton.Name = ""
-        Me.txtModel.CustomButton.Size = New System.Drawing.Size(21, 21)
-        Me.txtModel.CustomButton.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Blue
-        Me.txtModel.CustomButton.TabIndex = 1
-        Me.txtModel.CustomButton.Theme = ReaLTaiizor.[Enum].Poison.ThemeStyle.Light
-        Me.txtModel.CustomButton.UseSelectable = True
-        Me.txtModel.CustomButton.Visible = False
-        Me.txtModel.Lines = New String(-1) {}
-        Me.txtModel.Location = New System.Drawing.Point(15, 155)
-        Me.txtModel.MaxLength = 32767
-        Me.txtModel.Name = "txtModel"
-        Me.txtModel.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtModel.PromptText = "e.g., Camry, Civic"
-        Me.txtModel.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.txtModel.SelectedText = ""
-        Me.txtModel.SelectionLength = 0
-        Me.txtModel.SelectionStart = 0
-        Me.txtModel.ShortcutsEnabled = True
-        Me.txtModel.Size = New System.Drawing.Size(220, 23)
-        Me.txtModel.TabIndex = 3
-        Me.txtModel.UseSelectable = True
-        Me.txtModel.WaterMark = "e.g., Camry, Civic"
-        Me.txtModel.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.txtModel.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
+        '
+        '
+        Me.txtmodel.CustomButton.Image = Nothing
+        Me.txtmodel.CustomButton.Location = New System.Drawing.Point(198, 1)
+        Me.txtmodel.CustomButton.Name = ""
+        Me.txtmodel.CustomButton.Size = New System.Drawing.Size(21, 21)
+        Me.txtmodel.CustomButton.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Blue
+        Me.txtmodel.CustomButton.TabIndex = 1
+        Me.txtmodel.CustomButton.Theme = ReaLTaiizor.[Enum].Poison.ThemeStyle.Light
+        Me.txtmodel.CustomButton.UseSelectable = True
+        Me.txtmodel.CustomButton.Visible = False
+        Me.txtmodel.Lines = New String(-1) {}
+        Me.txtmodel.Location = New System.Drawing.Point(15, 155)
+        Me.txtmodel.MaxLength = 32767
+        Me.txtmodel.Name = "txtmodel"
+        Me.txtmodel.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtmodel.PromptText = "e.g., Camry, Civic"
+        Me.txtmodel.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtmodel.SelectedText = ""
+        Me.txtmodel.SelectionLength = 0
+        Me.txtmodel.SelectionStart = 0
+        Me.txtmodel.ShortcutsEnabled = True
+        Me.txtmodel.Size = New System.Drawing.Size(220, 23)
+        Me.txtmodel.TabIndex = 3
+        Me.txtmodel.UseSelectable = True
+        Me.txtmodel.WaterMark = "e.g., Camry, Civic"
+        Me.txtmodel.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.txtmodel.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'txtPrice
         '
@@ -327,7 +327,7 @@ Partial Class FrmRooms
         Me.PoisonLabel2.Name = "PoisonLabel2"
         Me.PoisonLabel2.Size = New System.Drawing.Size(47, 19)
         Me.PoisonLabel2.TabIndex = 11
-        Me.PoisonLabel2.Text = "Model"
+        Me.PoisonLabel2.Text = "bed_type"
         '
         'PoisonLabel3
         '
@@ -336,7 +336,7 @@ Partial Class FrmRooms
         Me.PoisonLabel3.Name = "PoisonLabel3"
         Me.PoisonLabel3.Size = New System.Drawing.Size(44, 19)
         Me.PoisonLabel3.TabIndex = 12
-        Me.PoisonLabel3.Text = "Brand"
+        Me.PoisonLabel3.Text = "Room_Type"
         '
         'PoisonLabel4
         '
@@ -386,7 +386,7 @@ Partial Class FrmRooms
         Me.txtSearch.MaxLength = 32767
         Me.txtSearch.Name = "txtSearch"
         Me.txtSearch.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtSearch.PromptText = "Search by Reg No, Brand, Model..."
+        Me.txtSearch.PromptText = "Search by Room No No, Room_Type, bed_type..."
         Me.txtSearch.ScrollBars = System.Windows.Forms.ScrollBars.None
         Me.txtSearch.SelectedText = ""
         Me.txtSearch.SelectionLength = 0
@@ -395,7 +395,7 @@ Partial Class FrmRooms
         Me.txtSearch.Size = New System.Drawing.Size(218, 23)
         Me.txtSearch.TabIndex = 16
         Me.txtSearch.UseSelectable = True
-        Me.txtSearch.WaterMark = "Search by Reg No, Brand, Model..."
+        Me.txtSearch.WaterMark = "Search by Room No No, Room_Type, bed_type..."
         Me.txtSearch.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.txtSearch.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
@@ -430,8 +430,8 @@ Partial Class FrmRooms
         '
         Me.PoisonPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.PoisonPanel1.Controls.Add(Me.txtRegNo)
-        Me.PoisonPanel1.Controls.Add(Me.txtBrand)
-        Me.PoisonPanel1.Controls.Add(Me.txtModel)
+        Me.PoisonPanel1.Controls.Add(Me.txtRoom_Type)
+        Me.PoisonPanel1.Controls.Add(Me.txtmodel)
         Me.PoisonPanel1.Controls.Add(Me.txtPrice)
         Me.PoisonPanel1.Controls.Add(Me.cbAvailable)
         Me.PoisonPanel1.Controls.Add(Me.btnAdd)
@@ -525,8 +525,8 @@ Partial Class FrmRooms
         Me.Resizable = False
         Me.ShadowType = ReaLTaiizor.[Enum].Poison.FormShadowType.AeroShadow
         Me.Text = "Room Booking Management System"
-        CType(Me.PoisonStyleManager1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dgvRooms, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PoisonStyleManager1, System.Componentmodel.ISupportInitialize).EndInit()
+        CType(Me.dgvRooms, System.Componentmodel.ISupportInitialize).EndInit()
         Me.PoisonPanel1.ResumeLayout(False)
         Me.PoisonPanel1.PerformLayout()
         Me.PoisonPanel2.ResumeLayout(False)
@@ -545,8 +545,8 @@ Partial Class FrmRooms
     Friend WithEvents btnAdd As ReaLTaiizor.Controls.PoisonButton
     Friend WithEvents cbAvailable As ReaLTaiizor.Controls.PoisonComboBox
     Friend WithEvents txtPrice As ReaLTaiizor.Controls.PoisonTextBox
-    Friend WithEvents txtModel As ReaLTaiizor.Controls.PoisonTextBox
-    Friend WithEvents txtBrand As ReaLTaiizor.Controls.PoisonTextBox
+    Friend WithEvents txtmodel As ReaLTaiizor.Controls.PoisonTextBox
+    Friend WithEvents txtRoom_Type As ReaLTaiizor.Controls.PoisonTextBox
     Friend WithEvents txtRegNo As ReaLTaiizor.Controls.PoisonTextBox
     Friend WithEvents PoisonLabel1 As ReaLTaiizor.Controls.PoisonLabel
     Friend WithEvents PoisonLabel5 As ReaLTaiizor.Controls.PoisonLabel

@@ -15,14 +15,14 @@ Partial Class FrmRequests
     End Sub
 
     'Required by the Windows Form Designer
-    Private components As System.ComponentModel.IContainer
+    Private components As System.Componentmodel.IContainer
 
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
+        Me.components = New System.Componentmodel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -46,9 +46,9 @@ Partial Class FrmRequests
         Me.PoisonTile2 = New ReaLTaiizor.Controls.PoisonTile()
         Me.btnRejectBook = New ReaLTaiizor.Controls.PoisonButton()
         Me.btnViewDetails = New ReaLTaiizor.Controls.PoisonButton()
-        CType(Me.PoisonStyleManager1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dgvReturnRequests, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dgvBookRequests, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PoisonStyleManager1, System.Componentmodel.ISupportInitialize).BeginInit()
+        CType(Me.dgvReturnRequests, System.Componentmodel.ISupportInitialize).BeginInit()
+        CType(Me.dgvBookRequests, System.Componentmodel.ISupportInitialize).BeginInit()
         Me.PoisonPanel1.SuspendLayout()
         Me.PoisonPanel2.SuspendLayout()
         Me.SuspendLayout()
@@ -331,9 +331,9 @@ Partial Class FrmRequests
         Me.Resizable = False
         Me.ShadowType = ReaLTaiizor.[Enum].Poison.FormShadowType.AeroShadow
         Me.Text = "Booking && Return Requests - Hotel Management"
-        CType(Me.PoisonStyleManager1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dgvReturnRequests, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dgvBookRequests, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PoisonStyleManager1, System.Componentmodel.ISupportInitialize).EndInit()
+        CType(Me.dgvReturnRequests, System.Componentmodel.ISupportInitialize).EndInit()
+        CType(Me.dgvBookRequests, System.Componentmodel.ISupportInitialize).EndInit()
         Me.PoisonPanel1.ResumeLayout(False)
         Me.PoisonPanel2.ResumeLayout(False)
         Me.ResumeLayout(False)

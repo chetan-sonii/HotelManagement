@@ -15,14 +15,14 @@ Partial Class FrmUserDashboard
     End Sub
 
     'Required by the Windows Form Designer
-    Private components As System.ComponentModel.IContainer
+    Private components As System.Componentmodel.IContainer
 
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
+        Me.components = New System.Componentmodel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -53,14 +53,14 @@ Partial Class FrmUserDashboard
         Me.lblWelcome = New ReaLTaiizor.Controls.PoisonLabel()
         Me.btnLogout = New ReaLTaiizor.Controls.PoisonButton()
         Me.lblUserEmail = New ReaLTaiizor.Controls.PoisonLabel()
-        CType(Me.PoisonStyleManager1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PoisonStyleManager1, System.Componentmodel.ISupportInitialize).BeginInit()
         Me.PoisonTabControl1.SuspendLayout()
         Me.tabBook.SuspendLayout()
         Me.PoisonPanel1.SuspendLayout()
-        CType(Me.dgvAvailable, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvAvailable, System.Componentmodel.ISupportInitialize).BeginInit()
         Me.tabHistory.SuspendLayout()
         Me.PoisonPanel2.SuspendLayout()
-        CType(Me.dgvMyBookings, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvMyBookings, System.Componentmodel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PoisonStyleManager1
@@ -149,7 +149,7 @@ Partial Class FrmUserDashboard
         Me.PoisonLabel3.Name = "PoisonLabel3"
         Me.PoisonLabel3.Size = New System.Drawing.Size(124, 19)
         Me.PoisonLabel3.TabIndex = 6
-        Me.PoisonLabel3.Text = "Selected Vehicle:"
+        Me.PoisonLabel3.Text = "Selected Room:"
         '
         'btnRefreshRooms
         '
@@ -188,7 +188,7 @@ Partial Class FrmUserDashboard
         Me.txtSearchRoom.Size = New System.Drawing.Size(248, 25)
         Me.txtSearchRoom.TabIndex = 4
         Me.txtSearchRoom.UseSelectable = True
-        Me.txtSearchRoom.WaterMark = "Search by brand, model, type..."
+        Me.txtSearchRoom.WaterMark = "Search by Room_Type, bed_type, type..."
         Me.txtSearchRoom.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.txtSearchRoom.WaterMarkFont = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         '
@@ -456,16 +456,16 @@ Partial Class FrmUserDashboard
         Me.ShadowType = ReaLTaiizor.[Enum].Poison.FormShadowType.AeroShadow
         Me.Style = ReaLTaiizor.[Enum].Poison.ColorStyle.Green
         Me.Text = "User Dashboard - Room Booking System"
-        CType(Me.PoisonStyleManager1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PoisonStyleManager1, System.Componentmodel.ISupportInitialize).EndInit()
         Me.PoisonTabControl1.ResumeLayout(False)
         Me.tabBook.ResumeLayout(False)
         Me.PoisonPanel1.ResumeLayout(False)
         Me.PoisonPanel1.PerformLayout()
-        CType(Me.dgvAvailable, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvAvailable, System.Componentmodel.ISupportInitialize).EndInit()
         Me.tabHistory.ResumeLayout(False)
         Me.PoisonPanel2.ResumeLayout(False)
         Me.PoisonPanel2.PerformLayout()
-        CType(Me.dgvMyBookings, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvMyBookings, System.Componentmodel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

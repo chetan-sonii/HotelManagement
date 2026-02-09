@@ -63,9 +63,9 @@ Public Class FrmUserDashboard
     Private Sub LoadAvailableRooms()
         Try
             ' We use aliases (AS ...) to make column headers look nice automatically
-            Dim query As String = "SELECT room_no AS 'Reg No', brand AS 'Brand', model AS 'Model', " &
+            Dim query As String = "SELECT room_no AS 'Room No No', Room_Type AS 'Room_Type', bed_type AS 'bed_type', " &
                                   "price AS 'Price/Day', available AS 'Status' " &
-                                  "FROM tbl_rooms WHERE available = 'Yes' ORDER BY brand, model"
+                                  "FROM tbl_rooms WHERE available = 'Yes' ORDER BY Room_Type, bed_type"
 
             Dim dt As DataTable = DatabaseConnection.RunQuery(query)
             dgvAvailable.DataSource = dt
@@ -88,7 +88,7 @@ Public Class FrmUserDashboard
     Private Sub LoadMyBookings()
         Try
             ' Join tables to get Room Details + Booking Status
-            Dim query As String = "SELECT r.Book_id, c.brand, c.model, " &
+            Dim query As String = "SELECT r.Book_id, c.Room_Type, c.bed_type, " &
                                   "r.check_in AS 'Start Date', r.check_out AS 'Return Date', " &
                                   "r.fees AS 'Total Fees', r.status AS 'Status', r.room_no " &
                                   "FROM tbl_bookings r " &
@@ -119,10 +119,10 @@ Public Class FrmUserDashboard
                 Return
             End If
 
-            Dim query As String = "SELECT room_no AS 'Reg No', brand AS 'Brand', model AS 'Model', " &
+            Dim query As String = "SELECT room_no AS 'Room No No', Room_Type AS 'Room_Type', bed_type AS 'bed_type', " &
                                   "price AS 'Price/Day', available AS 'Status' " &
                                   "FROM tbl_rooms " &
-                                  "WHERE available = 'Yes' AND (brand LIKE @search OR model LIKE @search)"
+                                  "WHERE available = 'Yes' AND (Room_Type LIKE @search OR bed_type LIKE @search)"
 
             Dim params As New List(Of MySqlParameter)
             params.Add(New MySqlParameter("@search", "%" & searchTerm & "%"))
@@ -149,11 +149,11 @@ Public Class FrmUserDashboard
             Dim row As DataGridViewRow = dgvAvailable.SelectedRows(0)
             Dim RoomReg As String = row.Cells("Room No").Value.ToString()
             Dim price As Decimal = Convert.ToDecimal(row.Cells("Price/Day").Value)
-            Dim brand As String = row.Cells("Brand").Value.ToString()
-            Dim model As String = row.Cells("Model").Value.ToString()
+            Dim Room_Type As String = row.Cells("Room_Type").Value.ToString()
+            Dim bed_type As String = row.Cells("bed_type").Value.ToString()
 
             ' Confirmation
-            Dim ans = MsgBox($"Request to book {brand} {model} for ₹{price}/day?", MsgBoxStyle.YesNo + MsgBoxStyle.Question)
+            Dim ans = MsgBox($"Request to book {Room_Type} {bed_type} for ₹{price}/day?", MsgBoxStyle.YesNo + MsgBoxStyle.Question)
             If ans = MsgBoxResult.No Then Return
 
             ' FIX 3: INSERT AS 'PENDING'. Do NOT set Room to 'No' yet.
@@ -234,7 +234,7 @@ Public Class FrmUserDashboard
     Private Sub dgvAvailable_SelectionChanged(sender As Object, e As EventArgs) Handles dgvAvailable.SelectionChanged
         If dgvAvailable.SelectedRows.Count > 0 Then
             Dim row = dgvAvailable.SelectedRows(0)
-            lblSelectedRoom.Text = row.Cells("Brand").Value.ToString() & " " & row.Cells("Model").Value.ToString()
+            lblSelectedRoom.Text = row.Cells("Room_Type").Value.ToString() & " " & row.Cells("bed_type").Value.ToString()
         End If
     End Sub
 
